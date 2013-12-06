@@ -1,0 +1,32 @@
+// ------------------------------
+// [name] _util v1.0.0
+// [path] /hisho/helper/_util
+// [desc]
+//   マークアップ補助用module一覧
+// ------------------------------
+
+//@UtHide
+.UtHide{display:none;}
+
+//@:UtAlign
+.UtAlignCenter{text-align:center!important;}
+.UtAlignRight{text-align:right!important;}
+.UtAlignLeft{text-align:left!important;}
+.UtAlignMiddle{vertical-align:middle!important;}
+.UtAlignTop{vertical-align:top!important;}
+.UtAlignBottom{vertical-align:bottom!important;}
+
+//@UtElement
+.UtElement{
+	margin-bottom: map-get($styleSetting, moduleBottomMargin);
+}
+
+//@UtSpriteImg
+.UtSpriteImg{
+	@include sprite-core();
+}
+
+//@UtSpriteBnt
+.UtSpriteBnt{
+	@include sprite-core("pointer", true);
+}

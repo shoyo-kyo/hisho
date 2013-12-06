@@ -1,0 +1,62 @@
+// ------------------------------
+// [name] link-styles v1.0.0
+// [path] /hisho/helper/_link-styles
+// [desc]
+//   linkのcolorとdecorationを指定
+// ------------------------------
+
+//private
+@mixin link-styles-view($color,$underline){
+	@if $color {
+		cursor:$color;
+	}
+	@if $underline {
+		cursor:underline;
+	} @else {
+		cursor:none;
+	}
+}
+
+//publick
+@mixin link-styles($map){
+	
+	$_OPTIONS : (
+		linkColor            : null,
+		linkColorVisited     : null,
+		linkColorHover       : null,
+		linkColorActive      : null,
+		linkColorFocus       : null,
+		linkUnderline        : false,
+		linkUnderlineVisited : false,
+		linkUnderlineHover   : false,
+		linkUnderActive      : false,
+		linkUnderFocus       : false
+	);
+	$_options: map-merge($_OPTIONS, $map)
+
+	&:link{
+		$_color:  map-get($_options, linkColor);
+		$_underline: map-get($_options, linkUnderline);
+		link-styles-view($_color,$_underline);
+	}
+	&:visited{
+		$_color: map-get($_options, linkColorVisited);
+		$_underline: map-get($_options, linkUnderlineVisited);
+		link-styles-view($_color,$_underline);
+	}
+	&:hover{
+		$_color: map-get($_options, linkColorHover);
+		$_underline: map-get($_options, linkUnderlineHover);
+		link-styles-view($_color,$_underline);
+	}
+	&:active{
+		$_color: map-get($_options, linkColorActive);
+		$_underline: map-get($_options, linkUnderActive);
+		link-styles-view($_color,$_underline);
+	}
+	&:focus{
+		$_color: map-get($_options, linkColorFocus);
+		$_underline: map-get($_options, linkUnderFocus);
+		link-styles-view($_color,$_underline);
+	}
+}

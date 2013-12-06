@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+//@:reset
+
+body,h1,h2,h3,h4,h5,h6,p,dl,dt,dd,ul,ol,li,th,td,div,blockquote,pre,form,fieldset,input,textarea{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+ol,ul{list-style:none;}
+table{border-collapse:collapse;border-spacing:0;}
+img,fieldset,table,th,td{border:none;}
+input{*margin:-1px 0;}
+input,textarea{font-size:1.0em;}
+em,cite{font-style:normal;}
+small{font-size:100%;}
+html{overflow-y:scroll;}
+body{*position:relative;font:12px/1.5 arial,sans-serif;}
+body.ExOsWin{font-family:Meiryo,"MS PGothic",arial,sans-serif;}
+body.ExOsMac{font-family:arial,sans-serif;}
+a img{vertical-align:top;}
+:focus{outline:none;}
+input,button,textarea{border:0;}
+input[type="text"],textarea{-webkit-appearance:none;}
+textarea{overflow-x:hidden;overflow-y:auto;font-family:arial,sans-serif;}
+img{-ms-interpolation-mode: bicubic;}
+hr{display:none;}
+
+body.ExOsWin textarea{font-family:Meiryo,"MS PGothic",arial,sans-serif;}
+h1,h2,h3,h4,h5,h6,p,dl,dt,dd,ul,ol,li,table,th,td,div,blockquote,pre,form,fieldset,legend{*zoom:1;}
+
+/*google analytics*/
+#iyp__bubbles{position:static;}
+
+/*html5*/
+article, aside, canvas, details, figcaption, figure, header,
+footer, hgroup, menu, nav, section, summary {display: block;}
+

@@ -1,12 +1,20 @@
+@charset "utf-8";
 // ------------------------------
 // [name] link-styles v1.0.0
-// [path] /hisho/helper/_link-styles
-// [desc]
-//   linkのcolorとdecorationを指定
+// [path] /hisho/helper/_link-styles.scss
+// [desc] linkのcolorとunderlineを指定
+// [exsample]
+//
+//   @include link-styles($map);
+//
+//   @include link-styles(
+//     linkColor : #333,
+//     linkUnderline : false
+//   );
 // ------------------------------
 
-//private
-@mixin link-styles-view($color,$underline){
+//private mixin
+@mixin link-styles-view($color:null, $underline:null){
 	@if $color {
 		cursor:$color;
 	}
@@ -17,46 +25,78 @@
 	}
 }
 
-//publick
+//publick mixin
 @mixin link-styles($map){
-	
+
+	//-----------------
+	// options
+	//-----------------
 	$_OPTIONS : (
-		linkColor            : null,
-		linkColorVisited     : null,
-		linkColorHover       : null,
-		linkColorActive      : null,
-		linkColorFocus       : null,
-		linkUnderline        : false,
+		linkColor        : null,
+		linkColorVisited : null,
+		linkColorHover   : null,
+		linkColorActive  : null,
+		linkColorFocus   : null,
+		linkUnderline    : false,
 		linkUnderlineVisited : false,
 		linkUnderlineHover   : false,
 		linkUnderActive      : false,
 		linkUnderFocus       : false
 	);
-	$_options: map-merge($_OPTIONS, $map)
+	$_options: map-merge($_OPTIONS, $map);
 
-	&:link{
-		$_color:  map-get($_options, linkColor);
-		$_underline: map-get($_options, linkUnderline);
-		link-styles-view($_color,$_underline);
+	//-----------------
+	// view
+	//-----------------
+
+	@include link-styles-view(
+		$color: map-get($_options, linkColor),
+		$underline: map-get($_options, linkUnderline)
+	);
+
+	@if map-get($_options, linkColor) {
+		&:link{
+			@include link-styles-view(
+				$color: map-get($_options, linkColor),
+				$underline: map-get($_options, linkUnderline)
+			);
+		}
 	}
-	&:visited{
-		$_color: map-get($_options, linkColorVisited);
-		$_underline: map-get($_options, linkUnderlineVisited);
-		link-styles-view($_color,$_underline);
+
+	@if map-get($_options, linkColorVisited) {
+		&:visited{
+			@include link-styles-view(
+				$color: map-get($_options, linkColorVisited),
+				$underline: map-get($_options, linkUnderlineVisited)
+			);
+		}
 	}
-	&:hover{
-		$_color: map-get($_options, linkColorHover);
-		$_underline: map-get($_options, linkUnderlineHover);
-		link-styles-view($_color,$_underline);
+
+	@if map-get($_options, linkColorHover) {
+		&:hover{
+			@include link-styles-view(
+				$color: map-get($_options, linkColorHover),
+				$underline: map-get($_options, linkUnderlineHover)
+			);
+		}
 	}
-	&:active{
-		$_color: map-get($_options, linkColorActive);
-		$_underline: map-get($_options, linkUnderActive);
-		link-styles-view($_color,$_underline);
+
+	@if map-get($_options, linkColorActive) {
+		&:active{
+			@include link-styles-view(
+				$color: map-get($_options, linkColorActive),
+				$underline: map-get($_options, linkUnderActive)
+			);
+		}
 	}
-	&:focus{
-		$_color: map-get($_options, linkColorFocus);
-		$_underline: map-get($_options, linkUnderFocus);
-		link-styles-view($_color,$_underline);
+
+	@if map-get($_options, linkColorFocus) {
+		&:focus{
+			@include link-styles-view(
+				$color: map-get($_options, linkColorFocus),
+				$underline: map-get($_options, linkUnderFocus)
+			);
+		}
 	}
+
 }

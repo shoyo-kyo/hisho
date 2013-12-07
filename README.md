@@ -13,4 +13,4 @@ compassを使ったHTMLフレームワーク。
 ### 環境 ###
 
 +  sass 3.3.0.rc.2
-+  sass 1.0.0.alpha.15
++  compass 1.0.0.alpha.15

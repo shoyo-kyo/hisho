@@ -1,0 +1,156 @@
+@charset "utf-8";
+// ------------------------------
+// [name] layout-col3-mainLeft
+// [varsion] v1.0.0
+// [path] /hisho/layout/col3/_mainLeft.scss
+// [desc] 2段組左ナビ
+// [exsample]
+//
+//    @include layout-col3-mainLeft();
+//
+//    @include layout-col3-mainLeft((
+//      widthFixed: true,
+//      style: (
+//          contentWidth: 1050px
+//      )
+//    ));
+// ------------------------------
+
+//publick mixin
+@mixin layout-col3-mainLeft($options:null){
+	$_options : null;
+	$_widthMain01 : null;
+	$_marginCnt : null;
+
+	//-----------------
+	// options
+	//-----------------
+	$_OPTIONS : (
+		widthFixed   : false,
+		alignContent : center,
+		widthSub01   : 300px,
+		widthSub02   : 160px,
+		marginAreaX  : 15px,
+		style : $styleSetting,
+		debug : false
+	);
+	@if $options {
+		$_options: map-merge($_OPTIONS, $options);
+	} @else{
+		$_options: $_OPTIONS;
+	}
+	
+	$_style: map-get($_options, style);
+
+
+	//-----------------
+	// model
+	//-----------------
+	$_widthMain01: map-get($_style, contentWidth) - map-get($_options, widthSub01) - map-get($_options, widthSub02) - (map-get($_options, marginAreaX) * 2);
+
+	@if map-get($_options, alignContent) == center {
+		$_marginCnt: 0 auto;
+	}
+	@if map-get($_options, alignContent) == left {
+		$_marginCnt: 0 0;
+	}
+	@if map-get($_options, alignContent) == right {
+		$_marginCnt: 0 0 0 auto;
+	}
+
+	// globalにlayoutWidth情報保存
+	$layoutWidth: (
+		content: map-get($_style, contentWidth),
+		main01: $_widthMain01,
+		sub01: map-get($_options, widthSub01),
+		sub02: map-get($_options, widthSub02)
+	);
+
+	//-----------------
+	// view
+	//-----------------
+	.LyBody01{
+		position:relative;
+	}
+	.LyWrap01{}
+	.LyWrap02{
+		@if map-get($_options, widthFixed) {
+			width: map-get($_style, contentWidth);
+			margin: $_marginCnt;
+		}
+	}
+
+	.LyHead01{}
+	.LyTop01{}
+
+	.LyCnt01{
+		position:relative;
+		@include clearfix;
+		width: map-get($_style, contentWidth);
+		margin: $_marginCnt;
+	}
+	.LySubT01{
+		clear:both;
+	}
+	.LyMain01{
+		float:left;
+		width: $_widthMain01;
+		margin-right: map-get($_options, marginAreaX);
+	}
+	.LySub01{
+		float:left;
+		width: map-get($_options, widthSub01);
+	}
+	.LySub02{
+		float:right;
+		width: map-get($_options, widthSub02);
+	}
+	.LySubB01{
+		clear:both;
+	}
+
+	.LyBottom01{}
+	.LyFoot01{}
+
+
+	//-----------------
+	// debug View
+	//-----------------
+	@if map-get($_options, debug) {
+		$_blue: #7f7fff;
+		$_green: #7fffbf;
+		$_skyBlue: #84ffff;
+		$_yelow: #ffff9e;
+		$_red: #ff8484;
+		$_pink: #ff84ff;
+		$_orange: #ffc184;
+		$_purple: #c184ff;
+
+		.LyBody01{}
+		.LyWrap01{}
+		.LyWrap02{}
+		.LyHead01{   background: $_blue; }
+		.LyTop01{    background: $_green; }
+		.LyCnt01{    background: $_yelow; }
+		.LyMain01{   background: $_red; }
+		.LySub01{    background: $_pink; }
+		.LySub02{    background: $_orange; }
+		.LySubT01{    background: $_purple; }
+		.LySubB01{    background: $_purple; }
+		.LyBottom01{ background: $_green; }
+		.LyFoot01{   background: $_blue; }
+
+		.LyHead01,
+		.LyTop01,
+		.LyMain01,
+		.LySub01,
+		.LySub02,
+		.LySubT01,
+		.LySubB01,
+		.LyBottom01,
+		.LyFoot01{
+			height:100px;
+		}
+	}
+
+}

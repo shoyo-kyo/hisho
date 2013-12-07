@@ -26,7 +26,7 @@
 }
 
 //publick mixin
-@mixin link-styles($map){
+@mixin link-styles($options){
 
 	//-----------------
 	// options
@@ -43,7 +43,7 @@
 		linkUnderActive      : false,
 		linkUnderFocus       : false
 	);
-	$_options: map-merge($_OPTIONS, $map);
+	$_options: map-merge($_OPTIONS, $options);
 
 	//-----------------
 	// view

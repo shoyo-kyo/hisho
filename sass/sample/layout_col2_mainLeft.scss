@@ -75,8 +75,8 @@ $styleSetting: (
 	bgImg03       : url(#{$imgPath}),
 	bgAlpha03     : $alphaImg-pink,
 
-	bgImgOther01   : url(#{$imgPath}),
-	bgImgOther02   : url(#{$imgPath}),
+	bgImgOther01 : url(#{$imgPath}),
+	bgImgOther02: url(#{$imgPath}),
 	bgAlphaOther01 : $alphaImg-black
 );
 
@@ -122,18 +122,13 @@ a{
 // 4.sprite image setting
 // sprite-mapの生成
 //--------------------------------
-//$sprite-all: sprite-map("spAll/*.png",$layout: smart);
-//@import "spAll/*.png";
-//@include all-spAll-sprites;
-
 
 //--------------------------------
 // 5.Select Layout
 // 使用するlayoutを選択しimport
-// 実行後、$layoutWidthマップ生成
 //--------------------------------
-@import "hisho/layout/col2/mainRight";
-@include layout-col2-mainRight();
+@import "hisho/layout/col2/mainLeft";
+@include layout-col2-mainLeft((debug: true));
 
 
 //--------------------------------

@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+// ------------------------------
+// [name] setting-compass
+// [path] /hisho/setting/compass.scss
+// [desc] コンパスの設定
+// ------------------------------
+
+// Compass browser support
+$legacy-support-for-ie6 : true;
+$legacy-support-for-ie7 : true;
+$experimental-support-for-webkit : true;
+$experimental-support-for-mozilla : true;
+$experimental-support-for-opera : true;
+$experimental-support-for-microsoft : true;
+$experimental-support-for-khtml : false;
+$experimental-support-for-svg: true;

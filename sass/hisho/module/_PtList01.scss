@@ -23,35 +23,33 @@
 	//-----------------
 	// options
 	//-----------------
-	$_OPTIONS : (
+	$_options: map-extend((
 		width: auto,
 		color: null,
 		iconWidth: map-get($styleSetting, fontSize),
 		iconMarginRight: 5px,
 		itemMarginBottom: 8px,
 		marginBottom: map-get($styleSetting, moduleBottomMargin)
-	);
-	$_options:　map-extend($_OPTIONS, $options);
+	), $options);
 
 	//-----------------
 	// model
 	//-----------------
 	$_leftPadding:  map-get($_options, iconWidth) + map-get($_options, iconMarginRight);
-	$_marginBottom: map-get($_options, marginBottom) - map-get($_options, itemMarginBottom);
 
 	//-----------------
 	// view
 	//-----------------
 	.PtList01{
-		@if map-get($_options, width) !== auto{
+		@if map-get($_options, width) == auto{
 			width: map-get($_options, width);
 			margin-left: auto;
 			margin-right: auto;
 		}
-		@if map-get($_options, color) !== auto{
+		@if map-get($_options, color) == auto{
 			color: map-get($_options, color);
 		}
-		margin-bottom:$_marginBottom;
+		margin-bottom: map-get($_options, marginBottom);
 		//
 		.ptList01Li{
 			position: relative;
@@ -62,6 +60,7 @@
 			position:absolute;
 			top:0;
 			left:0;
+			@include sprite-core();
 		}
 	}
 

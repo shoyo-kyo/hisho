@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+// ===============================================
+//
+// Hisho alpha var0.1.1
+//
+// update:2013/12/04
+//
+// 1.page setting
+// 2.include files
+// 3.base style setting
+// 4.sprite image setting
+// 5.Select Layout
+// 6.Select Header
+// 7.Select Footer
+// 8.Module Setting
+// 9.overlide
+// ===============================================
+
+
+//--------------------------------
+// 1.page setting
+//--------------------------------
+
+//imgPass
+$imgPath : "../img";
+
+//common image
+@import "hisho/setting/alphaImg";
+
+//style setting
+$styleSetting: (
+	contentWidth : 1010px,
+	moduleBottomMargin : 20px,
+
+	fontSize         : 12px,
+	lineHeight       : 1.5,
+	fontFamily       : "Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif",
+	fontFamilyWin    : "'メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif",
+	fontFamilyMac    : "'Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',sans-serif",
+	
+	fontColor01        : #333,
+	fontColor01Strong  : #c00,
+	fontColor02        : #333,
+	fontColor02Strong  : #c00,
+	fontColor03        : #333,
+	fontColor03Strong  : #c00,
+
+	linkColor        : #333,
+	linkColorVisited : #333,
+	linkColorHover   : #333,
+	linkColorActive  : #333,
+	linkColorFocus   : #333,
+	linkUnderline        : false,
+	linkUnderlineVisited : false,
+	linkUnderlineHover   : true,
+	linkUnderActive      : true,
+	linkUnderFocus       : true,
+
+	bgColor01     : #333,
+	bgColor01Sub1 : #333,
+	bgColor01Sub2 : #333,
+	bgImg01       : url(#{$imgPath}),
+	bgAlpha01     : $alphaImg-black,
+
+	bgColor02     : #333,
+	bgColor02Sub1 : #333,
+	bgColor02Sub2 : #333,
+	bgImg02       : url(#{$imgPath}),
+	bgAlpha02     : $alphaImg-white,
+
+	bgColor03     : #333,
+	bgColor03Sub1 : #333,
+	bgColor03Sub2 : #333,
+	bgImg03       : url(#{$imgPath}),
+	bgAlpha03     : $alphaImg-pink,
+
+	bgImgOther01 : url(#{$imgPath}),
+	bgImgOther02: url(#{$imgPath}),
+	bgAlphaOther01 : $alphaImg-black
+);
+
+
+//--------------------------------
+// 2.include files
+//--------------------------------
+@import "compass/css3/";
+@import "compass/utilities";
+@import "hisho/setting/compass";
+@import "hisho/helper/sprite-core";
+@import "hisho/helper/sprite-background";
+@import "hisho/helper/link-styles";
+@import "hisho/helper/function/map-extend";
+
+//--------------------------------
+// 3.base style setting
+// もろもろstyle設定
+//--------------------------------
+
+//reset
+@import "hisho/helper/reset";
+
+//common style
+body{
+	font-size: map-get($styleSetting, fontSize);
+	font-family: map-get($styleSetting, fontFamily);
+	line-height: map-get($styleSetting, lineHeight);
+	color: map-get($styleSetting, fontColor01);
+}
+.OsWin{
+	font-family: map-get($styleSetting, fontFamilyWin);
+}
+.OsMac{
+	font-family: map-get($styleSetting, fontFamilyMac);
+}
+a{
+	@include link-styles($styleSetting);
+}
+
+
+//--------------------------------
+// 4.sprite image setting
+// sprite-mapの生成
+//--------------------------------
+
+
+//--------------------------------
+// 5.Select Layout
+// 使用するlayoutを選択しimport
+//--------------------------------
+@import "hisho/layout/col3/mainLeft";
+@include layout-col3-mainLeft((debug: true));
+
+
+//--------------------------------
+// 6.Select Header
+// 使用するheaderを選択しimport
+//--------------------------------
+
+//--------------------------------
+// 7.Select Footer
+// 使用するfooterを選択しimport
+//--------------------------------
+
+//--------------------------------
+// 8.Module Setting
+// 使用する各種パーツ(module)をimport
+//--------------------------------
+@import "hisho/helper/util";
+
+
+//--------------------------------
+// 9.overlide
+//--------------------------------
+
+
+
+
+
+
+

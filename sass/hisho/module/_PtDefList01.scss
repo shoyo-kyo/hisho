@@ -23,29 +23,27 @@
 	//-----------------
 	// options
 	//-----------------
-	$_OPTIONS : (
+	$_options: map-extend((
 		width: auto,
 		color: null,
 		itemMarginBottom: 8px,
 		marginBottom: map-get($styleSetting, moduleBottomMargin)
-	);
-	$_options:　map-extend($_OPTIONS, $options);
+	), $options);
 
 	//-----------------
 	// model
 	//-----------------
-	$_marginBottom: map-get($_options, marginBottom) - map-get($_options, itemMarginBottom);
 
 	//-----------------
 	// view
 	//-----------------
 	.PtDefList01{
-		@if map-get($_options, width) !== auto{
+		@if map-get($_options, width) == auto{
 			width: map-get($_options, width);
 			margin-left: auto;
 			margin-right: auto;
 		}
-		margin-bottom:$_marginBottom;
+		margin-bottom: map-get($_options, marginBottom);
 		//
 		.ptDefList01Dt{
 			margin-bottom: ciel(map-get($_options, itemMarginBottom) / 2);

@@ -35,7 +35,7 @@ $styleSetting: (
 
 	fontSize         : 12px,
 	lineHeight       : 1.5,
-	fontFamily       : "Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif",
+	fontFamily       : "'Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif",
 	fontFamilyWin    : "'メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif",
 	fontFamilyMac    : "'Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',sans-serif",
 	
@@ -46,16 +46,16 @@ $styleSetting: (
 	fontColor03        : #333,
 	fontColor03Strong  : #c00,
 
-	linkColor        : #333,
-	linkColorVisited : #333,
-	linkColorHover   : #333,
-	linkColorActive  : #333,
-	linkColorFocus   : #333,
-	linkUnderline        : false,
-	linkUnderlineVisited : false,
-	linkUnderlineHover   : true,
-	linkUnderActive      : true,
-	linkUnderFocus       : true,
+	linkColor        : #2468ce,
+	linkColorVisited : #a611a1,
+	linkColorHover   : null,
+	linkColorActive  : null,
+	linkColorFocus   : null,
+	linkUnderline        : true,
+	linkUnderlineVisited : true,
+	linkUnderlineHover   : false,
+	linkUnderActive      : false,
+	linkUnderFocus       : false,
 
 	bgColor01     : #333,
 	bgColor01Sub1 : #333,
@@ -90,7 +90,7 @@ $styleSetting: (
 @import "hisho/helper/sprite-core";
 @import "hisho/helper/sprite-background";
 @import "hisho/helper/link-styles";
-
+@import "hisho/helper/function/map-extend";
 
 //--------------------------------
 // 3.base style setting
@@ -103,15 +103,15 @@ $styleSetting: (
 //common style
 body{
 	font-size: map-get($styleSetting, fontSize);
-	font-family: map-get($styleSetting, fontFamily);
+	font-family: #{map-get($styleSetting, fontFamily)};
 	line-height: map-get($styleSetting, lineHeight);
 	color: map-get($styleSetting, fontColor01);
 }
 .OsWin{
-	font-family: map-get($styleSetting, fontFamilyWin);
+	font-family: #{map-get($styleSetting, fontFamilyWin)};
 }
 .OsMac{
-	font-family: map-get($styleSetting, fontFamilyMac);
+	font-family: #{map-get($styleSetting, fontFamilyMac)};
 }
 a{
 	@include link-styles($styleSetting);
@@ -127,8 +127,10 @@ a{
 // 5.Select Layout
 // 使用するlayoutを選択しimport
 //--------------------------------
-@import "hisho/layout/col2/mainRight";
-@include layout-col2-mainRight((debug: true));
+@import "hisho/layout/col1/default";
+@include layout-col1-default((
+	widthMain01 : 600px
+));
 
 
 //--------------------------------
@@ -146,6 +148,25 @@ a{
 // 使用する各種パーツ(module)をimport
 //--------------------------------
 @import "hisho/helper/util";
+
+@import "hisho/module/PtTxt01";
+@include PtTxt01();
+
+@import "hisho/module/PtAd01";
+@include PtAd01();
+
+@import "hisho/module/PtDefList01";
+@include PtDefList01();
+
+@import "hisho/module/PtList01";
+@include PtList01();
+
+@import "hisho/module/PtNumList01";
+@include PtNumList01();
+
+@import "hisho/module/PtTbl01";
+@include PtTbl01();
+
 
 
 //--------------------------------

@@ -17,26 +17,25 @@
 
 //publick mixin
 @mixin PtAd01($options:null){
-	$_options : null;
 
 	//-----------------
 	// options
 	//-----------------
-	$_OPTIONS : (
-		width: auto,
-		colorTitle: #333,
-		colorLink:  #7c94aa,
-		colorTxt:   #ccc,
-		colorAbout: #333,
+	$_options: map-extend((
+		width       : auto,
+		colorTitle  : #333,
+		colorLink   : #7c94aa,
+		colorTxt    : #ccc,
+		colorAbout  : #333,
+		itemMarginBottom : 30px,
 		marginBottom: map-get($styleSetting, moduleBottomMargin)
-	);
-	$_options:　map-extend($_OPTIONS, $options);
+	), $options);
 
 	//-----------------
 	// view
 	//-----------------
 	.PtAd01{
-		@if map-get($_options, width) !== auto{
+		@if map-get($_options, width) == auto{
 			width: map-get($_options, width);
 			margin-left: auto;
 			margin-right: auto;
@@ -45,13 +44,19 @@
 		overflow: hidden;
 		//
 		.ptAd01Ul{
-			margin-top:-30px;
+			margin-top: map-get($_options, itemMarginBottom) * -1;
 		}
 		.ptAd01Li{
-			margin-bottom: 30px;
+			margin-top: map-get($_options, itemMarginBottom);
 		}
 		.ptAd01LiA{
+			cursor: pointer;
 			display: block;
+			text-decoration: none;
+			//
+			&:hover .ptAd01Ttl{
+				text-decoration: none;
+			}
 		}
 		.ptAd01Ttl{
 			color: map-get($_options, colorTitle);
@@ -61,19 +66,23 @@
 		.ptAd01Link{
 			color: map-get($_options, colorLink);
 			font-size:11px;
-			margin-top: 1px
+			margin-top: 1px;
 			text-decoration: none;
 		}
 		.ptAd01Txt{
 			color: map-get($_options, colorTxt);
 			font-size:12px;
-			margin-top: 5px
+			margin-top: 5px;
 			text-decoration: none;
 		}
 		.ptAd01About{
+			margin-top:15px;
+			text-align:right;
 			color: map-get($_options, colorAbout);
 		}
 		.ptAd01AboutA{
+			cursor: pointer;
+			
 			@include link-styles((
 				linkColor        : #333,
 				linkColorVisited : #333,

@@ -25,19 +25,14 @@
 	//-----------------
 	// options
 	//-----------------
-	$_OPTIONS : (
+	$_options: map-extend((
 		widthFixed   : false,
 		alignContent : center,
 		widthSub01   : 300px,
 		marginAreaX  : 15px,
 		style : $styleSetting,
 		debug : false
-	);
-	@if $options {
-		$_options: map-merge($_OPTIONS, $options);
-	} @else{
-		$_options: $_OPTIONS;
-	}
+	), $options);
 	
 	$_style: map-get($_options, style);
 

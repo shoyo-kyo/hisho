@@ -17,36 +17,32 @@
 
 //publick mixin
 @mixin PtTbl01($options:null){
-	$_options : null;
-	$_marginBottom: null;
 
 	//-----------------
 	// options
 	//-----------------
-	$_OPTIONS : (
-		width: auto,
-		align: left;
-		borderColor: #ddd,
-		thBgColor: #e7e7e7,
+	$_options: map-extend((
+		width: 100%,
+		align: left,
+		borderColor: #ccc,
+		thBgColor: #ececec,
 		tdBgColor: null,
 		itemMarginBottom: 8px,
 		marginBottom: map-get($styleSetting, moduleBottomMargin)
-	);
-	$_options:　map-extend($_OPTIONS, $options);
-
+	), $options);
 
 	//-----------------
 	// view
 	//-----------------
 	.PtTbl01{
-		@if map-get($_options, width) !== auto{
+		@if map-get($_options, width) != auto{
 			width: map-get($_options, width);
 
-			@if map-get($_options, align) !== center{
+			@if map-get($_options, align) != center{
 				margin-left: auto;
 				margin-right: auto;
 
-			}@else if map-get($_options, align) !== right{
+			}@else if map-get($_options, align) != right{
 				margin-left: auto;
 				margin-right: 0;
 			}
@@ -68,6 +64,7 @@
 			@if map-get($_options, thBgColor){
 				background-color: map-get($_options, thBgColor);
 			}
+			font-weight: normal;
 		}
 	}
 

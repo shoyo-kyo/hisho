@@ -16,12 +16,12 @@
 //private mixin
 @mixin link-styles-view($color:null, $underline:null){
 	@if $color {
-		cursor:$color;
+		color:$color;
 	}
 	@if $underline {
-		cursor:underline;
+		text-decoration: underline;
 	} @else {
-		cursor:none;
+		text-decoration: none;
 	}
 }
 
@@ -31,7 +31,7 @@
 	//-----------------
 	// options
 	//-----------------
-	$_OPTIONS : (
+	$_options: map-extend((
 		linkColor        : null,
 		linkColorVisited : null,
 		linkColorHover   : null,
@@ -42,8 +42,7 @@
 		linkUnderlineHover   : false,
 		linkUnderActive      : false,
 		linkUnderFocus       : false
-	);
-	$_options: map-merge($_OPTIONS, $options);
+	), $options);
 
 	//-----------------
 	// view
@@ -54,49 +53,40 @@
 		$underline: map-get($_options, linkUnderline)
 	);
 
-	@if map-get($_options, linkColor) {
-		&:link{
-			@include link-styles-view(
-				$color: map-get($_options, linkColor),
-				$underline: map-get($_options, linkUnderline)
-			);
-		}
+
+	&:link{
+		@include link-styles-view(
+			$color: map-get($_options, linkColor),
+			$underline: map-get($_options, linkUnderline)
+		);
 	}
 
-	@if map-get($_options, linkColorVisited) {
-		&:visited{
-			@include link-styles-view(
-				$color: map-get($_options, linkColorVisited),
-				$underline: map-get($_options, linkUnderlineVisited)
-			);
-		}
+	&:visited{
+		@include link-styles-view(
+			$color: map-get($_options, linkColorVisited),
+			$underline: map-get($_options, linkUnderlineVisited)
+		);
 	}
 
-	@if map-get($_options, linkColorHover) {
-		&:hover{
-			@include link-styles-view(
-				$color: map-get($_options, linkColorHover),
-				$underline: map-get($_options, linkUnderlineHover)
-			);
-		}
+	&:hover{
+		@include link-styles-view(
+			$color: map-get($_options, linkColorHover),
+			$underline: map-get($_options, linkUnderlineHover)
+		);
 	}
 
-	@if map-get($_options, linkColorActive) {
-		&:active{
-			@include link-styles-view(
-				$color: map-get($_options, linkColorActive),
-				$underline: map-get($_options, linkUnderActive)
-			);
-		}
+	&:active{
+		@include link-styles-view(
+			$color: map-get($_options, linkColorActive),
+			$underline: map-get($_options, linkUnderActive)
+		);
 	}
 
-	@if map-get($_options, linkColorFocus) {
-		&:focus{
-			@include link-styles-view(
-				$color: map-get($_options, linkColorFocus),
-				$underline: map-get($_options, linkUnderFocus)
-			);
-		}
+	&:focus{
+		@include link-styles-view(
+			$color: map-get($_options, linkColorFocus),
+			$underline: map-get($_options, linkUnderFocus)
+		);
 	}
 
 }

@@ -115,7 +115,7 @@ article, aside, canvas, details, figcaption, figure, header, footer, hgroup, men
   display: block;
 }
 
-/* line 104, ../../sass/sample/layout_col3_mainCenter.scss */
+/* line 104, ../../sass/_sample/layout_col3_mainRight.scss */
 body {
   font-size: 12px;
   font-family: "Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif";
@@ -123,53 +123,53 @@ body {
   color: #333333;
 }
 
-/* line 110, ../../sass/sample/layout_col3_mainCenter.scss */
+/* line 110, ../../sass/_sample/layout_col3_mainRight.scss */
 .OsWin {
   font-family: "'メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif";
 }
 
-/* line 113, ../../sass/sample/layout_col3_mainCenter.scss */
+/* line 113, ../../sass/_sample/layout_col3_mainRight.scss */
 .OsMac {
   font-family: "'Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',sans-serif";
 }
 
-/* line 116, ../../sass/sample/layout_col3_mainCenter.scss */
+/* line 116, ../../sass/_sample/layout_col3_mainRight.scss */
 a {
-  cursor: #333333;
-  cursor: none;
+  color: #333333;
+  text-decoration: none;
 }
-/* line 58, ../../sass/hisho/helper/_link-styles.scss */
+/* line 57, ../../sass/hisho/helper/_link-styles.scss */
 a:link {
-  cursor: #333333;
-  cursor: none;
+  color: #333333;
+  text-decoration: none;
 }
-/* line 67, ../../sass/hisho/helper/_link-styles.scss */
+/* line 64, ../../sass/hisho/helper/_link-styles.scss */
 a:visited {
-  cursor: #333333;
-  cursor: none;
+  color: #333333;
+  text-decoration: none;
 }
-/* line 76, ../../sass/hisho/helper/_link-styles.scss */
+/* line 71, ../../sass/hisho/helper/_link-styles.scss */
 a:hover {
-  cursor: #333333;
-  cursor: underline;
+  color: #333333;
+  text-decoration: underline;
+}
+/* line 78, ../../sass/hisho/helper/_link-styles.scss */
+a:active {
+  color: #333333;
+  text-decoration: underline;
 }
 /* line 85, ../../sass/hisho/helper/_link-styles.scss */
-a:active {
-  cursor: #333333;
-  cursor: underline;
-}
-/* line 94, ../../sass/hisho/helper/_link-styles.scss */
 a:focus {
-  cursor: #333333;
-  cursor: underline;
+  color: #333333;
+  text-decoration: underline;
 }
 
-/* line 72, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 66, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LyBody01 {
   position: relative;
 }
 
-/* line 86, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 80, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LyCnt01 {
   position: relative;
   overflow: hidden;
@@ -178,86 +178,86 @@ a:focus {
   margin: 0 auto;
 }
 
-/* line 92, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 86, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LySubT01 {
   clear: both;
 }
 
-/* line 95, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 89, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LyMain01 {
-  float: left;
+  float: right;
   width: 520px;
 }
 
-/* line 99, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 93, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LySub01 {
   float: left;
   width: 300px;
   margin-right: 15px;
 }
 
-/* line 104, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 98, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LySub02 {
-  float: right;
+  float: left;
   width: 160px;
 }
 
-/* line 108, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 102, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LySubB01 {
   clear: both;
 }
 
-/* line 132, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 126, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LyHead01 {
   background: #7f7fff;
 }
 
-/* line 133, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 127, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LyTop01 {
   background: #7fffbf;
 }
 
-/* line 134, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 128, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LyCnt01 {
   background: #ffff9e;
 }
 
-/* line 135, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 129, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LyMain01 {
   background: #ff8484;
 }
 
-/* line 136, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 130, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LySub01 {
   background: #ff84ff;
 }
 
-/* line 137, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 131, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LySub02 {
   background: #ffc184;
 }
 
-/* line 138, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 132, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LySubT01 {
   background: #c184ff;
 }
 
-/* line 139, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 133, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LySubB01 {
   background: #c184ff;
 }
 
-/* line 140, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 134, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LyBottom01 {
   background: #7fffbf;
 }
 
-/* line 141, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 135, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LyFoot01 {
   background: #7f7fff;
 }
 
-/* line 143, ../../sass/hisho/layout/col3/_mainCenter.scss */
+/* line 137, ../../sass/hisho/layout/col3/_mainRight.scss */
 .LyHead01,
 .LyTop01,
 .LyMain01,

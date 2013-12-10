@@ -1,0 +1,74 @@
+@charset "utf-8";
+// ------------------------------
+// [name] PtTbl01
+// [varsion] v1.0.0
+// [path] /hisho/module/_PtDefList01.scss
+// [desc] text parts 01
+// [exsample]
+//
+//    @include PtTbl01();
+//
+//    @include PtTbl01((
+//      style: (
+//          itemMarginBottom: 10px
+//      )
+//    ));
+// ------------------------------
+
+//publick mixin
+@mixin PtTbl01($options:null){
+	$_options : null;
+	$_marginBottom: null;
+
+	//-----------------
+	// options
+	//-----------------
+	$_OPTIONS : (
+		width: auto,
+		align: left;
+		borderColor: #ddd,
+		thBgColor: #e7e7e7,
+		tdBgColor: null,
+		itemMarginBottom: 8px,
+		marginBottom: map-get($styleSetting, moduleBottomMargin)
+	);
+	$_options:　map-extend($_OPTIONS, $options);
+
+
+	//-----------------
+	// view
+	//-----------------
+	.PtTbl01{
+		@if map-get($_options, width) !== auto{
+			width: map-get($_options, width);
+
+			@if map-get($_options, align) !== center{
+				margin-left: auto;
+				margin-right: auto;
+
+			}@else if map-get($_options, align) !== right{
+				margin-left: auto;
+				margin-right: 0;
+			}
+		}
+
+		margin-bottom: map-get($_options, marginBottom);
+		//
+		th,
+		td{
+			@if map-get($_options, borderColor){
+				border: 1px solid map-get($_options, borderColor);
+			}
+			@if map-get($_options, tdBgColor){
+				background-color: map-get($_options, tdBgColor);
+			}
+			padding: 4px 8px;
+		}
+		th{
+			@if map-get($_options, thBgColor){
+				background-color: map-get($_options, thBgColor);
+			}
+		}
+	}
+
+}

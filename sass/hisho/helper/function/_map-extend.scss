@@ -1,0 +1,12 @@
+@charset "utf-8";
+// ------------------------------
+// [name] map-extend v1.0.0
+// [path] /hisho/helper/function/_map-extend
+// [desc] mapのマージ処理
+// [exsample]
+//   map-extend($map1, $map2);
+// ------------------------------
+@function map-extend( $map1:null, $map2:null){
+	$_result : if($map2, map-merge($map1, $map2), $map1);
+	@return $_result;
+}

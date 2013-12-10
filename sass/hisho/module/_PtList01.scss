@@ -1,0 +1,68 @@
+@charset "utf-8";
+// ------------------------------
+// [name] PtList01
+// [varsion] v1.0.0
+// [path] /hisho/module/_PtList01.scss
+// [desc] text parts 01
+// [exsample]
+//
+//    @include PtList01();
+//
+//    @include PtList01((
+//      style: (
+//          itemMarginBottom: 10px
+//      )
+//    ));
+// ------------------------------
+
+//publick mixin
+@mixin PtList01($options:null){
+	$_options : null;
+	$_marginBottom: null;
+
+	//-----------------
+	// options
+	//-----------------
+	$_OPTIONS : (
+		width: auto,
+		color: null,
+		iconWidth: map-get($styleSetting, fontSize),
+		iconMarginRight: 5px,
+		itemMarginBottom: 8px,
+		marginBottom: map-get($styleSetting, moduleBottomMargin)
+	);
+	$_options:　map-extend($_OPTIONS, $options);
+
+	//-----------------
+	// model
+	//-----------------
+	$_leftPadding:  map-get($_options, iconWidth) + map-get($_options, iconMarginRight);
+	$_marginBottom: map-get($_options, marginBottom) - map-get($_options, itemMarginBottom);
+
+	//-----------------
+	// view
+	//-----------------
+	.PtList01{
+		@if map-get($_options, width) !== auto{
+			width: map-get($_options, width);
+			margin-left: auto;
+			margin-right: auto;
+		}
+		@if map-get($_options, color) !== auto{
+			color: map-get($_options, color);
+		}
+		margin-bottom:$_marginBottom;
+		//
+		.ptList01Li{
+			position: relative;
+			margin-bottom: map-get($_options, itemMarginBottom);
+			padding-left: $_leftPadding;
+		}
+		.ptList01Icon{
+			position:absolute;
+			top:0;
+			left:0;
+		}
+	}
+
+}

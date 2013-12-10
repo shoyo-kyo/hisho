@@ -1,0 +1,54 @@
+@charset "utf-8";
+// ------------------------------
+// [name] PtPtImage01
+// [varsion] v1.0.0
+// [path] /hisho/module/_PtImage01.scss
+// [desc] text parts 01
+// [exsample]
+//
+//    @include PtImage01();
+//
+//    @include PtImage01((
+//      style: (
+//          contentWidth: 1050px
+//      )
+//    ));
+// ------------------------------
+
+//publick mixin
+@mixin PtImage01($options:null){
+	$_options : null;
+
+	//-----------------
+	// options
+	//-----------------
+	$_OPTIONS : (
+		maxWidth: auto,
+		align: left,
+		borderColor: null,
+		marginBottom: map-get($styleSetting, moduleBottomMargin)
+	);
+	$_options:　map-extend($_OPTIONS, $options);
+
+	//-----------------
+	// view
+	//-----------------
+	.PtImage01{
+		@include inline-block;
+		text-aling: map-get($_options, align);
+		margin-bottom: map-get($_options, marginBottom);
+		//
+		.ptImage01Img{
+			max-width: map-get($_options, maxWidth);
+			@if map-get($_options, borderColor){
+				border:solid 1px map-get($_options, borderColor);
+			}
+		}
+		.ptImage01Cap{
+			font-size: 10px;
+			margin-top:8px;
+			text-align:left;
+		}
+	}
+
+}

@@ -1,0 +1,60 @@
+@charset "utf-8";
+// ------------------------------
+// [name] PtNumList01
+// [varsion] v1.0.0
+// [path] /hisho/module/_PtNumList01.scss
+// [desc] text parts 01
+// [exsample]
+//
+//    @include PtNumList01();
+//
+//    @include PtNumList01((
+//      style: (
+//          itemMarginBottom: 10px
+//      )
+//    ));
+// ------------------------------
+
+//publick mixin
+@mixin PtNumList01($options:null){
+	$_options : null;
+	$_marginBottom: null;
+
+	//-----------------
+	// options
+	//-----------------
+	$_OPTIONS : (
+		width: auto,
+		color: null,
+		itemMarginBottom: 8px,
+		marginBottom: map-get($styleSetting, moduleBottomMargin)
+	);
+	$_options:　map-extend($_OPTIONS, $options);
+
+	//-----------------
+	// model
+	//-----------------
+	$_marginBottom: map-get($_options, marginBottom) - map-get($_options, itemMarginBottom);
+
+	//-----------------
+	// view
+	//-----------------
+	.PtNumList01{
+		@if map-get($_options, width) !== auto{
+			width: map-get($_options, width);
+			margin-left: auto;
+			margin-right: auto;
+		}
+		@if map-get($_options, color) !== auto{
+			color: map-get($_options, color);
+		}
+		margin-bottom:$_marginBottom;
+		//
+		.PtNumList01Li{
+			margin: 0 0 map-get($_options, itemMarginBottom) 17px;
+			list-style: decimal;
+			padding-left: 3px;
+		}
+	}
+
+}

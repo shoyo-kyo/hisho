@@ -86,11 +86,9 @@ $styleSetting: (
 //--------------------------------
 @import "compass/css3/";
 @import "compass/utilities";
-@import "hisho/setting/compass";
-@import "hisho/helper/sprite-core";
-@import "hisho/helper/sprite-background";
-@import "hisho/helper/link-styles";
-@import "hisho/helper/function/map-extend";
+@import "hisho/setting";
+@import "hisho/helper/mixin";
+@import "hisho/helper/function";
 
 //--------------------------------
 // 3.base style setting

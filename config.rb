@@ -23,3 +23,19 @@ http_images_dir = 'hisho_1.0/'
 # preferred_syntax = :sass
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
+
+# Add custom fantions
+module SassExtention
+	#replace
+	def replace(str, find, rep)
+		assert_type str, :String
+		assert_type find, :String
+		assert_type rep, :String
+		str.value.sub!(find.value, rep.value)
+		return s
+	end
+end
+
+module Sass::Script::Functions
+	include SassExtention
+end

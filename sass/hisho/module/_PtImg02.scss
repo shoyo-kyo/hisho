@@ -17,18 +17,16 @@
 
 //publick mixin
 @mixin PtImage02($options:null){
-	$_options : null;
 
 	//-----------------
 	// options
 	//-----------------
-	$_OPTIONS : (
+	$_options: map-extend((
 		maxWidth: auto,
 		align: left,
 		borderColor: null,
 		marginBottom: map-get($styleSetting, moduleBottomMargin)
-	);
-	$_options:　map-extend($_OPTIONS, $options);
+	), $options);
 
 	//-----------------
 	// view

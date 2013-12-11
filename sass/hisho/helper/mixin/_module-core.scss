@@ -1,0 +1,49 @@
+@charset "utf-8";
+// ------------------------------
+// [name] _module-core v1.0.0
+// [path] /hisho/helper/mixin/_module-core.scss
+// [desc] moduleの基本styleを指定
+// [exsample]
+//
+//   @include module-core();
+//
+//   @include module-core(
+//     width : 500px,
+//     align : center
+//   );
+// ------------------------------
+
+//publick mixin
+@mixin module-core($options){
+
+	//-----------------
+	// options
+	//-----------------
+	$_options: map-extend((
+		width   : null,
+		align   : null,
+		marginB : null,
+	), $options);
+
+	//-----------------
+	// view
+	//-----------------
+	@if map-get($_options, width) == auto{
+		width: map-get($_options, width);
+
+		@if map-get($_options, align) != center{
+			margin-left: auto;
+			margin-right: auto;
+
+		}@else if map-get($_options, align) != right{
+			margin-left: auto;
+			margin-right: 0;
+		}
+	}
+	
+	@if map-get($_options, marginB) {
+		margin-bottom: map-get($_options, marginB);
+	} @else {
+		margin-bottom: map-get($styleSetting, moduleBottomMargin);
+	}
+}

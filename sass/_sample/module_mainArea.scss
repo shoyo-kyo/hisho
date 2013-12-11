@@ -86,11 +86,9 @@ $styleSetting: (
 //--------------------------------
 @import "compass/css3/";
 @import "compass/utilities";
-@import "hisho/setting/compass";
-@import "hisho/helper/sprite-core";
-@import "hisho/helper/sprite-background";
-@import "hisho/helper/link-styles";
-@import "hisho/helper/function/map-extend";
+@import "hisho/setting";
+@import "hisho/helper/mixin";
+@import "hisho/helper/function";
 
 //--------------------------------
 // 3.base style setting
@@ -152,21 +150,20 @@ a{
 @import "hisho/module/PtTxt01";
 @include PtTxt01();
 
-@import "hisho/module/PtAd01";
-@include PtAd01();
-
-@import "hisho/module/PtDefList01";
-@include PtDefList01();
-
 @import "hisho/module/PtList01";
 @include PtList01();
 
 @import "hisho/module/PtNumList01";
 @include PtNumList01();
 
+@import "hisho/module/PtDefList01";
+@include PtDefList01();
+
 @import "hisho/module/PtTbl01";
 @include PtTbl01();
 
+@import "hisho/module/_PtAdTxt01";
+@include _PtAdTxt01();
 
 
 //--------------------------------

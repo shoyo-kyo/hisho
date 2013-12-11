@@ -115,7 +115,7 @@ article, aside, canvas, details, figcaption, figure, header, footer, hgroup, men
   display: block;
 }
 
-/* line 104, ../../sass/_sample/module_mainArea.scss */
+/* line 102, ../../sass/_sample/module_mainArea.scss */
 body {
   font-size: 12px;
   font-family: 'Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
@@ -123,40 +123,40 @@ body {
   color: #333333;
 }
 
-/* line 110, ../../sass/_sample/module_mainArea.scss */
+/* line 108, ../../sass/_sample/module_mainArea.scss */
 .OsWin {
   font-family: 'メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
 }
 
-/* line 113, ../../sass/_sample/module_mainArea.scss */
+/* line 111, ../../sass/_sample/module_mainArea.scss */
 .OsMac {
   font-family: 'Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',sans-serif;
 }
 
-/* line 116, ../../sass/_sample/module_mainArea.scss */
+/* line 114, ../../sass/_sample/module_mainArea.scss */
 a {
   color: #2468ce;
   text-decoration: underline;
 }
-/* line 57, ../../sass/hisho/helper/_link-styles.scss */
+/* line 57, ../../sass/hisho/helper/mixin/_link-styles.scss */
 a:link {
   color: #2468ce;
   text-decoration: underline;
 }
-/* line 64, ../../sass/hisho/helper/_link-styles.scss */
+/* line 64, ../../sass/hisho/helper/mixin/_link-styles.scss */
 a:visited {
   color: #a611a1;
   text-decoration: underline;
 }
-/* line 71, ../../sass/hisho/helper/_link-styles.scss */
+/* line 71, ../../sass/hisho/helper/mixin/_link-styles.scss */
 a:hover {
   text-decoration: none;
 }
-/* line 78, ../../sass/hisho/helper/_link-styles.scss */
+/* line 78, ../../sass/hisho/helper/mixin/_link-styles.scss */
 a:active {
   text-decoration: none;
 }
-/* line 85, ../../sass/hisho/helper/_link-styles.scss */
+/* line 85, ../../sass/hisho/helper/mixin/_link-styles.scss */
 a:focus {
   text-decoration: none;
 }
@@ -255,137 +255,41 @@ a:focus {
   opacity: 0.8;
 }
 
-/* line 45, ../../sass/hisho/module/_PtTxt01.scss */
-.PtText01 {
-  font-size: 12px;
+/* line 48, ../../sass/hisho/module/_PtTxt01.scss */
+.Pt {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 20px;
-}
-/* line 61, ../../sass/hisho/module/_PtTxt01.scss */
-.PtText01.medium {
   font-size: 12px;
 }
-/* line 68, ../../sass/hisho/module/_PtTxt01.scss */
-.PtText01.small {
+/* line 69, ../../sass/hisho/module/_PtTxt01.scss */
+.Pt.medium {
+  font-size: 12px;
+}
+/* line 76, ../../sass/hisho/module/_PtTxt01.scss */
+.Pt.small {
   font-size: 10px;
 }
-/* line 74, ../../sass/hisho/module/_PtTxt01.scss */
-.PtText01.x-small {
+/* line 82, ../../sass/hisho/module/_PtTxt01.scss */
+.Pt.x-small {
   font-size: 8px;
 }
-/* line 80, ../../sass/hisho/module/_PtTxt01.scss */
-.PtText01.xx-small {
+/* line 88, ../../sass/hisho/module/_PtTxt01.scss */
+.Pt.xx-small {
   font-size: 6px;
 }
-/* line 87, ../../sass/hisho/module/_PtTxt01.scss */
-.PtText01.large {
+/* line 95, ../../sass/hisho/module/_PtTxt01.scss */
+.Pt.large {
   font-size: 14px;
 }
-/* line 93, ../../sass/hisho/module/_PtTxt01.scss */
-.PtText01.x-large {
+/* line 101, ../../sass/hisho/module/_PtTxt01.scss */
+.Pt.x-large {
   font-size: 17px;
 }
-/* line 99, ../../sass/hisho/module/_PtTxt01.scss */
-.PtText01.xx-large {
+/* line 107, ../../sass/hisho/module/_PtTxt01.scss */
+.Pt.xx-large {
   font-size: 20px;
-}
-
-/* line 37, ../../sass/hisho/module/_PtAd01.scss */
-.PtAd01 {
-  width: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-  overflow: hidden;
-}
-/* line 46, ../../sass/hisho/module/_PtAd01.scss */
-.PtAd01 .ptAd01Ul {
-  margin-top: -30px;
-}
-/* line 49, ../../sass/hisho/module/_PtAd01.scss */
-.PtAd01 .ptAd01Li {
-  margin-top: 30px;
-}
-/* line 52, ../../sass/hisho/module/_PtAd01.scss */
-.PtAd01 .ptAd01LiA {
-  cursor: pointer;
-  display: block;
-  text-decoration: none;
-}
-/* line 57, ../../sass/hisho/module/_PtAd01.scss */
-.PtAd01 .ptAd01LiA:hover .ptAd01Ttl {
-  text-decoration: none;
-}
-/* line 61, ../../sass/hisho/module/_PtAd01.scss */
-.PtAd01 .ptAd01Ttl {
-  color: #333333;
-  font-size: 20px;
-  text-decoration: underline;
-}
-/* line 66, ../../sass/hisho/module/_PtAd01.scss */
-.PtAd01 .ptAd01Link {
-  color: #7c94aa;
-  font-size: 11px;
-  margin-top: 1px;
-  text-decoration: none;
-}
-/* line 72, ../../sass/hisho/module/_PtAd01.scss */
-.PtAd01 .ptAd01Txt {
-  color: #cccccc;
-  font-size: 12px;
-  margin-top: 5px;
-  text-decoration: none;
-}
-/* line 78, ../../sass/hisho/module/_PtAd01.scss */
-.PtAd01 .ptAd01About {
-  margin-top: 15px;
-  text-align: right;
-  color: #333333;
-}
-/* line 83, ../../sass/hisho/module/_PtAd01.scss */
-.PtAd01 .ptAd01AboutA {
-  cursor: pointer;
-  color: #333333;
-  text-decoration: underline;
-}
-/* line 57, ../../sass/hisho/helper/_link-styles.scss */
-.PtAd01 .ptAd01AboutA:link {
-  color: #333333;
-  text-decoration: underline;
-}
-/* line 64, ../../sass/hisho/helper/_link-styles.scss */
-.PtAd01 .ptAd01AboutA:visited {
-  color: #333333;
-  text-decoration: underline;
-}
-/* line 71, ../../sass/hisho/helper/_link-styles.scss */
-.PtAd01 .ptAd01AboutA:hover {
-  color: #333333;
-  text-decoration: none;
-}
-/* line 78, ../../sass/hisho/helper/_link-styles.scss */
-.PtAd01 .ptAd01AboutA:active {
-  text-decoration: none;
-}
-/* line 85, ../../sass/hisho/helper/_link-styles.scss */
-.PtAd01 .ptAd01AboutA:focus {
-  text-decoration: none;
-}
-
-/* line 40, ../../sass/hisho/module/_PtDefList01.scss */
-.PtDefList01 {
-  width: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-}
-/* line 48, ../../sass/hisho/module/_PtDefList01.scss */
-.PtDefList01 .ptDefList01Dt {
-  margin-bottom: ciel(8px/2);
-}
-/* line 51, ../../sass/hisho/module/_PtDefList01.scss */
-.PtDefList01 .ptDefList01Dd {
-  margin-left: 1em;
-  margin-bottom: 8px;
 }
 
 /* line 43, ../../sass/hisho/module/_PtList01.scss */
@@ -430,6 +334,23 @@ a:focus {
   list-style: decimal;
 }
 
+/* line 40, ../../sass/hisho/module/_PtDefList01.scss */
+.PtDefList01 {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+/* line 48, ../../sass/hisho/module/_PtDefList01.scss */
+.PtDefList01 .ptDefList01Dt {
+  margin-bottom: ciel(8px/2);
+}
+/* line 51, ../../sass/hisho/module/_PtDefList01.scss */
+.PtDefList01 .ptDefList01Dd {
+  margin-left: 1em;
+  margin-bottom: 8px;
+}
+
 /* line 37, ../../sass/hisho/module/_PtTbl01.scss */
 .PtTbl01 {
   width: 100%;
@@ -447,4 +368,44 @@ a:focus {
 .PtTbl01 th {
   background-color: #ececec;
   font-weight: normal;
+}
+
+/* line 45, ../../sass/hisho/module/_PtAdTxt01.scss */
+.Pt01 {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+/* line 54, ../../sass/hisho/module/_PtAdTxt01.scss */
+.Pt01 .ptA {
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+}
+/* line 59, ../../sass/hisho/module/_PtAdTxt01.scss */
+.Pt01 .ptA:hover .ptTtl {
+  text-decoration: none;
+  background: #f8f8f8;
+}
+/* line 67, ../../sass/hisho/module/_PtAdTxt01.scss */
+.Pt01 .ptTtl {
+  color: #333333;
+  font-size: 20px;
+  text-decoration: underline;
+}
+/* line 73, ../../sass/hisho/module/_PtAdTxt01.scss */
+.Pt01 .ptUrl {
+  color: #7c94aa;
+  font-size: 11px;
+  margin-top: 1px;
+  text-decoration: none;
+}
+/* line 80, ../../sass/hisho/module/_PtAdTxt01.scss */
+.Pt01 .ptTxt {
+  color: #cccccc;
+  font-size: 12px;
+  margin-top: 5px;
+  text-decoration: none;
 }

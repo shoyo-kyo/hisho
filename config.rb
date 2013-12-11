@@ -25,14 +25,39 @@ http_images_dir = 'hisho_1.0/'
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
 
 # Add custom fantions
+# Add custom fantions
+ 
 module SassExtention
-	#replace
-	def replace(str, find, rep)
+	def replace(search_cond, replace_str, str)
+		assert_type search_cond, :String
+		assert_type replace_str, :String
 		assert_type str, :String
-		assert_type find, :String
-		assert_type rep, :String
-		str.value.sub!(find.value, rep.value)
-		return s
+
+		begin
+			replace = eval "lambda { " + replace_str.value + " }"
+		rescue
+			replace = replace_str.value
+		end
+
+		is_proc = replace.class == Proc
+
+		begin
+			search = eval search_cond.value
+		rescue
+			search = search_cond.value
+		end
+
+		if (search_cond.class == Regexp) then
+			val = is_proc ?
+			str.value.gsub(search, &replace) :
+			str.value.gsub(search, replace)
+		else
+		val = is_proc ?
+			str.value.sub(search, &replace) :
+			str.value.sub(search, replace)
+		end
+
+		Sass::Script::String.new(val)
 	end
 end
 

@@ -22,7 +22,7 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		name:      : "PtAdTxt01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		name      : "PtAdTxt01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
 		width      : auto,         //moduleのwidth指定
 		aling      : center,       //moduleのセンタリング位置を指定
 		marginB    : null,         //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
@@ -31,7 +31,7 @@
 		colorTxt   : #ccc,         //txt color
 		sizeTtl    : 20px,         //ttl font-size
 		sizeUrl    : 11px,         //url font-size
-		sizeTxt    : 12px          //txt font-size
+		sizeTxt    : 12px,          //txt font-size
 		hoverBg    : #f8f8f8       //a:hover時の背景色設定
 	), $options);
 
@@ -44,9 +44,9 @@
 	//PtAdTxt01
 	.Pt#{$_name}01{
 		@include module-core((
-			width      :　map-get($_options, width),
-			aling      : map-get($_options, align),
-			marginB    : map-get($_options, marginB)
+			width   : map-get($_options, width),
+			aling   : map-get($_options, align),
+			marginB : map-get($_options, marginB)
 		));
 		overflow: hidden;
 		

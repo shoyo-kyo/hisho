@@ -22,10 +22,10 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		name:      : "PtTxt01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
-		width      : auto,         //moduleのwidth指定
-		aling      : center,       //moduleのセンタリング位置を指定
-		marginB    : null,         //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
+		name     : "PtTxt01",
+		width    : auto,
+		aling    : center,
+		marginB  : null,
 		medium   : map-get($styleSetting, fontSize),
 		large    : null,
 		x-large  : null,
@@ -33,7 +33,7 @@
 		small    : null,
 		x-small  : null,
 		xx-small : null,
-		style : $styleSetting
+		style    : $styleSetting
 	), $options);
 
 	$_fontSize: null;
@@ -45,11 +45,11 @@
 	//-----------------
 
 	//PtTxt01
-	.Pt#{$name}{
+	.Pt#{$_name}{
 		@include module-core((
-			width      :　map-get($_options, width),
-			aling      : map-get($_options, align),
-			marginB    : map-get($_options, marginB)
+			width   : map-get($_options, width),
+			aling   : map-get($_options, align),
+			marginB : map-get($_options, marginB)
 		));
 
 		font-size: map-get($_options, medium);

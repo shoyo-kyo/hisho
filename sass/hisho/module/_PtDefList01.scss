@@ -17,40 +17,43 @@
 
 //publick mixin
 @mixin PtDefList01($options:null){
-	$_options : null;
-	$_marginBottom: null;
 
 	//-----------------
 	// options
 	//-----------------
 	$_options: map-extend((
-		width: auto,
-		color: null,
-		itemMarginBottom: 8px,
-		marginBottom: map-get($styleSetting, moduleBottomMargin)
+		name      : "PtDefList01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width      : auto,         //moduleのwidth指定
+		aling      : center,       //moduleのセンタリング位置を指定
+		marginB    : null,         //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
+		colorDt: null,
+		marginBItem: 8px,
+		marginLDd: 1em
 	), $options);
 
-	//-----------------
-	// model
-	//-----------------
+	$_name : replace("Pt", "", map-get($_options, name));
+
 
 	//-----------------
 	// view
 	//-----------------
-	.PtDefList01{
-		@if map-get($_options, width) == auto{
-			width: map-get($_options, width);
-			margin-left: auto;
-			margin-right: auto;
+
+	//PtDefList01
+	.Pt#{$_name}{
+		@include module-core((
+			width   : map-get($_options, width),
+			aling   : map-get($_options, align),
+			marginB : map-get($_options, marginB)
+		));
+		
+		//ptDefList01Dt
+		.pt#{$_name}Dt{
+			margin-bottom: ciel(map-get($_options, marginBItem) / 2);
 		}
-		margin-bottom: map-get($_options, marginBottom);
-		//
-		.ptDefList01Dt{
-			margin-bottom: ciel(map-get($_options, itemMarginBottom) / 2);
-		}
-		.ptDefList01Dd{
-			margin-left:1em;
-			margin-bottom: map-get($_options, itemMarginBottom);
+		//ptDefList01Dd
+		.pt#{$_name}Dd{
+			margin-left: map-get($_options, marginLDd);
+			margin-bottom: map-get($_options, marginBItem);
 		}
 	}
 

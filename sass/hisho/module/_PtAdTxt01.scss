@@ -35,14 +35,14 @@
 		hoverBg    : #f8f8f8       //a:hover時の背景色設定
 	), $options);
 
-	$_name : replace(map-get($_options, name), "Pt" , "");
+	$_name : replace("Pt", "", map-get($_options, name));
 
 	//-----------------
 	// view
 	//-----------------
 
 	//PtAdTxt01
-	.Pt#{$_name}01{
+	.Pt#{$_name}{
 		@include module-core((
 			width   : map-get($_options, width),
 			aling   : map-get($_options, align),

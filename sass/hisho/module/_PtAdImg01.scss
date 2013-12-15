@@ -1,0 +1,87 @@
+@charset "utf-8";
+// ------------------------------
+// [name] PtAdImg01
+// [varsion] v1.0.0
+// [path] /hisho/module/_PtAdImg01.scss
+// [desc] text parts 01
+// [exsample]
+//
+//    @include PtAdImg01();
+//
+// ------------------------------
+
+//publick mixin
+@mixin PtAdImg01($options:null){
+
+	//-----------------
+	// options
+	//-----------------
+	$_options: map-extend((
+		name      : "PtAdImg01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width     : auto,          //moduleのwidth指定
+		aling     : left,          //moduleのセンタリング位置を指定
+		marginB   : null,          //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
+		colorPr   : #fff,
+		radiusePr : 2px,
+		bgPr      : #000,
+		paddingPr : 3px 10px 2px,
+		topPr : 10px,
+		rightPr : 10px,
+		leftPr :  null,
+	), $options);
+
+	$_name : str_replace(map-get($_options, name), "Pt", "");
+
+	//-----------------
+	// view
+	//-----------------
+
+	//PtAdImg01
+	.Pt#{$_name}{
+		@include inline-block;
+		@include module-core((
+			width   : map-get($_options, width),
+			aling   : map-get($_options, align),
+			marginB : map-get($_options, marginB)
+		));
+
+		text-aling: map-get($_options, align);
+		position: relative;
+
+		//ptAdImg01A
+		.pt#{$_name}A{
+			display:block;
+			position: relative;
+		}
+		//ptAdImg01Img
+		.pt#{$_name}Img{
+		}
+		//ptAdImg01Pr
+		.pt#{$_name}Pr{
+			display:block;
+			position: absolute;
+			line-height:1;
+			
+			@if map-get($_options, topPr){
+				top: map-get($_options, topPr);
+			}
+			@if map-get($_options, rightPr){
+				right: map-get($_options, rightPr);
+			}
+
+			@if map-get($_options, paddingPr){
+				padding: map-get($_options, paddingPr);
+			}
+			@if map-get($_options, colorPr){
+				color: map-get($_options, colorPr);
+			}
+			@if map-get($_options, bgPr){
+				background: map-get($_options, bgPr);
+			}
+			@if map-get($_options, radiusePr){
+				@include border-radius(map-get($_options, radiusePr));
+			}
+		}
+	}
+
+}

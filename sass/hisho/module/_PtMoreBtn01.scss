@@ -1,0 +1,98 @@
+@charset "utf-8";
+// ------------------------------
+// [name] PtMoreBtn01
+// [varsion] v1.0.0
+// [path] /hisho/module/_PtTxt01.scss
+// [desc] text parts 01
+// [exsample]
+//
+//    @include PtTxt01();
+// ------------------------------
+
+//publick mixin
+@mixin PtMoreBtn01($options:null){
+
+	//-----------------
+	// options
+	//-----------------
+	$_options: map-extend((
+		name      : "PtMoreBtn01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width     : auto,         //moduleのwidth指定
+		aling     : center,       //moduleのセンタリング位置を指定
+		marginB   : null,         //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
+		size      : 14px,
+		color     : #666,
+		bg        : null,
+		//gardient  : white, #cccccc, #aaaaaa,
+		border    : 1px solid #ccc,
+		radiuse   : 3px,
+		padding   : 15px
+	), $options);
+
+	$_name : str_replace(map-get($_options, name), "Pt", "");
+
+	//-----------------
+	// view
+	//-----------------
+
+	//PtMore01
+	.Pt#{$_name}{
+		@include module-core((
+			width   : map-get($_options, width),
+			aling   : map-get($_options, align),
+			marginB : map-get($_options, marginB)
+		));
+
+		@if map-get($_options, size){
+			font-size: map-get($_options, size);
+		}
+		@if map-get($_options, color){
+			color: map-get($_options, color);
+		}
+		@if map-get($_options, bg){
+			background: map-get($_options, bg);
+		}
+		//@if map-get($_options, gardient){
+			@include background-image(linear-gradient(white, #fefefe, #eee));
+		//}
+		@if map-get($_options, border){
+			border: map-get($_options, border);
+		}
+		@if map-get($_options, radiuse){
+			@include border-radius(map-get($_options, radiuse));
+		}
+		text-align: center;
+		line-height: 1;
+
+		&:hover,
+		&:active{
+			
+		}
+
+		//ptMore01A
+		.pt#{$_name}A{
+			display:block;
+			@if map-get($_options, padding){
+				padding: map-get($_options, padding);
+			}
+			
+			@if map-get($_options, color){
+				$_color: map-get($_options, color);
+				@include link-styles((
+					linkColor        : $_color,
+					linkColorVisited : $_color,
+					linkColorHover   : $_color,
+					linkColorActive  : $_color,
+					linkColorFocus   : $_color,
+					linkUnderline    : false,
+					linkUnderlineVisited : false,
+					linkUnderlineHover   : false,
+					linkUnderActive      : false,
+					linkUnderFocus       : false
+				));
+			}
+		}
+
+	}
+
+}

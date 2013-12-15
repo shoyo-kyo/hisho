@@ -35,7 +35,7 @@
 		hoverBg    : #f8f8f8       //a:hover時の背景色設定
 	), $options);
 
-	$_name : replace("Pt", "", map-get($_options, name));
+	$_name : str_replace(map-get($_options, name), "Pt", "");
 
 	//-----------------
 	// view

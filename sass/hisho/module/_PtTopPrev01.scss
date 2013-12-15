@@ -1,0 +1,69 @@
+@charset "utf-8";
+// ------------------------------
+// [name] PtTopPrev01
+// [varsion] v1.0.0
+// [path] /hisho/module/_PtMore01.scss
+// [desc] text parts 01
+// [exsample]
+//
+//    @include PtTopPrev01();
+// ------------------------------
+
+//publick mixin
+@mixin PtTopPrev01($options:null){
+
+	//-----------------
+	// options
+	//-----------------
+	$_options: map-extend((
+		name      : "PtTopPrev01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width     : auto,         //moduleのwidth指定
+		aling     : center,       //moduleのセンタリング位置を指定
+		marginB   : null,         //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
+		size      : null,
+		linkStyle : null,
+		topIcon   : 0,
+		marginIcon : 0 5px 0 0
+	), $options);
+
+	$_name : str_replace(map-get($_options, name), "Pt", "");
+
+	//-----------------
+	// view
+	//-----------------
+
+	//PtTopPrev01
+	.Pt#{$_name}{
+		@include module-core((
+			width   : map-get($_options, width),
+			aling   : map-get($_options, align),
+			marginB : map-get($_options, marginB)
+		));
+
+		@if map-get($_options, size){
+			font-size: map-get($_options, size);
+		}
+		text-align: right;
+		line-height: 1;
+
+		//ptTopPrev01A
+		.pt#{$_name}A{
+			@if map-get($_options, linkStyle){
+				@include link-styles($styleSetting);
+			}
+		}
+		//ptTopPrev01con
+		.pt#{$_name}Icon{
+			@include sprite-core();
+			position: relative;
+			@if map-get($_options, topIcon){
+				top:  map-get($_options, topIcon);
+			}
+			@if map-get($_options, marginIcon){
+				margin: map-get($_options, marginIcon);
+			}
+		}
+
+	}
+
+}

@@ -31,3 +31,10 @@
 .UtSpriteBnt{
 	@include sprite-core("pointer", true);
 }
+
+//@UtNowrap
+//td,thの折り返しを禁止する
+.UtNowrap{
+	width:1px;
+	white-space: nowrap;
+}

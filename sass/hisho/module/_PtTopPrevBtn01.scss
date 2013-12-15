@@ -1,0 +1,59 @@
+@charset "utf-8";
+// ------------------------------
+// [name] PtTopPrevBtn01
+// [varsion] v1.0.0
+// [path] /hisho/module/_PtTopPrevBtn01.scss
+// [desc] text parts 01
+// [exsample]
+//
+//    @include PtTopPrevBtn01();
+// ------------------------------
+
+//publick mixin
+@mixin PtTopPrevBtn01($options:null){
+
+	//-----------------
+	// options
+	//-----------------
+	$_options: map-extend((
+		name      : "PtTopPrevBtn01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width     : auto,         //moduleのwidth指定
+		aling     : center,       //moduleのセンタリング位置を指定
+		marginB   : null,         //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
+		bottom    : 20px,
+		right     : 20px
+	), $options);
+
+	$_name : str_replace(map-get($_options, name), "Pt", "");
+
+	//-----------------
+	// view
+	//-----------------
+
+	//PtTopPrevBtn01
+	.Pt#{$_name}{
+		@include module-core((
+			width   : map-get($_options, width),
+			aling   : map-get($_options, align),
+			marginB : map-get($_options, marginB)
+		));
+		text-align: right;
+		
+		&.fixed{
+			position:fixed;
+			bottom: map-get($_options, bottom);
+			right: map-get($_options, right);
+		}
+
+		//ptTopPrevBtn01Btn
+		.pt#{$_name}Btn{
+			position: relative;
+			@include sprite-core();
+
+			&:hover{
+				@include opacity(0.8);
+			}
+		}
+	}
+
+}

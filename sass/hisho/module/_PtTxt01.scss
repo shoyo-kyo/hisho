@@ -51,8 +51,8 @@
 			aling   : map-get($_options, align),
 			marginB : map-get($_options, marginB)
 		));
+		@include property-set(font-size, map-get($_options, medium));
 
-		font-size: map-get($_options, medium);
 
 		@if map-get($_style, lineHeight) != map-get($styleSetting, lineHeight) {
 			line-height: map-get($_style, lineHeight);

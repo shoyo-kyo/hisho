@@ -22,30 +22,64 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		maxWidth: auto,
-		align: left,
-		borderColor: null,
-		marginBottom: map-get($styleSetting, moduleBottomMargin)
+		name       : "PtImage01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width      : auto,        //moduleのwidth指定
+		aling      : center,      //moduleのセンタリング位置を指定
+		marginB    : null,        //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
+		border     : null,        //moduleのborder
+		cntOverlay : false,       //cnt要素を画像にかぶる場合に使用 false top bottom
+		bgCnt      : null,
+		borderImg  : solid 1px #ccc
 	), $options);
+
+	$_name : replace("Pt", "", map-get($_options, name));
 
 	//-----------------
 	// view
 	//-----------------
-	.PtImage01{
+
+	//PtImage01
+	.Pt#{$_name}{
+		@include module-core((
+			width   : map-get($_options, width),
+			aling   : null,
+			marginB : map-get($_options, marginB)
+		));
+
+		position:relative;
 		@include inline-block;
-		text-aling: map-get($_options, align);
-		margin-bottom: map-get($_options, marginBottom);
+		@include property-set(border, map-get($_options, border));
+		@include property-set(text-aling, map-get($_options, align));
+		
+
 		//
-		.ptImage02A{
+		//ptImage01A
+		.pt#{$_name}A{
+			position:relative;
 			display:block;
 		}
-		.ptImage01Img{
+		//ptImage01Img
+		.pt#{$_name}Img{
 			max-width: map-get($_options, maxWidth);
-			@if map-get($_options, borderColor){
-				border:solid 1px map-get($_options, borderColor);
-			}
+			@include property-set(border, map-get($_options, borderImg));
 		}
-		.ptImage01Cap{
+		//ptImage01Cnt
+		.pt#{$_name}Cnt{
+			@if map-get($_options, cntOverlay) != false{
+				z-index: 2;
+				position:absolute;
+				left:0;
+				width:100%;
+				@if map-get($_options, cntOverlay) == "top"{
+					top:0;
+				} @else if map-get($_options, cntOverlay) == "bottom"{
+					bottom:0;
+				}
+			}
+			@include property-set(background, map-get($_options, bgCnt));
+		}
+		//ptImage01Cap
+		.pt#{$_name}Cap{
 			font-size: 10px;
 			margin-top:8px;
 			text-align:left;

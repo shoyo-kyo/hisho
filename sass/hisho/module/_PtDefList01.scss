@@ -32,7 +32,7 @@
 	), $options);
 
 	$_name : replace("Pt", "", map-get($_options, name));
-
+	$_marginBDt : if(map-get($_options, marginBItem), ciel(map-get($_options, marginBItem) / 2) ,null)
 
 	//-----------------
 	// view
@@ -48,12 +48,12 @@
 		
 		//ptDefList01Dt
 		.pt#{$_name}Dt{
-			margin-bottom: ciel(map-get($_options, marginBItem) / 2);
+			@include property-set(margin-bottom, $_marginBDt);
 		}
 		//ptDefList01Dd
 		.pt#{$_name}Dd{
-			margin-left: map-get($_options, marginLDd);
-			margin-bottom: map-get($_options, marginBItem);
+			@include property-set(margin-left, map-get($_options, marginLDd));
+			@include property-set(margin-bottom, map-get($_options, marginBItem));
 		}
 	}
 

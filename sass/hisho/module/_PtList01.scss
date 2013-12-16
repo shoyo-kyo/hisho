@@ -24,42 +24,46 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		width: auto,
-		color: null,
-		iconWidth: map-get($styleSetting, fontSize),
-		iconMarginRight: 5px,
-		itemMarginBottom: 8px,
-		marginBottom: map-get($styleSetting, moduleBottomMargin)
+		name       : "PtList01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width      : auto,        //moduleのwidth指定
+		aling      : center,      //moduleのセンタリング位置を指定
+		marginB    : null,        //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
+		color      : null,
+		widthIcon  : map-get($styleSetting, fontSize),
+		marginRIcon : 5px,
+		topIcon     : 0,
+		marginBLi   : 8px
 	), $options);
 
-	//-----------------
-	// model
-	//-----------------
-	$_leftPadding:  map-get($_options, iconWidth) + map-get($_options, iconMarginRight);
+	$_name : replace("Pt", "", map-get($_options, name));
+	$_paddingLLi: map-get($_options, widthIcon) + map-get($_options, marginRIcon);
 
 	//-----------------
 	// view
 	//-----------------
-	.PtList01{
-		@if map-get($_options, width) == auto{
-			width: map-get($_options, width);
-			margin-left: auto;
-			margin-right: auto;
-		}
-		@if map-get($_options, color) == auto{
-			color: map-get($_options, color);
-		}
-		margin-bottom: map-get($_options, marginBottom);
-		//
-		.ptList01Li{
+
+	//PtList01
+	.Pt#{$_name}{
+		@include module-core((
+			width   : map-get($_options, width),
+			aling   : map-get($_options, align),
+			marginB : map-get($_options, marginB)
+		));
+		@include property-set(color, map-get($_options, color));
+
+		
+		//ptList01Li
+		.pt#{$_name}Li{
 			position: relative;
-			margin-bottom: map-get($_options, itemMarginBottom);
-			padding-left: $_leftPadding;
+			@include property-set(margin-bottom, map-get($_options, marginBLi));
+			@include property-set(padding-left, $_paddingLLi);
 		}
-		.ptList01Icon{
-			position:absolute;
-			top:0;
-			left:0;
+
+		//ptList01Icon
+		.pt#{$_name}Icon{
+			position: absolute;
+			left: 0;
+			@include property-set(top, map-get($_options, topIcon));
 			@include sprite-core();
 		}
 	}

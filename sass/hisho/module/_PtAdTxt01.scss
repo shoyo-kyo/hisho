@@ -32,7 +32,7 @@
 		sizeTtl    : 20px,         //ttl font-size
 		sizeUrl    : 11px,         //url font-size
 		sizeTxt    : 12px,          //txt font-size
-		hoverBg    : #f8f8f8       //a:hover時の背景色設定
+		bgAHover   : #f8f8f8       //a:hover時の背景色設定
 	), $options);
 
 	$_name : replace("Pt", "", map-get($_options, name));
@@ -58,28 +58,26 @@
 			//
 			&:hover .pt#{$_name}Ttl{
 				text-decoration: none;
-				@if map-get($_options, hoverBg) {
-					background: map-get($_options, hoverBg)
-				}
+				@include property-set(background, map-get($_options, bgAHover));
 			}
 		}
 		//ptAdTxt01Ttl
 		.pt#{$_name}Ttl{
-			color: map-get($_options, colorTtl);
-			font-size: map-get($_options, sizeTtl);
+			@include property-set(color, map-get($_options, colorTtl));
+			@include property-set(font-size, map-get($_options, sizeTtl));
 			text-decoration: underline;
 		}
 		//ptAdTxt01Url
 		.pt#{$_name}Url{
-			color: map-get($_options, colorUrl);
-			font-size: map-get($_options, sizeUrl);
+			@include property-set(color, map-get($_options, colorUrl));
+			@include property-set(font-size, map-get($_options, sizeUrl));
 			margin-top: 1px;
 			text-decoration: none;
 		}
 		//ptAdTxt01Txt
 		.pt#{$_name}Txt{
-			color: map-get($_options, colorTxt);
-			font-size: map-get($_options, sizeTxt);
+			@include property-set(color, map-get($_options, colorTxt));
+			@include property-set(font-size, map-get($_options, sizeTxt));
 			margin-top: 5px;
 			text-decoration: none;
 		}

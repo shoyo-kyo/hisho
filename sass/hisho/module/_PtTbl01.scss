@@ -22,48 +22,39 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		width: 100%,
-		align: left,
-		borderColor: #ccc,
-		thBgColor: #ececec,
-		tdBgColor: null,
-		itemMarginBottom: 8px,
-		marginBottom: map-get($styleSetting, moduleBottomMargin)
+		name       : "PtTbl01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width      : auto,         //moduleのwidth指定
+		aling      : center,       //moduleのセンタリング位置を指定
+		marginB    : null,         //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
+		borderT    : null,
+		bgColorTh  : #ececec,
+		bgColorTd  : null,
+		paddingTd  : 4px 8px,
+		borderTd   : 1px solid #ccc
 	), $options);
+
+	$_name : replace("Pt", "", map-get($_options, name));
 
 	//-----------------
 	// view
 	//-----------------
-	.PtTbl01{
-		@if map-get($_options, width) != auto{
-			width: map-get($_options, width);
 
-			@if map-get($_options, align) != center{
-				margin-left: auto;
-				margin-right: auto;
-
-			}@else if map-get($_options, align) != right{
-				margin-left: auto;
-				margin-right: 0;
-			}
-		}
-
-		margin-bottom: map-get($_options, marginBottom);
+	//PtTbl01
+	.Pt#{$_name}{
+		@include module-core((
+			width   : map-get($_options, width),
+			aling   : map-get($_options, align),
+			marginB : map-get($_options, marginB)
+		));
 		//
 		th,
 		td{
-			@if map-get($_options, borderColor){
-				border: 1px solid map-get($_options, borderColor);
-			}
-			@if map-get($_options, tdBgColor){
-				background-color: map-get($_options, tdBgColor);
-			}
-			padding: 4px 8px;
+			@include property-set(border, map-get($_options, borderTd));
+			@include property-set(background, map-get($_options, bgColorTd));
+			@include property-set(padding, map-get($_options, paddingTd));
 		}
 		th{
-			@if map-get($_options, thBgColor){
-				background-color: map-get($_options, thBgColor);
-			}
+			@include property-set(background, map-get($_options, bgColorTh));
 			font-weight: normal;
 		}
 	}

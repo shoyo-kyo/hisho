@@ -24,32 +24,32 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		width: auto,
-		color: null,
-		itemMarginBottom: 8px,
-		marginBottom: map-get($styleSetting, moduleBottomMargin)
+		name       : "PtNumList01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width      : auto,        //moduleのwidth指定
+		aling      : center,      //moduleのセンタリング位置を指定
+		marginB    : null,        //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
+		color      : null,
+		marginLi   : 0 0 8px 20px
 	), $options);
 
-	//-----------------
-	// model
-	//-----------------
+	$_name : replace("Pt", "", map-get($_options, name));
 
 	//-----------------
 	// view
 	//-----------------
-	.PtNumList01{
-		@if map-get($_options, width) != auto{
-			width: map-get($_options, width);
-			margin-left: auto;
-			margin-right: auto;
-		}
-		@if map-get($_options, color) != auto{
-			color: map-get($_options, color);
-		}
-		margin-bottom: map-get($_options, marginBottom);
-		//
-		.PtNumList01Li{
-			margin: 0 0 map-get($_options, itemMarginBottom) 20px;
+
+	//PtNumList01
+	.Pt#{$_name}{
+		@include module-core((
+			width   : map-get($_options, width),
+			aling   : map-get($_options, align),
+			marginB : map-get($_options, marginB)
+		));
+		@include property-set(color, map-get($_options, color));
+
+		//ptNumList01Li
+		.pt#{$_name}Li{
+			@include property-set(margin, map-get($_options, marginLi));
 			list-style: decimal;
 		}
 	}

@@ -31,7 +31,7 @@
 		marginLDd: 1em
 	), $options);
 
-	$_name : replace("Pt", "", map-get($_options, name));
+	$_name : str_replace(map-get($_options, name), "Pt", "");
 	$_marginBDt : if(map-get($_options, marginBItem), ciel(map-get($_options, marginBItem) / 2) ,null)
 
 	//-----------------

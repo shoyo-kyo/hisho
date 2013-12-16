@@ -13,11 +13,12 @@
 	@include inline-block();
 	overflow:hidden;
 	border:none;
-	width:0;
-	height:0;
 	vertical-align:top;
 	white-space: nowrap;
 	text-indent: 100%;
+
+	//width:0;
+	//height:0;
 
 	//text-indent:-126em;
 	//white-space: nowrap;

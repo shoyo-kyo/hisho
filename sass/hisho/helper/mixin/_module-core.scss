@@ -28,14 +28,14 @@
 	//-----------------
 	// view
 	//-----------------
-	@if map-get($_options, width) == auto{
+	@if map-get($_options, width) != auto{
 		width: map-get($_options, width);
 
-		@if map-get($_options, align) != center{
+		@if map-get($_options, align) == center{
 			margin-left: auto;
 			margin-right: auto;
 
-		}@else if map-get($_options, align) != right{
+		}@else if map-get($_options, align) == right{
 			margin-left: auto;
 			margin-right: 0;
 		}

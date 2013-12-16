@@ -1,0 +1,72 @@
+@charset "utf-8";
+// ------------------------------
+// [name] BxCntent01
+// [varsion] v1.0.0
+// [path] /hisho/module/_BxListY01.scss
+// [desc] text parts 01
+// [exsample]
+//
+//    @include BxCntent01();
+//
+// ------------------------------
+
+//publick mixin
+@mixin BxCntent01($options:null){
+
+	//-----------------
+	// options
+	//-----------------
+	$_options: map-extend((
+		name     : "BxCntent01",
+		width    : auto,
+		aling    : center,
+		marginB  : null
+	), $options);
+
+	$_name : str_replace(map-get($_options, name), "Bx", "");
+
+	//-----------------
+	// view
+	//-----------------
+
+	//BxCntent01
+	.Bx#{$_name}{
+		@include module-core((
+			width   : map-get($_options, width),
+			aling   : map-get($_options, align),
+			marginB : map-get($_options, marginB)
+		));
+		background: #efefef;
+		border: solid 1px #ccc;
+		padding:3px;
+		
+		//bxCntent01Head
+		.bx#{$_name}Head{
+			background: #efefef;
+			border-top: solid 1px #ccc;
+			border-bottom: solid 1px #ccc;
+			border-left: solid 1px #ccc;
+			border-right: solid 1px #ccc;
+			padding:5px;
+		}
+		//bxCntent01Body
+		.bx#{$_name}Body{
+			background: #efefef;
+			border-top: solid 1px #ccc;
+			border-bottom: solid 1px #ccc;
+			border-left: solid 1px #ccc;
+			border-right: solid 1px #ccc;
+			padding:5px;
+		}
+		//bxCntent01Foot
+		.bx#{$_name}Foot{
+			background: #efefef;
+			border-top: solid 1px #ccc;
+			border-bottom: solid 1px #ccc;
+			border-left: solid 1px #ccc;
+			border-right: solid 1px #ccc;
+			padding:5px;
+		}
+	}
+
+}

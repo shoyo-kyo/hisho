@@ -90,6 +90,7 @@ $styleSetting: (
 @import "hisho/helper/mixin";
 @import "hisho/helper/function";
 
+@import url(http://fonts.googleapis.com/css?family=Share+Tech+Mono);
 //--------------------------------
 // 3.base style setting
 // もろもろstyle設定
@@ -120,6 +121,9 @@ a{
 // 4.sprite image setting
 // sprite-mapの生成
 //--------------------------------
+$sprite-all: sprite-map("spAll/*.png",$layout: smart);
+@import "spAll/*.png";
+@include all-spAll-sprites(hoge);
 
 //--------------------------------
 // 5.Select Layout
@@ -147,6 +151,14 @@ a{
 //--------------------------------
 @import "hisho/helper/util";
 
+@import "hisho/module/PtTitle01";
+@include PtTitle01();
+
+@import "hisho/module/PtTitleSimple01";
+@include PtTitleSimple01((
+	family: "'Share Tech Mono', sans-serif"
+));
+
 @import "hisho/module/PtTxt01";
 @include PtTxt01();
 
@@ -162,9 +174,48 @@ a{
 @import "hisho/module/PtTbl01";
 @include PtTbl01();
 
-@import "hisho/module/_PtAdTxt01";
+@import "hisho/module/PtListTbl01";
+@include PtListTbl01();
+
+@import "hisho/module/PtCode01";
+@include PtCode01();
+
+@import "hisho/module/PtAdTxt01";
 @include PtAdTxt01();
 
+@import "hisho/module/PtAdImg01";
+@include PtAdImg01();
+
+
+@import "hisho/module/PtMore01";
+@include PtMore01();
+
+@import "hisho/module/PtMoreBtn01";
+@include PtMoreBtn01();
+
+@import "hisho/module/PtTopPrev01";
+@include PtTopPrev01();
+
+@import "hisho/module/PtTopPrevBtn01";
+@include PtTopPrevBtn01();
+
+@import "hisho/module/PtLine01";
+@include PtLine01();
+
+@import "hisho/module/PtSprt01";
+@include PtSprt01();
+
+@import "hisho/module/BxQuote01";
+@include BxQuote01();
+
+@import "hisho/module/BxListY01";
+@include BxListY01();
+
+@import "hisho/module/BxListX01";
+@include BxListX01();
+
+@import "hisho/module/BxCntent01";
+@include BxCntent01();
 
 //--------------------------------
 // 9.overlide

@@ -249,8 +249,6 @@ a:focus {
   *display: inline;
   overflow: hidden;
   border: none;
-  width: 0;
-  height: 0;
   vertical-align: top;
   white-space: nowrap;
   text-indent: 100%;
@@ -265,11 +263,15 @@ a:focus {
   *display: inline;
   overflow: hidden;
   border: none;
-  width: 0;
-  height: 0;
   vertical-align: top;
   white-space: nowrap;
   text-indent: 100%;
   cursor: "pointer";
   opacity: 0.8;
+}
+
+/* line 37, ../sass/hisho/helper/_util.scss */
+.UtNowrap {
+  width: 1px;
+  white-space: nowrap;
 }

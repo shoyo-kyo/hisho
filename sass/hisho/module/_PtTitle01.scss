@@ -1,0 +1,122 @@
+@charset "utf-8";
+// ------------------------------
+// [name] PtTitle01
+// [varsion] v1.0.0
+// [path] /hisho/module/_PtTitle01.scss
+// [desc] text parts 01
+// [exsample]
+//
+//    @include PtTitle01();
+//
+// ------------------------------
+
+//publick mixin
+@mixin PtTitle01($options:null){
+
+	//-----------------
+	// options
+	//-----------------
+	$_options: map-extend((
+		name     : "PtTitle01",
+		width    : auto,
+		aling    : center,
+		marginB  : null,
+		color    : #CEBB6E,
+		family   : null,
+		weight   : bold,
+		lineHeight : null,
+		medium   : 18px,
+		large    : null,
+		x-large  : null,
+		xx-large : null,
+		small    : null,
+		x-small  : null,
+		xx-small : null
+	), $options);
+
+	$_name : str_replace(map-get($_options, name), "Pt", "");
+
+	//-----------------
+	// view
+	//-----------------
+
+	//PtTitle01
+	.Pt#{$_name}{
+		@include module-core((
+			width   : map-get($_options, width),
+			aling   : map-get($_options, align),
+			marginB : map-get($_options, marginB)
+		));
+		position: relative;
+		padding:10px;
+		border: solid 1px #ccc;
+		background: #fefefe;
+		margin:0;
+		@include border-radius(2px);
+
+		//ptTitle01Inner
+		.pt#{$_name}Inner{
+			display: block;
+			padding: 10px;
+			border-left: solid 20px #333;
+			background: #fefefe;
+		}
+
+		//ptTitle01Ttl
+		.pt#{$_name}Ttl{
+			font-size: map-get($_options, medium);
+			@if map-get($_options, lineHeight){
+				line-height: map-get($_options, lineHeight);
+			}
+			@if map-get($_options, weight){
+				font-weight: map-get($_options, weight);
+			}
+			@if map-get($_options, family){
+				font-family: #{map-get($_options, family)};
+			}
+			@if map-get($_options, color){
+				color: map-get($_options, color);
+			}
+		}
+
+		//ptTitle01TtlIcon
+		.pt#{$_name}TtlIcon{
+			@include sprite-core();
+			position:relative;
+			top:0;
+			margin-right: 5px;
+		}
+
+		//ptTitle01Txt
+		.pt#{$_name}Txt{
+			margin-top:5px;
+			color: #ccc;
+			font-size: 10px;
+			height: 1.5;
+		}
+
+		//ptTitle01Link
+		.pt#{$_name}Link{
+			position: absolute;
+			top:0;
+			right:0;
+			line-height: 1;
+		}
+
+		//ptTitle01LinkA
+		.pt#{$_name}LinkA{
+			
+		}
+
+		//ptTitle01LinkIcon
+		.pt#{$_name}LinkIcon{
+			@include sprite-core();
+			position:relative;
+			top:0;
+			margin-right: 5px;
+		}
+
+
+	}
+
+}

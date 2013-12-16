@@ -1,67 +1,67 @@
 @charset "utf-8";
 // ------------------------------
-// [name] PtTxt01
+// [name] PtTitleSimple01
 // [varsion] v1.0.0
-// [path] /hisho/module/_PtTxt01.scss
+// [path] /hisho/module/_PtTitleSimple01.scss
 // [desc] text parts 01
 // [exsample]
 //
-//    @include PtTxt01();
+//    @include PtTitleSimple01();
 //
-//    @include PtTxt01((
-//      style: (
-//          contentWidth: 1050px
-//      )
-//    ));
 // ------------------------------
 
 //publick mixin
-@mixin PtTxt01($options:null){
+@mixin PtTitleSimple01($options:null){
 
 	//-----------------
 	// options
 	//-----------------
 	$_options: map-extend((
-		name     : "PtTxt01",
+		name     : "PtTitleSimple01",
 		width    : auto,
 		aling    : center,
 		marginB  : null,
-		medium   : map-get($styleSetting, fontSize),
+		color    : #CEBB6E,
+		family   : null,
+		weight   : bold,
+		lineHeight : null,
+		medium   : 30px,
 		large    : null,
 		x-large  : null,
 		xx-large : null,
 		small    : null,
 		x-small  : null,
-		xx-small : null,
-		style    : $styleSetting
+		xx-small : null
 	), $options);
 
 	$_fontSize: null;
-	$_style: map-get($_options, style);
 	$_name : str_replace(map-get($_options, name), "Pt", "");
 
 	//-----------------
 	// view
 	//-----------------
 
-	//PtTxt01
+	//PtTitleSimple01
 	.Pt#{$_name}{
 		@include module-core((
 			width   : map-get($_options, width),
 			aling   : map-get($_options, align),
 			marginB : map-get($_options, marginB)
 		));
-		@include property-set(font-size, map-get($_options, medium));
 
+		font-size: map-get($_options, medium);
 
-		@if map-get($_style, lineHeight) != map-get($styleSetting, lineHeight) {
-			line-height: map-get($_style, lineHeight);
+		@if map-get($_options, lineHeight){
+			line-height: map-get($_options, lineHeight);
 		}
-		@if map-get($_style, fontFamily) != map-get($styleSetting, fontFamily) {
-			font-family: map-get($_style, fontFamily);
+		@if map-get($_options, weight){
+			font-weight: map-get($_options, weight);
 		}
-		@if map-get($_style, fontColor01) != map-get($styleSetting, fontColor01) {
-			color: map-get($_style, fontColor01);
+		@if map-get($_options, family){
+			font-family: #{map-get($_options, family)};
+		}
+		@if map-get($_options, color){
+			color: map-get($_options, color);
 		}
 
 		//medium
@@ -71,7 +71,7 @@
 		}
 
 		//small
-		$_fontSize: map-get($_style, fontSize);
+		$_fontSize: map-get($_options, medium);
 		$_fontSize: floor($_fontSize / 1.2);
 		&.small{
 			font-size: if(map-get($_options, small), map-get($_options, small), $_fontSize);
@@ -90,7 +90,7 @@
 		}
 
 		//large
-		$_fontSize: map-get($_style, fontSize);
+		$_fontSize: map-get($_options, medium);
 		$_fontSize: round($_fontSize * 1.2);
 		&.large{
 			font-size: if(map-get($_options, large), map-get($_options, large), $_fontSize);

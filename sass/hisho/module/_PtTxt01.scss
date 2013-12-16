@@ -52,17 +52,9 @@
 			marginB : map-get($_options, marginB)
 		));
 		@include property-set(font-size, map-get($_options, medium));
-
-
-		@if map-get($_style, lineHeight) != map-get($styleSetting, lineHeight) {
-			line-height: map-get($_style, lineHeight);
-		}
-		@if map-get($_style, fontFamily) != map-get($styleSetting, fontFamily) {
-			font-family: map-get($_style, fontFamily);
-		}
-		@if map-get($_style, fontColor01) != map-get($styleSetting, fontColor01) {
-			color: map-get($_style, fontColor01);
-		}
+		@include property-set(line-height, map-get($styleSetting, lineHeight));
+		@include property-set(font-family, map-get($styleSetting, fontFamily));
+		@include property-set(color, map-get($styleSetting, fontColor01));
 
 		//medium
 		$_fontSize: map-get($_options, medium);

@@ -38,12 +38,8 @@
 			marginB : map-get($_options, marginB)
 		));
 		display:block;
-		@if map-get($_options, borderT){
-			border-top: map-get($_options, borderT);
-		}
-		@if map-get($_options, borderB){
-			border-bottom: map-get($_options, borderB);
-		}
+		@include property-set(border-top, map-get($_options, borderB));
+		@include property-set(border-bottom, map-get($_options, borderB));
 	}
 
 }

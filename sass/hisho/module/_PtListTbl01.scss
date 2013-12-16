@@ -44,29 +44,19 @@
 			aling   : map-get($_options, align),
 			marginB : map-get($_options, marginB)
 		));
-		@if map-get($_options, marginT){
-			margin-top: map-get($_options, marginT);
-		}
+		@include property-set(margin-top, map-get($_options, marginT));
 
 		//
 		th,
 		td{
-			@if map-get($_options, color){
-				color: map-get($_options, color);
-			}
-			@if map-get($_options, borderBTd){
-				border-bottom: map-get($_options, borderBTd);
-			}
-			@if map-get($_options, paddingTd){
-				padding: map-get($_options, paddingTd);
-			}
+			@include property-set(color, map-get($_options, color));
+			@include property-set(border-bottom, map-get($_options, borderBTd));
+			@include property-set(padding, map-get($_options, paddingTd));
 			text-align: left;
 		}
 		th{
 			font-weight: normal;
-			@if map-get($_options, colorTh){
-				color: map-get($_options, colorTh);
-			}
+			@include property-set(color, map-get($_options, colorTh));
 		}
 
 	}

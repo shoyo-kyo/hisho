@@ -50,19 +50,11 @@
 		));
 
 		font-size: map-get($_options, medium);
-
-		@if map-get($_options, lineHeight){
-			line-height: map-get($_options, lineHeight);
-		}
-		@if map-get($_options, weight){
-			font-weight: map-get($_options, weight);
-		}
-		@if map-get($_options, family){
-			font-family: #{map-get($_options, family)};
-		}
-		@if map-get($_options, color){
-			color: map-get($_options, color);
-		}
+		
+		@include property-set(line-height, map-get($_options, lineHeight));
+		@include property-set(font-weight, map-get($_options, weight));
+		@include property-set(font-family, map-get($_options, family));
+		@include property-set(color, map-get($_options, color));
 
 		//medium
 		$_fontSize: map-get($_options, medium);

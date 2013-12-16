@@ -56,12 +56,8 @@
 		.pt#{$_name}Icon{
 			@include sprite-core();
 			position: relative;
-			@if map-get($_options, topIcon){
-				top:  map-get($_options, topIcon);
-			}
-			@if map-get($_options, marginIcon){
-				margin: map-get($_options, marginIcon);
-			}
+			@include property-set(top, map-get($_options, topIcon));
+			@include property-set(margin, map-get($_options, marginIcon));
 		}
 
 	}

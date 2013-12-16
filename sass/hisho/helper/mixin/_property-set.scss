@@ -10,7 +10,20 @@
 
 //publick mixin
 @mixin property-set($propaty,$value:null){
+	//$_propaty: str_sprit($propaty,":");
+
+
 	@if $value{
-		$propaty: $value;
+		@if $propaty == border-radius {
+			@include border-radius($value);
+
+		//} @else $propaty == background-gradient {
+		//	@include background-image(linear-gradient(left top, white, #dddddd));
+
+		} @else {
+			$propaty: $value;
+		}
+
+		
 	}
 }

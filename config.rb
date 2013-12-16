@@ -34,6 +34,15 @@ module SassExtention
     result = str.value.sub(find.value, rep.value)
     Sass::Script::String.new(result)
   end
+
+  def str_sprit(str, find)
+    assert_type str, :String
+    assert_type find, :String
+    array = str.value.split(find.value)
+    array[0] = array[0].strip
+    array[1] = array[1].strip
+    Sass::Script::String.new(array)
+  end
 end
 
 module Sass::Script::Functions

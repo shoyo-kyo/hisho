@@ -34,15 +34,9 @@
 		@include sprite-core();
 		margin:0;
 		width:0;
-		@if map-get($_options, height){
-			height: map-get($_options, height);
-		}
-		@if map-get($_options, borderL){
-			border-left: map-get($_options, borderL);
-		}
-		@if map-get($_options, borderR){
-			border-right: map-get($_options, borderR);
-		}
+		@include property-set(height, map-get($_options, height));
+		@include property-set(border-left, map-get($_options, borderL));
+		@include property-set(border-right, map-get($_options, borderR));
 		line-height: 1;
 	}
 

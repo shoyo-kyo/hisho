@@ -42,22 +42,16 @@
 			aling   : map-get($_options, align),
 			marginB : map-get($_options, marginB)
 		));
+		
+		@include property-set(font-size, map-get($_options, size));
+		@include property-set(color, map-get($_options, color));
+		@include property-set(background, map-get($_options, bg));
 
-		@if map-get($_options, size){
-			font-size: map-get($_options, size);
-		}
-		@if map-get($_options, color){
-			color: map-get($_options, color);
-		}
-		@if map-get($_options, bg){
-			background: map-get($_options, bg);
-		}
 		//@if map-get($_options, gardient){
 			@include background-image(linear-gradient(white, #fefefe, #eee));
 		//}
-		@if map-get($_options, border){
-			border: map-get($_options, border);
-		}
+
+		@include property-set(border, map-get($_options, border));
 		@if map-get($_options, radiuse){
 			@include border-radius(map-get($_options, radiuse));
 		}

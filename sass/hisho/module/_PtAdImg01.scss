@@ -61,23 +61,11 @@
 			display:block;
 			position: absolute;
 			line-height:1;
-			
-			@if map-get($_options, topPr){
-				top: map-get($_options, topPr);
-			}
-			@if map-get($_options, rightPr){
-				right: map-get($_options, rightPr);
-			}
-
-			@if map-get($_options, paddingPr){
-				padding: map-get($_options, paddingPr);
-			}
-			@if map-get($_options, colorPr){
-				color: map-get($_options, colorPr);
-			}
-			@if map-get($_options, bgPr){
-				background: map-get($_options, bgPr);
-			}
+			@include property-set(top, map-get($_options, topPr));
+			@include property-set(right, map-get($_options, rightPr));
+			@include property-set(padding, map-get($_options, paddingPr));
+			@include property-set(color, map-get($_options, colorPr));
+			@include property-set(background, map-get($_options, bgPr));
 			@if map-get($_options, radiusePr){
 				@include border-radius(map-get($_options, radiusePr));
 			}

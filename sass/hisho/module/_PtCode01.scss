@@ -39,24 +39,14 @@
 			aling   : map-get($_options, align),
 			marginB : map-get($_options, marginB)
 		));
-
-		@if map-get($_options, color) {
-			color: map-get($_options, color);
-		}
-		@if map-get($_options, border) {
-			border: map-get($_options, border);
-		}
-		@if map-get($_options, bg) {
-			background: map-get($_options, bg);
-		}
+		@include property-set(color, map-get($_options, color));
+		@include property-set(border, map-get($_options, border));
+		@include property-set(background, map-get($_options, bg));
 		
 		//ptCode01Inner
 		.pt#{$_name}Inner{
 			display:block;
-
-			@if map-get($_options, padding) {
-				padding: map-get($_options, padding);
-			}
+			@include property-set(padding, map-get($_options, padding));
 		}
 	}
 

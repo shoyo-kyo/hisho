@@ -55,12 +55,8 @@
 		.bx#{$_name}Li{
 			float:left;
 			width: $_widthLi;
-			@if map-get($_options, marginRLi){
-				margin-right: map-get($_options, marginRLi);
-			}
-			@if map-get($_options, marginBLi){
-				margin-bottom: map-get($_options, marginBLi);
-			}
+			@include property-set(margin-right, map-get($_options, marginRLi));
+			@include property-set(margin-bottom, map-get($_options, marginBLi));
 		}
 	
 	}

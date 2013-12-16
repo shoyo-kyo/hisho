@@ -32,7 +32,7 @@
 		marginLi   : 0 0 8px 20px
 	), $options);
 
-	$_name : replace("Pt", "", map-get($_options, name));
+	$_name : str_replace(map-get($_options, name), "Pt", "");
 
 	//-----------------
 	// view

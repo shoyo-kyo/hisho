@@ -35,7 +35,7 @@
 		marginBLi   : 8px
 	), $options);
 
-	$_name : replace("Pt", "", map-get($_options, name));
+	$_name : str_replace(map-get($_options, name), "Pt", "");
 	$_paddingLLi: map-get($_options, widthIcon) + map-get($_options, marginRIcon);
 
 	//-----------------

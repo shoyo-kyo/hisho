@@ -35,13 +35,12 @@ module SassExtention
     Sass::Script::String.new(result)
   end
 
-  def str_sprit(str, find)
+  def str_sprit(str, find, index)
     assert_type str, :String
     assert_type find, :String
-    array = str.value.split(find.value)
-    array[0] = array[0].strip
-    array[1] = array[1].strip
-    Sass::Script::String.new(array)
+    assert_type index, :Number
+    datas = str.value.split(find.value)
+    Sass::Script::String.new(datas[index.to_i].strip)
   end
 end
 

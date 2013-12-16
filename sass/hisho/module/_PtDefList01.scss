@@ -32,7 +32,7 @@
 	), $options);
 
 	$_name : str_replace(map-get($_options, name), "Pt", "");
-	$_marginBDt : if(map-get($_options, marginBItem), ciel(map-get($_options, marginBItem) / 2) ,null)
+	$_marginBDt : if(map-get($_options, marginBItem), ciel(map-get($_options, marginBItem) / 2) ,null);
 
 	//-----------------
 	// view

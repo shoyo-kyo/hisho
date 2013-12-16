@@ -10,12 +10,41 @@
 
 //publick mixin
 @mixin property-set($propaty,$value:null){
-	//$_propaty: str_sprit($propaty,":");
-
-
 	@if $value{
-		@if $propaty == border-radius {
+
+		
+		
+		//border
+		@if $propaty == border and type-of($value) != string{
+			
+			@if map-get($value, top){
+				border-top: map-get($value, top);
+			}
+			@if map-get($value, right){
+				border-right: map-get($value, right);
+			}
+			@if map-get($value, bottom){
+				border-bottom: map-get($value, bottom);
+			}
+			@if map-get($value, left){
+				border-left: map-get($value, left);
+			}
+		
+		//border-radius
+		} @else if $propaty == border-radius {
 			@include border-radius($value);
+
+		//opacity
+		} @else if $propaty == opacity{
+			@include opacity($value);
+
+		//box-shadow
+		} @else if $propaty == box-shadow{
+			@include box-shadow{$value);
+
+		//box-shadow
+		} @else if $propaty == text-shadow{
+			@include text-shadow{$value);
 
 		//} @else $propaty == background-gradient {
 		//	@include background-image(linear-gradient(left top, white, #dddddd));

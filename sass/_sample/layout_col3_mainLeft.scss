@@ -81,14 +81,19 @@ $styleSetting: (
 );
 
 
+
 //--------------------------------
-// 2.include files
+// 2.import files
 //--------------------------------
 @import "compass/css3/";
 @import "compass/utilities";
 @import "hisho/setting";
 @import "hisho/helper/mixin";
 @import "hisho/helper/function";
+
+//webfont
+@import url(http://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
 
 //--------------------------------
 // 3.base style setting
@@ -101,16 +106,18 @@ $styleSetting: (
 //common style
 body{
 	font-size: map-get($styleSetting, fontSize);
-	font-family: map-get($styleSetting, fontFamily);
+	font-family: #{map-get($styleSetting, fontFamily)};
 	line-height: map-get($styleSetting, lineHeight);
 	color: map-get($styleSetting, fontColor01);
+	//
+	&.OsWin{
+		font-family: #{map-get($styleSetting, fontFamilyWin)};
+	}
+	&.OsMac{
+		font-family: #{map-get($styleSetting, fontFamilyMac)};
+	}
 }
-.OsWin{
-	font-family: map-get($styleSetting, fontFamilyWin);
-}
-.OsMac{
-	font-family: map-get($styleSetting, fontFamilyMac);
-}
+
 a{
 	@include link-styles($styleSetting);
 }
@@ -144,7 +151,7 @@ a{
 // 8.Module Setting
 // 使用する各種パーツ(module)をimport
 //--------------------------------
-@import "hisho/helper/util";
+@import "hisho/module/utilities";
 
 
 //--------------------------------

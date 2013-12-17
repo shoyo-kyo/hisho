@@ -48,12 +48,12 @@
 		
 		//ptDefList01Dt
 		.pt#{$_name}Dt{
-			@include property-set(margin-bottom, $_marginBDt);
+			margin-bottom: $_marginBDt
 		}
 		//ptDefList01Dd
 		.pt#{$_name}Dd{
-			@include property-set(margin-left, map-get($_options, marginLDd));
-			@include property-set(margin-bottom, map-get($_options, marginBItem));
+			margin-left: map-get($_options, marginLDd)
+			margin-bottom: map-get($_options, marginBItem)
 		}
 	}
 

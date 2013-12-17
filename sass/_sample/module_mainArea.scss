@@ -7,7 +7,7 @@
 // update:2013/12/04
 //
 // 1.page setting
-// 2.include files
+// 2.import files
 // 3.base style setting
 // 4.sprite image setting
 // 5.Select Layout
@@ -32,13 +32,13 @@ $imgPath : "../img";
 $styleSetting: (
 	contentWidth : 1010px,
 	moduleBottomMargin : 20px,
-
+	
 	fontSize         : 12px,
-	lineHeight       : 1.5,
 	fontFamily       : "'Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif",
 	fontFamilyWin    : "'メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif",
 	fontFamilyMac    : "'Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',sans-serif",
-	
+	lineHeight       : 1.5,
+
 	fontColor01        : #333,
 	fontColor01Strong  : #c00,
 	fontColor02        : #333,
@@ -82,7 +82,7 @@ $styleSetting: (
 
 
 //--------------------------------
-// 2.include files
+// 2.import files
 //--------------------------------
 @import "compass/css3/";
 @import "compass/utilities";
@@ -90,7 +90,10 @@ $styleSetting: (
 @import "hisho/helper/mixin";
 @import "hisho/helper/function";
 
+//webfont
 @import url(http://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
+
 //--------------------------------
 // 3.base style setting
 // もろもろstyle設定
@@ -105,13 +108,15 @@ body{
 	font-family: #{map-get($styleSetting, fontFamily)};
 	line-height: map-get($styleSetting, lineHeight);
 	color: map-get($styleSetting, fontColor01);
+	//
+	&.OsWin{
+		font-family: #{map-get($styleSetting, fontFamilyWin)};
+	}
+	&.OsMac{
+		font-family: #{map-get($styleSetting, fontFamilyMac)};
+	}
 }
-.OsWin{
-	font-family: #{map-get($styleSetting, fontFamilyWin)};
-}
-.OsMac{
-	font-family: #{map-get($styleSetting, fontFamilyMac)};
-}
+
 a{
 	@include link-styles($styleSetting);
 }
@@ -149,7 +154,7 @@ $sprite-all: sprite-map("spAll/*.png",$layout: smart);
 // 8.Module Setting
 // 使用する各種パーツ(module)をimport
 //--------------------------------
-@import "hisho/helper/util";
+@import "hisho/module/utilities";
 
 @import "hisho/module/PtTitle01";
 @include PtTitle01();

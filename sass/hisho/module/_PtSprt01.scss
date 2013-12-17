@@ -34,9 +34,9 @@
 		@include sprite-core();
 		margin:0;
 		width:0;
-		@include property-set(height, map-get($_options, height));
-		@include property-set(border-left, map-get($_options, borderL));
-		@include property-set(border-right, map-get($_options, borderR));
+		height: map-get($_options, height)
+		border-left: map-get($_options, borderL)
+		border-right: map-get($_options, borderR)
 		line-height: 1;
 	}
 

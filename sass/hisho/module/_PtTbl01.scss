@@ -49,12 +49,12 @@
 		//
 		th,
 		td{
-			@include property-set(border, map-get($_options, borderTd));
-			@include property-set(background, map-get($_options, bgColorTd));
-			@include property-set(padding, map-get($_options, paddingTd));
+			border: map-get($_options, borderTd)
+			background: map-get($_options, bgColorTd)
+			padding: map-get($_options, paddingTd)
 		}
 		th{
-			@include property-set(background, map-get($_options, bgColorTh));
+			background: map-get($_options, bgColorTh)
 			font-weight: normal;
 		}
 	}

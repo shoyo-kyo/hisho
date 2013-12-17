@@ -46,8 +46,8 @@
 
 		//bxListY01Li
 		.bx#{$_name}Li{
-			@include property-set(border-bottom, map-get($_options, borderBLi));
-			@include property-set(margin-bottom, map-get($_options, marginBLi));
+			border-bottom: map-get($_options, borderBLi)
+			margin-bottom: map-get($_options, marginBLi)
 		}
 	
 	}

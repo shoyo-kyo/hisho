@@ -39,7 +39,7 @@
 			aling   : map-get($_options, align),
 			marginB : map-get($_options, marginB)
 		));
-		@include property-set(font-size, map-get($_options, size));
+		font-size: map-get($_options, size)
 		text-align: right;
 		line-height: 1;
 
@@ -53,8 +53,8 @@
 		.pt#{$_name}Icon{
 			@include sprite-core();
 			position: relative;
-			@include property-set(top, map-get($_options, topIcon));
-			@include property-set(margin, map-get($_options, marginIcon));
+			top: map-get($_options, topIcon)
+			margin: map-get($_options, marginIcon)
 		}
 
 	}

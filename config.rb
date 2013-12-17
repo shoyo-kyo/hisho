@@ -27,6 +27,7 @@ http_images_dir = 'hisho/img/'
 
 # Add custom fantions
 module SassExtention
+
   def str_replace(str, find, rep)
     assert_type str, :String
     assert_type find, :String
@@ -42,6 +43,14 @@ module SassExtention
     datas = str.value.split(find.value)
     Sass::Script::String.new(datas[index.to_i].strip)
   end
+
+  def str_scan(str, find)
+    assert_type str, :String
+    assert_type find, :String
+    result = string.scan(find.value).size
+    Sass::Script::String.new(result)
+  end
+
 end
 
 module Sass::Script::Functions

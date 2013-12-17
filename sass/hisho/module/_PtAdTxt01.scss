@@ -58,26 +58,26 @@
 			//
 			&:hover .pt#{$_name}Ttl{
 				text-decoration: none;
-				@include property-set(background, map-get($_options, bgAHover));
+				background: map-get($_options, bgAHover)
 			}
 		}
 		//ptAdTxt01Ttl
 		.pt#{$_name}Ttl{
-			@include property-set(color, map-get($_options, colorTtl));
-			@include property-set(font-size, map-get($_options, sizeTtl));
+			color: map-get($_options, colorTtl)
+			font-size: map-get($_options, sizeTtl)
 			text-decoration: underline;
 		}
 		//ptAdTxt01Url
 		.pt#{$_name}Url{
-			@include property-set(color, map-get($_options, colorUrl));
-			@include property-set(font-size, map-get($_options, sizeUrl));
+			color: map-get($_options, colorUrl)
+			font-size: map-get($_options, sizeUrl)
 			margin-top: 1px;
 			text-decoration: none;
 		}
 		//ptAdTxt01Txt
 		.pt#{$_name}Txt{
-			@include property-set(color, map-get($_options, colorTxt));
-			@include property-set(font-size, map-get($_options, sizeTxt));
+			color: map-get($_options, colorTxt)
+			font-size: map-get($_options, sizeTxt)
 			margin-top: 5px;
 			text-decoration: none;
 		}

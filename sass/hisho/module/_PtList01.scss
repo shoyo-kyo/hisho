@@ -49,21 +49,21 @@
 			aling   : map-get($_options, align),
 			marginB : map-get($_options, marginB)
 		));
-		@include property-set(color, map-get($_options, color));
+		color: map-get($_options, color)
 
 		
 		//ptList01Li
 		.pt#{$_name}Li{
 			position: relative;
-			@include property-set(margin-bottom, map-get($_options, marginBLi));
-			@include property-set(padding-left, $_paddingLLi);
+			margin-bottom: map-get($_options, marginBLi)
+			padding-left: $_paddingLLi
 		}
 
 		//ptList01Icon
 		.pt#{$_name}Icon{
 			position: absolute;
 			left: 0;
-			@include property-set(top, map-get($_options, topIcon));
+			top: map-get($_options, topIcon)
 			@include sprite-core();
 		}
 	}

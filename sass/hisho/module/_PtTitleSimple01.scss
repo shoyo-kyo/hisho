@@ -51,10 +51,10 @@
 
 		font-size: map-get($_options, medium);
 		
-		@include property-set(line-height, map-get($_options, lineHeight));
-		@include property-set(font-weight, map-get($_options, weight));
-		@include property-set(font-family, map-get($_options, family));
-		@include property-set(color, map-get($_options, color));
+		line-height: map-get($_options, lineHeight)
+		font-weight: map-get($_options, weight)
+		font-family: map-get($_options, family)
+		color: map-get($_options, color)
 
 		//medium
 		$_fontSize: map-get($_options, medium);

@@ -43,15 +43,15 @@
 			marginB : map-get($_options, marginB)
 		));
 		
-		@include property-set(font-size, map-get($_options, size));
-		@include property-set(color, map-get($_options, color));
-		@include property-set(background, map-get($_options, bg));
+		font-size: map-get($_options, size)
+		color: map-get($_options, color)
+		background: map-get($_options, bg)
 
 		//@if map-get($_options, gardient){
 			@include background-image(linear-gradient(white, #fefefe, #eee));
 		//}
 
-		@include property-set(border, map-get($_options, border));
+		border: map-get($_options, border)
 		@if map-get($_options, radiuse){
 			@include border-radius(map-get($_options, radiuse));
 		}

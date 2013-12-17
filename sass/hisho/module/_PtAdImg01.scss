@@ -61,11 +61,11 @@
 			display:block;
 			position: absolute;
 			line-height:1;
-			@include property-set(top, map-get($_options, topPr));
-			@include property-set(right, map-get($_options, rightPr));
-			@include property-set(padding, map-get($_options, paddingPr));
-			@include property-set(color, map-get($_options, colorPr));
-			@include property-set(background, map-get($_options, bgPr));
+			top: map-get($_options, topPr)
+			right: map-get($_options, rightPr)
+			padding: map-get($_options, paddingPr)
+			color: map-get($_options, colorPr)
+			background: map-get($_options, bgPr)
 			@if map-get($_options, radiusePr){
 				@include border-radius(map-get($_options, radiusePr));
 			}

@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+// ------------------------------
+// [name] _hisho-reset-form-font v1.0.0
+// [path] /hisho/reset/_form-font.scss
+// [desc] form parths専用 reset-font
+// ------------------------------
+
+@mixin hisho-reset-form-font(){
+	vertical-align: baseline;
+	font-size:  map-get($styleSetting, fontSize);
+	font-family: map-get($styleSetting, fontSize);
+	body.OsWin & {
+		font-family: #{map-get($styleSetting, fontFamilyWin)};
+	}
+	body.OsMac & {
+		font-family:#{map-get($styleSetting, fontFamilyMac)};
+	}
+}

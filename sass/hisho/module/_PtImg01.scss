@@ -48,8 +48,8 @@
 
 		position:relative;
 		@include inline-block;
-		@include property-set(border, map-get($_options, border));
-		@include property-set(text-aling, map-get($_options, align));
+		border: map-get($_options, border)
+		text-aling: map-get($_options, align)
 		
 
 		//
@@ -61,7 +61,7 @@
 		//ptImage01Img
 		.pt#{$_name}Img{
 			max-width: map-get($_options, maxWidth);
-			@include property-set(border, map-get($_options, borderImg));
+			border: map-get($_options, borderImg)
 		}
 		//ptImage01Cnt
 		.pt#{$_name}Cnt{
@@ -76,7 +76,7 @@
 					bottom:0;
 				}
 			}
-			@include property-set(background, map-get($_options, bgCnt));
+			background: map-get($_options, bgCnt)
 		}
 		//ptImage01Cap
 		.pt#{$_name}Cap{

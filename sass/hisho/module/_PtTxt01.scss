@@ -51,10 +51,10 @@
 			aling   : map-get($_options, align),
 			marginB : map-get($_options, marginB)
 		));
-		@include property-set(font-size, map-get($_options, medium));
-		@include property-set(line-height, map-get($styleSetting, lineHeight));
-		@include property-set(font-family, map-get($styleSetting, fontFamily));
-		@include property-set(color, map-get($styleSetting, fontColor01));
+		font-size: map-get($_options, medium)
+		line-height: map-get($styleSetting, lineHeight)
+		font-family: map-get($styleSetting, fontFamily)
+		color: map-get($styleSetting, fontColor01)
 
 		//medium
 		$_fontSize: map-get($_options, medium);

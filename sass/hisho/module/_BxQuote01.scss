@@ -46,18 +46,18 @@
 		));
 
 		position: relative;
-		@include property-set(background, map-get($_options, bg));
-		@include property-set(border, map-get($_options, border));
-		@include property-set(padding, map-get($_options, padding));
+		background: map-get($_options, bg)
+		border: map-get($_options, border)
+		padding: map-get($_options, padding)
 
 		&:before{
 			content: '“';
 			position: absolute;
-			@include property-set(top, map-get($_options, topIcon));
-			@include property-set(left, map-get($_options, leftIcon));
-			@include property-set(color, map-get($_options, colorIcon));
-			@include property-set(font-family, map-get($_options, familyIcon));
-			@include property-set(font-size, map-get($_options, sizeIcon));
+			top: map-get($_options, topIcon)
+			left: map-get($_options, leftIcon)
+			color: map-get($_options, colorIcon)
+			font-family: map-get($_options, familyIcon)
+			font-size: map-get($_options, sizeIcon)
 			line-height: 1;
 		}
 	

@@ -45,11 +45,11 @@
 			aling   : map-get($_options, align),
 			marginB : map-get($_options, marginB)
 		));
-		@include property-set(color, map-get($_options, color));
+		color: map-get($_options, color)
 
 		//ptNumList01Li
 		.pt#{$_name}Li{
-			@include property-set(margin, map-get($_options, marginLi));
+			margin: map-get($_options, marginLi)
 			list-style: decimal;
 		}
 	}

@@ -1,334 +1,78 @@
-@charset "UTF-8";
-/* line 9, ../../sass/hisho/helper/_reset.scss */
-body, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ul, ol, li, th, td, div, blockquote, pre, form, fieldset, input, textarea {
-  margin: 0;
-  padding: 0;
-}
+/*
+Syntax error: File to import not found or unreadable: hisho/helper/mixin/property-set.
+              Load paths:
+                C:/xampp/htdocs/_tasc/99_atest_dev/hisho/sass
+                C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets
+                Compass::SpriteImporter
+        on line 8 of C:/xampp/htdocs/_tasc/99_atest_dev/hisho/sass/hisho/helper/_mixin.scss
+        from line 90 of C:/xampp/htdocs/_tasc/99_atest_dev/hisho/sass/_sample/layout_col2_mainRight.scss
 
-/* line 13, ../../sass/hisho/helper/_reset.scss */
-html {
-  overflow-y: scroll;
-}
-
-/* line 16, ../../sass/hisho/helper/_reset.scss */
-body {
-  *position: relative;
-  font-size: 62.5%;
-}
-
-/* line 20, ../../sass/hisho/helper/_reset.scss */
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
-  font-weight: normal;
-}
-
-/* line 24, ../../sass/hisho/helper/_reset.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 27, ../../sass/hisho/helper/_reset.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 31, ../../sass/hisho/helper/_reset.scss */
-img, fieldset, table, th, td {
-  border: none;
-}
-
-/* line 34, ../../sass/hisho/helper/_reset.scss */
-input {
-  *margin: -1px 0;
-}
-
-/* line 37, ../../sass/hisho/helper/_reset.scss */
-input, textarea {
-  font-size: 1.0em;
-}
-
-/* line 40, ../../sass/hisho/helper/_reset.scss */
-em, cite {
-  font-style: normal;
-}
-
-/* line 43, ../../sass/hisho/helper/_reset.scss */
-small {
-  font-size: 100%;
-}
-
-/* line 46, ../../sass/hisho/helper/_reset.scss */
-img {
-  vertical-align: text-bottom;
-}
-
-/* line 49, ../../sass/hisho/helper/_reset.scss */
-a img {
-  vertical-align: top;
-}
-
-/* line 52, ../../sass/hisho/helper/_reset.scss */
-:focus {
-  outline: none;
-}
-
-/* line 55, ../../sass/hisho/helper/_reset.scss */
-input, button, textarea {
-  border: 0;
-}
-
-/* line 58, ../../sass/hisho/helper/_reset.scss */
-input[type="text"], textarea {
-  -webkit-appearance: none;
-}
-
-/* line 61, ../../sass/hisho/helper/_reset.scss */
-textarea {
-  overflow-x: hidden;
-  overflow-y: auto;
-  font-family: arial,sans-serif;
-}
-
-/* line 66, ../../sass/hisho/helper/_reset.scss */
-img {
-  -ms-interpolation-mode: bicubic;
-}
-
-/* line 69, ../../sass/hisho/helper/_reset.scss */
-hr {
-  display: none;
-}
-
-/* line 74, ../../sass/hisho/helper/_reset.scss */
-body.OsWin textarea {
-  font-family: "'メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif";
-}
-
-/* line 79, ../../sass/hisho/helper/_reset.scss */
-h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ul, ol, li, table, th, td, div, blockquote, pre, form, fieldset, legend {
-  *zoom: 1;
-}
-
-/* line 84, ../../sass/hisho/helper/_reset.scss */
-article, aside, canvas, details, figcaption, figure, header, footer, hgroup, menu, nav, section, summary {
-  display: block;
-}
-
-/* line 102, ../../sass/_sample/layout_col2_mainRight.scss */
-body {
-  font-size: 12px;
-  font-family: "Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif";
-  line-height: 1.5;
-  color: #333333;
-}
-
-/* line 108, ../../sass/_sample/layout_col2_mainRight.scss */
-.OsWin {
-  font-family: "'メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif";
-}
-
-/* line 111, ../../sass/_sample/layout_col2_mainRight.scss */
-.OsMac {
-  font-family: "'Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',sans-serif";
-}
-
-/* line 114, ../../sass/_sample/layout_col2_mainRight.scss */
-a {
-  color: #333333;
-  text-decoration: none;
-}
-/* line 57, ../../sass/hisho/helper/mixin/_link-styles.scss */
-a:link {
-  color: #333333;
-  text-decoration: none;
-}
-/* line 64, ../../sass/hisho/helper/mixin/_link-styles.scss */
-a:visited {
-  color: #333333;
-  text-decoration: none;
-}
-/* line 71, ../../sass/hisho/helper/mixin/_link-styles.scss */
-a:hover {
-  color: #333333;
-  text-decoration: underline;
-}
-/* line 78, ../../sass/hisho/helper/mixin/_link-styles.scss */
-a:active {
-  color: #333333;
-  text-decoration: underline;
-}
-/* line 85, ../../sass/hisho/helper/mixin/_link-styles.scss */
-a:focus {
-  color: #333333;
-  text-decoration: underline;
-}
-
-/* line 64, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LyBody01 {
-  position: relative;
-}
-
-/* line 78, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LyCnt01 {
-  position: relative;
-  overflow: hidden;
-  *zoom: 1;
-  width: 1010px;
-  margin: 0 auto;
-}
-
-/* line 84, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LySubT01 {
-  clear: both;
-}
-
-/* line 87, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LyMain01 {
-  float: right;
-  width: 695px;
-}
-
-/* line 91, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LySub01 {
-  float: left;
-  width: 300px;
-}
-
-/* line 95, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LySubB01 {
-  clear: both;
-}
-
-/* line 119, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LyHead01 {
-  background: #7f7fff;
-}
-
-/* line 120, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LyTop01 {
-  background: #7fffbf;
-}
-
-/* line 121, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LyCnt01 {
-  background: #ffff9e;
-}
-
-/* line 122, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LyMain01 {
-  background: #ff8484;
-}
-
-/* line 123, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LySub01 {
-  background: #ff84ff;
-}
-
-/* line 124, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LySubT01 {
-  background: #c184ff;
-}
-
-/* line 125, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LySubB01 {
-  background: #c184ff;
-}
-
-/* line 126, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LyBottom01 {
-  background: #7fffbf;
-}
-
-/* line 127, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LyFoot01 {
-  background: #7f7fff;
-}
-
-/* line 129, ../../sass/hisho/layout/col2/_mainRight.scss */
-.LyHead01,
-.LyTop01,
-.LyMain01,
-.LySub01,
-.LySubT01,
-.LySubB01,
-.LyBottom01,
-.LyFoot01 {
-  height: 100px;
-}
-
-/* line 10, ../../sass/hisho/helper/_util.scss */
-.UtHide {
-  display: none;
-}
-
-/* line 13, ../../sass/hisho/helper/_util.scss */
-.UtAlignCenter {
-  text-align: center !important;
-}
-
-/* line 14, ../../sass/hisho/helper/_util.scss */
-.UtAlignRight {
-  text-align: right !important;
-}
-
-/* line 15, ../../sass/hisho/helper/_util.scss */
-.UtAlignLeft {
-  text-align: left !important;
-}
-
-/* line 16, ../../sass/hisho/helper/_util.scss */
-.UtAlignMiddle {
-  vertical-align: middle !important;
-}
-
-/* line 17, ../../sass/hisho/helper/_util.scss */
-.UtAlignTop {
-  vertical-align: top !important;
-}
-
-/* line 18, ../../sass/hisho/helper/_util.scss */
-.UtAlignBottom {
-  vertical-align: bottom !important;
-}
-
-/* line 21, ../../sass/hisho/helper/_util.scss */
-.UtElement {
-  margin-bottom: 20px;
-}
-
-/* line 26, ../../sass/hisho/helper/_util.scss */
-.UtSpriteImg {
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  *zoom: 1;
-  *display: inline;
-  overflow: hidden;
-  border: none;
-  vertical-align: top;
-  white-space: nowrap;
-  text-indent: 100%;
-}
-
-/* line 31, ../../sass/hisho/helper/_util.scss */
-.UtSpriteBnt {
-  display: inline-block;
-  vertical-align: middle;
-  *vertical-align: auto;
-  *zoom: 1;
-  *display: inline;
-  overflow: hidden;
-  border: none;
-  vertical-align: top;
-  white-space: nowrap;
-  text-indent: 100%;
-  cursor: "pointer";
-  opacity: 0.8;
-}
-
-/* line 37, ../../sass/hisho/helper/_util.scss */
-.UtNowrap {
-  width: 1px;
-  white-space: nowrap;
-}
+Backtrace:
+C:/xampp/htdocs/_tasc/99_atest_dev/hisho/sass/hisho/helper/_mixin.scss:8
+C:/xampp/htdocs/_tasc/99_atest_dev/hisho/sass/_sample/layout_col2_mainRight.scss:90
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/import_node.rb:66:in `rescue in import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/import_node.rb:45:in `import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/import_node.rb:28:in `imported_file'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/import_node.rb:37:in `css_import?'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:282:in `visit_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:153:in `block in visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:153:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:296:in `block (2 levels) in visit_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:296:in `map'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:296:in `block in visit_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:88:in `block in with_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:88:in `with_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:293:in `visit_import'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:153:in `block in visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:153:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:174:in `with_environment'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:161:in `visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:181:in `visit_root'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:152:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/root_node.rb:20:in `render'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/engine.rb:275:in `render'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:171:in `block (2 levels) in compile'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:153:in `timed'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:166:in `block in compile'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/logger.rb:46:in `red'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:165:in `compile'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:144:in `compile_if_required'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:129:in `block (2 levels) in run'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:127:in `each'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:127:in `block in run'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:153:in `timed'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:126:in `run'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/watcher/compiler.rb:24:in `compile'
+C:/Ruby200-x64/lib/ruby/2.0.0/forwardable.rb:171:in `compile'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/commands/watch_project.rb:47:in `perform'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/commands/base.rb:18:in `execute'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/commands/project_base.rb:19:in `execute'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/bin/compass:30:in `block in <top (required)>'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/bin/compass:44:in `call'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/bin/compass:44:in `<top (required)>'
+C:/Ruby200-x64/bin/compass:23:in `load'
+C:/Ruby200-x64/bin/compass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: hisho/helper/mixin/property-set.\A               Load paths:\A                 C:/xampp/htdocs/_tasc/99_atest_dev/hisho/sass\A                 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets\A                 Compass::SpriteImporter\A         on line 8 of C:/xampp/htdocs/_tasc/99_atest_dev/hisho/sass/hisho/helper/_mixin.scss\A         from line 90 of C:/xampp/htdocs/_tasc/99_atest_dev/hisho/sass/_sample/layout_col2_mainRight.scss"; }

@@ -17,8 +17,6 @@
 
 //publick mixin
 @mixin PtList01($options:null){
-	$_options : null;
-	$_marginBottom: null;
 
 	//-----------------
 	// options
@@ -27,7 +25,7 @@
 		name       : "PtList01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
 		width      : auto,        //moduleのwidth指定
 		aling      : center,      //moduleのセンタリング位置を指定
-		marginB    : null,        //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
+		margin  　  : null,        //moduleのmargin指定(nullの場合default設定が適応される)
 		color      : null,
 		widthIcon  : map-get($styleSetting, fontSize),
 		marginRIcon : 5px,
@@ -44,26 +42,24 @@
 
 	//PtList01
 	.Pt#{$_name}{
-		@include module-core((
-			width   : map-get($_options, width),
-			aling   : map-get($_options, align),
-			marginB : map-get($_options, marginB)
-		));
-		color: map-get($_options, color)
+		//moduleのwidth&margin設定
+		@include module-core($_options);
+
+		color: map-get($_options, color);
 
 		
 		//ptList01Li
 		.pt#{$_name}Li{
 			position: relative;
-			margin-bottom: map-get($_options, marginBLi)
-			padding-left: $_paddingLLi
+			margin-bottom: map-get($_options, marginBLi);
+			padding-left: $_paddingLLi;
 		}
 
 		//ptList01Icon
 		.pt#{$_name}Icon{
 			position: absolute;
 			left: 0;
-			top: map-get($_options, topIcon)
+			top: map-get($_options, topIcon);
 			@include sprite-core();
 		}
 	}

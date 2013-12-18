@@ -1,9 +1,9 @@
 @charset "utf-8";
 
 //import
-@import "compass/reset/utilities"
-@import "hisho/helper/reset/global";
-@import "hisho/helper/reset/form-font";
+@import "compass/reset/utilities";
+@import "hisho/reset/global";
+@import "hisho/reset/form-font";
 
 //global reset
 @include hisho-reset-global;

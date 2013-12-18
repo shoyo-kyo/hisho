@@ -22,28 +22,34 @@
 	$_options: map-extend((
 		width   : null,
 		align   : null,
-		marginB : null,
+		margin  : 0 0 map-get($styleSetting, moduleBottomMargin) 0
 	), $options);
+	
+	//marginがlist形式の場合,mapに変換
+	$_margin: map-get($_options, margin);
+	$_margin: short-to-map($_margin);
+	
+	//width
+	$_width: if(map-get($_options, width) == auto, null, map-get($_options, width));
+	
+	@if $_width and map-get($_options, align) == center{
+		$_margin: map-extend($_margin, (
+			right:  auto,
+			left:   auto
+		));
+
+	}@else if $_width and map-get($_options, align) == right{
+		$_margin: map-extend($_margin, (
+			right:  0,
+			left:   auto
+		));
+	}
+
 
 	//-----------------
 	// view
 	//-----------------
-	@if map-get($_options, width) != auto{
-		width: map-get($_options, width);
+	width: $_width;
+	@include propaty-set("margin", $_margin);
 
-		@if map-get($_options, align) == center{
-			margin-left: auto;
-			margin-right: auto;
-
-		}@else if map-get($_options, align) == right{
-			margin-left: auto;
-			margin-right: 0;
-		}
-	}
-	
-	@if map-get($_options, marginB) {
-		margin-bottom: map-get($_options, marginB);
-	} @else {
-		margin-bottom: map-get($styleSetting, moduleBottomMargin);
-	}
 }

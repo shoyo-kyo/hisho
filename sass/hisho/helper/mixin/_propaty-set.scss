@@ -1,0 +1,50 @@
+@charset "utf-8";
+// ------------------------------
+// [name] propaty-set v1.0.0
+// [path] /hisho/helper/mixin/_propaty-set.scss
+// [desc] map形式のデータをpropatyに変換し表示
+// [exsample]
+//
+//   @include propaty-set();
+//
+//   @include propaty-set(
+//     width : 500px,
+//     align : center
+//   );
+// ------------------------------
+
+//publick mixin
+@mixin propaty-set($propaty, $data){
+
+	//-----------------
+	// view
+	//-----------------
+
+	//mapの場合
+	@if type-of($data) == map {
+		$_isNull: false;
+
+		//nullチェック
+		@each $key, $value in $data {
+			@if $value == null{
+				$_isNull: true;
+			}
+		}
+		
+		//個別生成
+		@if $_isNull {
+			@each $key, $value in $data {
+				#{$propaty}-#{$key}: $value;
+			}
+
+		//shortHand生成(margin border padding)
+		}@else if $propaty == margin or $propaty == padding or $propaty == border{
+			#{$propaty} : map-get($data,"top") map-get($data,"right") map-get($data,"bottom") map-get($data,"left");
+		}
+
+	//その他
+	} @else {
+		#{$propaty} : $data;
+	}
+
+}

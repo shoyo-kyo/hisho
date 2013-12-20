@@ -32,6 +32,7 @@
 	//width
 	$_width: if(map-get($_options, width) == auto, null, map-get($_options, width));
 	
+	//align
 	@if $_width and map-get($_options, align) == center{
 		$_margin: map-extend($_margin, (
 			right:  auto,

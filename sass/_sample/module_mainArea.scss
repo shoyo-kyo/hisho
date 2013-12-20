@@ -156,10 +156,7 @@ $sprite-all: sprite-map("spAll/*.png",$layout: smart);
 //--------------------------------
 @import "hisho/module/utilities";
 
-@import "hisho/module/PtList01";
-@include PtList01();
 
-/*
 @import "hisho/module/PtTitle01";
 @include PtTitle01();
 
@@ -171,7 +168,8 @@ $sprite-all: sprite-map("spAll/*.png",$layout: smart);
 @import "hisho/module/PtTxt01";
 @include PtTxt01();
 
-
+@import "hisho/module/PtList01";
+@include PtList01();
 
 @import "hisho/module/PtNumList01";
 @include PtNumList01();
@@ -224,7 +222,6 @@ $sprite-all: sprite-map("spAll/*.png",$layout: smart);
 
 @import "hisho/module/BxCntent01";
 @include BxCntent01();
-*/
 
 //--------------------------------
 // 9.overlide

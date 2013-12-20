@@ -2,7 +2,7 @@
 // ------------------------------
 // [name] propaty-set v1.0.0
 // [path] /hisho/helper/mixin/_propaty-set.scss
-// [desc] map形式のデータをpropatyに変換し表示
+// [desc] 通常指定の場合はショートハンド、map指定の場合は複数プロパティで返す
 // [exsample]
 //
 //   @include propaty-set();
@@ -13,38 +13,82 @@
 //   );
 // ------------------------------
 
-//publick mixin
-@mixin propaty-set($propaty, $data){
+//
+// private mixin
+// @ propaty-set-view-margin
+// - margin,padding時、map指定で値が全て指定されている場合、ショートハンドで返す。
+//
+@mixin propaty-set-view-margin($propaty, $data){
+	$_isNull: false;
+	$data: map-extend((
+		top: null,
+		right: null,
+		bottom: null,
+		left: null
+	) ,$data);
 
-	//-----------------
-	// view
-	//-----------------
-
-	//mapの場合
-	@if type-of($data) == map {
-		$_isNull: false;
-
-		//nullチェック
+	//nullチェック
+	@each $key, $value in $data {
+		@if $value == null{
+			$_isNull: true;
+		}
+	}
+	//個別に生成
+	@if $_isNull {
 		@each $key, $value in $data {
-			@if $value == null{
-				$_isNull: true;
+			#{$propaty}-#{$key}: $value;
+		}
+	//shortHand生成(margin padding)
+	}@else{
+		#{$propaty} : map-get($data,"top") map-get($data,"right") map-get($data,"bottom") map-get($data,"left");
+	}
+}
+
+//
+// private mixin
+// @ propaty-set-view-margin
+// - border時mapが複数構造ある場合対応
+//
+@mixin propaty-set-view-border($propaty, $data){
+	@each $_k, $_v in $data {
+		//border-radius compass mixin
+		@if $_k == radius{
+			@include border-radius($_v);
+		}@else{
+			@if type-of($_v) == map{
+				@each $_k2, $_v2 in $_v {
+					#{$propaty}-#{$_k}-#{$_k2}: $_v2;
+				}
+			}@else{
+				#{$propaty}-#{$_k}: $_v;
 			}
 		}
-		
-		//個別生成
-		@if $_isNull {
+	}
+}
+
+//
+// publick mixin
+// @ propaty-set
+//
+@mixin propaty-set($propaty, $data){
+	//mapの場合
+	@if type-of($data) == map {
+
+		//margin padding
+		@if $propaty == margin or $propaty == padding {
+			@include propaty-set-view-margin($propaty, $data);
+		//border
+		}@else if $propaty == border {
+			@include propaty-set-view-border($propaty, $data);
+		//default
+		}@else{
 			@each $key, $value in $data {
 				#{$propaty}-#{$key}: $value;
 			}
-
-		//shortHand生成(margin border padding)
-		}@else if $propaty == margin or $propaty == padding or $propaty == border{
-			#{$propaty} : map-get($data,"top") map-get($data,"right") map-get($data,"bottom") map-get($data,"left");
 		}
 
 	//その他
 	} @else {
 		#{$propaty} : $data;
 	}
-
 }

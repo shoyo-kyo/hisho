@@ -22,18 +22,16 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		name     : "PtTxt01",
-		width    : auto,
-		aling    : center,
-		marginB  : null,
-		medium   : map-get($styleSetting, fontSize),
-		large    : null,
-		x-large  : null,
-		xx-large : null,
-		small    : null,
-		x-small  : null,
-		xx-small : null,
-		style    : $styleSetting
+		name   : "PtTxt01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width  : auto,        //moduleのwidth指定
+		aling  : center,      //moduleのセンタリング位置を指定
+		margin : null,        //moduleのmargin指定(nullの場合default設定が適応される)
+		font   : (size: map-get($styleSetting, fontSize)),
+		color  : null,
+		lineHeight : null,
+		//[map,num] foncCloud
+		//fontsize用class s,l,xl,xxl等を生成。map指定する事で任意の値を設定可能
+		fontCloud  : map-get($styleSetting, fontSize)
 	), $options);
 
 	$_fontSize: null;
@@ -46,60 +44,14 @@
 
 	//PtTxt01
 	.Pt#{$_name}{
-		@include module-core((
-			width   : map-get($_options, width),
-			aling   : map-get($_options, align),
-			marginB : map-get($_options, marginB)
-		));
-		font-size: map-get($_options, medium)
+		//moduleのwidth&margin設定
+		@include module-core($_options);
+		@include propaty-set("font", map-get($_options, font));
+		color: map-get($_options, color);
 		line-height: map-get($styleSetting, lineHeight)
-		font-family: map-get($styleSetting, fontFamily)
-		color: map-get($styleSetting, fontColor01)
-
-		//medium
-		$_fontSize: map-get($_options, medium);
-		&.medium{
-			font-size: $_fontSize;
-		}
-
-		//small
-		$_fontSize: map-get($_style, fontSize);
-		$_fontSize: floor($_fontSize / 1.2);
-		&.small{
-			font-size: if(map-get($_options, small), map-get($_options, small), $_fontSize);
-		}
-
-		//x-small
-		$_fontSize: floor($_fontSize / 1.2);
-		&.x-small{
-			font-size: if(map-get($_options, x-small), map-get($_options, x-small), $_fontSize);
-		}
-
-		//xx-small
-		$_fontSize: floor($_fontSize / 1.2);
-		&.xx-small{
-			font-size: if(map-get($_options, xx-small), map-get($_options, xx-small), $_fontSize);
-		}
-
-		//large
-		$_fontSize: map-get($_style, fontSize);
-		$_fontSize: round($_fontSize * 1.2);
-		&.large{
-			font-size: if(map-get($_options, large), map-get($_options, large), $_fontSize);
-		}
-
-		//x-large
-		$_fontSize: round($_fontSize * 1.2);
-		&.x-large{
-			font-size: if(map-get($_options, x-large), map-get($_options, x-large), $_fontSize);
-		}
-
-		//xx-large
-		$_fontSize: round($_fontSize * 1.2);
-		&.xx-large{
-			font-size: if(map-get($_options, xx-large), map-get($_options, xx-large), $_fontSize);
-		}
-
+		
+		//各種size生成
+		@include font-cloud(map-get($_options, fontCloud));
 	}
 
 }

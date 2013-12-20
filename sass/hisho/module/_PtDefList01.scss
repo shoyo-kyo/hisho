@@ -22,17 +22,23 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		name      : "PtDefList01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
-		width      : auto,         //moduleのwidth指定
-		aling      : center,       //moduleのセンタリング位置を指定
-		marginB    : null,         //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
-		colorDt: null,
-		marginBItem: 8px,
-		marginLDd: 1em
+		name   : "PtDefList01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width  : auto,        //moduleのwidth指定
+		aling  : center,      //moduleのセンタリング位置を指定
+		margin : null,        //moduleのmargin指定(nullの場合default設定が適応される)
+		//dt
+		dtColor: null,
+		dtFont : null,
+		dtMargin : null,
+		//dd
+		ddMargin: (
+			bottom: 8px,
+			left: 1em
+		)
 	), $options);
 
 	$_name : str_replace(map-get($_options, name), "Pt", "");
-	$_marginBDt : if(map-get($_options, marginBItem), ciel(map-get($_options, marginBItem) / 2) ,null);
+	$_dtMarginB : if(map-get(map-get($_options, ddMargin), bottom), ciel(map-get(map-get($_options, ddMargin), bottom) / 2) ,null);
 
 	//-----------------
 	// view
@@ -40,20 +46,19 @@
 
 	//PtDefList01
 	.Pt#{$_name}{
-		@include module-core((
-			width   : map-get($_options, width),
-			aling   : map-get($_options, align),
-			marginB : map-get($_options, marginB)
-		));
+		//moduleのwidth&margin設定
+		@include module-core($_options);
 		
 		//ptDefList01Dt
 		.pt#{$_name}Dt{
-			margin-bottom: $_marginBDt
+			color: map-get($_options, dtColor);
+			@include propaty-set("font", map-get($_options, dtFont));
+			margin-bottom: $_dtMarginB;
+			@include propaty-set("margin", map-get($_options, dtMargin));
 		}
 		//ptDefList01Dd
 		.pt#{$_name}Dd{
-			margin-left: map-get($_options, marginLDd)
-			margin-bottom: map-get($_options, marginBItem)
+			@include propaty-set("margin", map-get($_options, ddMargin));
 		}
 	}
 

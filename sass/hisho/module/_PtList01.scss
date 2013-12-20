@@ -22,19 +22,21 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		name       : "PtList01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
-		width      : auto,        //moduleのwidth指定
-		aling      : center,      //moduleのセンタリング位置を指定
-		margin  　  : null,        //moduleのmargin指定(nullの場合default設定が適応される)
-		color      : null,
-		widthIcon  : map-get($styleSetting, fontSize),
-		marginRIcon : 5px,
-		topIcon     : 0,
-		marginBLi   : 8px
+		name   : "PtList01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width  : auto,        //moduleのwidth指定
+		aling  : center,      //moduleのセンタリング位置を指定
+		margin : null,        //moduleのmargin指定(nullの場合default設定が適応される)
+		color  : null,
+		//icon
+		iconWidth  : map-get($styleSetting, fontSize),
+		iconMargin : (right: 5px),
+		iconTop    : 0,
+		//li
+		liMargin   : (bottom: 8px)
 	), $options);
 
 	$_name : str_replace(map-get($_options, name), "Pt", "");
-	$_paddingLLi: map-get($_options, widthIcon) + map-get($_options, marginRIcon);
+	$_liPaddingL: map-get($_options, iconWidth) + map-get(map-get($_options, iconMargin), right);
 
 	//-----------------
 	// view
@@ -44,22 +46,20 @@
 	.Pt#{$_name}{
 		//moduleのwidth&margin設定
 		@include module-core($_options);
-
 		color: map-get($_options, color);
 
-		
 		//ptList01Li
 		.pt#{$_name}Li{
 			position: relative;
-			margin-bottom: map-get($_options, marginBLi);
-			padding-left: $_paddingLLi;
+			padding-left: $_liPaddingL;
+			@include propaty-set("margin", map-get($_options, liMargin));
 		}
 
 		//ptList01Icon
 		.pt#{$_name}Icon{
 			position: absolute;
 			left: 0;
-			top: map-get($_options, topIcon);
+			top: map-get($_options, iconTop);
 			@include sprite-core();
 		}
 	}

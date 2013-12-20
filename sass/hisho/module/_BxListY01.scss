@@ -17,13 +17,16 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		name     : "BxListY01",
-		width    : auto,
-		aling    : center,
-		marginB  : null,
-		bg       : #f7f3ea,
-		marginBLi: 10px,
-		borderBLi: null
+		name   : "BxListY01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width  : auto,        //moduleのwidth指定
+		aling  : center,      //moduleのセンタリング位置を指定
+		margin : null,        //moduleのmargin指定(nullの場合default設定が適応される)
+		//ul
+		ulBorder  : null,
+		//li
+		liMargin  : (bottom: 10px),
+		liBorder  : null,
+		liBackground: null
 	), $options);
 
 	$_name : str_replace(map-get($_options, name), "Bx", "");
@@ -34,20 +37,19 @@
 
 	//BxListY01
 	.Bx#{$_name}{
-		@include module-core((
-			width   : map-get($_options, width),
-			aling   : map-get($_options, align),
-			marginB : map-get($_options, marginB)
-		));
-		
+		//moduleのwidth&margin設定
+		@include module-core($_options);
+
 		//bxListY01Ul
 		.bx#{$_name}Ul{
+			@include propaty-set("border", map-get($_options, ulBorder));
 		}
 
 		//bxListY01Li
 		.bx#{$_name}Li{
-			border-bottom: map-get($_options, borderBLi)
-			margin-bottom: map-get($_options, marginBLi)
+			@include propaty-set("background", map-get($_options, liBackground));
+			@include propaty-set("border", map-get($_options, liBorder));
+			@include propaty-set("margin", map-get($_options, liMargin));
 		}
 	
 	}

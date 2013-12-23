@@ -22,11 +22,11 @@
 	$_options: map-extend((
 		width   : null,
 		align   : null,
-		margin  : 0 0 map-get($styleSetting, moduleBottomMargin) 0
+		margin  : null
 	), $options);
 	
 	//marginがlist形式の場合,mapに変換
-	$_margin: map-get($_options, margin);
+	$_margin: if(map-get($_options, margin), map-get($_options, margin), (bottom: map-get($styleSetting, moduleBottomMargin)) );
 	$_margin: short-to-map($_margin);
 	
 	//width
@@ -45,7 +45,6 @@
 			left:   auto
 		));
 	}
-
 
 	//-----------------
 	// view

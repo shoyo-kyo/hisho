@@ -54,6 +54,8 @@
 		//border-radius compass mixin
 		@if $_k == radius{
 			@include border-radius($_v);
+		}@else if $_k == all{
+			#{$propaty}: $_v;
 		}@else{
 			@if type-of($_v) == map{
 				@each $_k2, $_v2 in $_v {

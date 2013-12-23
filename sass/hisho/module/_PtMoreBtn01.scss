@@ -16,77 +16,72 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		name      : "PtMoreBtn01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
-		width     : auto,         //moduleのwidth指定
-		aling     : center,       //moduleのセンタリング位置を指定
-		marginB   : null,         //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
-		size      : 14px,
-		color     : #666,
-		bg        : null,
-		//gardient  : white, #cccccc, #aaaaaa,
-		border    : 1px solid #ccc,
-		radiuse   : 3px,
-		padding   : 15px
+		name   : "PtMoreBtn01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width  : auto,        //moduleのwidth指定
+		aling  : center,      //moduleのセンタリング位置を指定
+		margin : null,        //moduleのmargin指定(nullの場合default設定が適応される)
+		font   : (size: 14px),
+		background : null,
+		border : (
+			all: 1px solid #ccc,
+			radiuse: 3px
+		),
+		padding : 15px,
+		linkStyle : (
+			linkColor        : #333,
+			linkColorVisited : #333,
+			linkColorHover   : #666,
+			linkColorActive  : #666,
+			linkColorFocus   : #666,
+			linkUnderline    : false,
+			linkUnderlineVisited : false,
+			linkUnderlineHover   : false,
+			linkUnderActive      : false,
+			linkUnderFocus       : false
+		),
+		//hover
+		hoverBackground: null,
+		hoverBorder: null
 	), $options);
 
 	$_name : str_replace(map-get($_options, name), "Pt", "");
-
 	//-----------------
 	// view
 	//-----------------
 
 	//PtMore01
 	.Pt#{$_name}{
-		@include module-core((
-			width   : map-get($_options, width),
-			aling   : map-get($_options, align),
-			marginB : map-get($_options, marginB)
-		));
-		
-		font-size: map-get($_options, size)
-		color: map-get($_options, color)
-		background: map-get($_options, bg)
+		//moduleのwidth&margin設定
+		@include module-core($_options);
+
+		background: map-get($_options, background);
+		@include propaty-set("border", map-get($_options, border));
+		@include propaty-set("font", map-get($_options, font));
+		text-align: center;
+		line-height: 1;
 
 		//@if map-get($_options, gardient){
 			@include background-image(linear-gradient(white, #fefefe, #eee));
 		//}
 
-		border: map-get($_options, border)
-		@if map-get($_options, radiuse){
-			@include border-radius(map-get($_options, radiuse));
-		}
-		text-align: center;
-		line-height: 1;
-
+		//hover
 		&:hover,
 		&:active{
-			
+			background: map-get($_options, background);
+			@include propaty-set("border", map-get($_options, border));
 		}
 
 		//ptMore01A
 		.pt#{$_name}A{
 			display:block;
-			@if map-get($_options, padding){
-				padding: map-get($_options, padding);
-			}
-			
-			@if map-get($_options, color){
-				$_color: map-get($_options, color);
-				@include link-styles((
-					linkColor        : $_color,
-					linkColorVisited : $_color,
-					linkColorHover   : $_color,
-					linkColorActive  : $_color,
-					linkColorFocus   : $_color,
-					linkUnderline    : false,
-					linkUnderlineVisited : false,
-					linkUnderlineHover   : false,
-					linkUnderActive      : false,
-					linkUnderFocus       : false
-				));
+			@include propaty-set("padding", map-get($_options, padding));
+			//linkStyle
+			@if map-get($_options, linkStyle){
+				@include link-styles(map-get($_options, linkStyle));
 			}
 		}
 
 	}
+
 
 }

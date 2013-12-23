@@ -57,11 +57,11 @@
 			display: block;
 			text-decoration: none;
 			//
-			&:hover
+			&:hover{
+				@include propaty-set("background", map-get($_options, hoverBackground));
 				.pt#{$_name}Ttl{
 					text-decoration: none;
 				}
-				@include propaty-set("background", map-get($_options, hoverBackground));
 			}
 		}
 		//ptAdTxt01Ttl

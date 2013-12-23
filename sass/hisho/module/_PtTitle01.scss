@@ -17,24 +17,43 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		name     : "PtTitle01",
-		width    : auto,
-		aling    : center,
-		marginB  : null,
-		color    : #CEBB6E,
-		family   : null,
-		weight   : bold,
-		lineHeight : null,
-		medium   : 18px,
-		large    : null,
-		x-large  : null,
-		xx-large : null,
-		small    : null,
-		x-small  : null,
-		xx-small : null
+		name   : "PtTitle01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width  : auto,        //moduleのwidth指定
+		aling  : center,      //moduleのセンタリング位置を指定
+		margin : null,        //moduleのmargin指定(nullの場合default設定が適応される)
+		padding : 10px,
+		background : #fefefe,
+		border : (
+			all: solid 1px #ccc,
+			radius: 2px
+		),
+		//ttl
+		ttlFont: (
+			size: 18px,
+			weight: bold
+		),
+		ttlLineHeight: null,
+		ttlColor: #CEBB6E,
+		fontCloud : null,
+		//ttlIcon
+		ttlIconMargin : (right: 5px),
+		ttlIconTop : 0,
+		//txt
+		txtMargin : (top: 5px),
+		txtFont   : null,
+		txtLineHeight: null,
+		txtColor: #ccc,
+		//link
+		linkTop : 10px,
+		linkRight : 10px,
+		//linkIcon
+		linkIconMargin : (right: 5px),
+		linkIconTop : 0
 	), $options);
 
 	$_name : str_replace(map-get($_options, name), "Pt", "");
+	$_fontCloud : if(map-get($_options, fontCloud), map-get($_options, fontCloud), map-get( map-get($_options, ttlFont), size));
+
 
 	//-----------------
 	// view
@@ -42,17 +61,12 @@
 
 	//PtTitle01
 	.Pt#{$_name}{
-		@include module-core((
-			width   : map-get($_options, width),
-			aling   : map-get($_options, align),
-			marginB : map-get($_options, marginB)
-		));
+		//moduleのwidth&margin設定
+		@include module-core($_options);
 		position: relative;
-		padding:10px;
-		border: solid 1px #ccc;
-		background: #fefefe;
-		margin:0;
-		@include border-radius(2px);
+		background: map-get($_options, background);
+		@include propaty-set("border", map-get($_options, border));
+		@include propaty-set("padding", map-get($_options, padding));
 
 		//ptTitle01Inner
 		.pt#{$_name}Inner{
@@ -64,48 +78,47 @@
 
 		//ptTitle01Ttl
 		.pt#{$_name}Ttl{
-			font-size: map-get($_options, medium);
-			line-height: map-get($_options, lineHeight)
-			font-weight: map-get($_options, weight)
-			font-family: map-get($_options, family)
-			color: map-get($_options, color)
+			@include propaty-set("font", map-get($_options, ttlFont));
+			line-height: map-get($_options, ttLlineHeight);
+			color: map-get($_options, ttlColor);
+			//各種size生成
+			@include font-cloud($_fontCloud);
 		}
 
 		//ptTitle01TtlIcon
 		.pt#{$_name}TtlIcon{
-			@include sprite-core();
 			position:relative;
-			top:0;
-			margin-right: 5px;
+			top: map-get($_options, ttlIconTop);
+			@include sprite-core();
+			@include propaty-set("margin", map-get($_options, ttlIconMargin));
 		}
 
 		//ptTitle01Txt
 		.pt#{$_name}Txt{
-			margin-top:5px;
-			color: #ccc;
-			font-size: 10px;
-			height: 1.5;
+			@include propaty-set("margin", map-get($_options, txtMargin));
+			@include propaty-set("font", map-get($_options, txtFont));
+			line-height: map-get($_options, txtLineHeight);
+			color: map-get($_options, txtColor);
 		}
 
 		//ptTitle01Link
 		.pt#{$_name}Link{
 			position: absolute;
-			top:0;
-			right:0;
+			top: map-get($_options, linkTop);
+			right: map-get($_options, linkRight);
 			line-height: 1;
 		}
 
 		//ptTitle01LinkA
 		.pt#{$_name}LinkA{
-			
 		}
 
 		//ptTitle01LinkIcon
 		.pt#{$_name}LinkIcon{
-			@include sprite-core();
 			position:relative;
-			top:0;
-			margin-right: 5px;
+			top: map-get($_options, linkIconTop);
+			@include sprite-core();
+			@include propaty-set("margin", map-get($_options, linkIconMargin));
 		}
 
 

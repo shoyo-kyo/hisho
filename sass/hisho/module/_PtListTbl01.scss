@@ -19,13 +19,16 @@
 		name   : "PtListTbl01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
 		width  : 100%,        //moduleのwidth指定
 		aling  : center,      //moduleのセンタリング位置を指定
-		margin : null,        //moduleのmargin指定(nullの場合default設定が適応される)
+		margin : (
+			top: -10px,
+			bottom: map-get($styleSetting, moduleBottomMargin)
+		),        //moduleのmargin指定(nullの場合default設定が適応される)
 		color     : #333,
-		margin   : (top:-10px),
-
-		colorTh   : #999,
-		borderBTd : dotted 1px #ccc,
-		paddingTd : 10px 10px 10px 0
+		//td
+		tdBorder  : (bottom: dotted 1px #ccc),
+		tdPadding : 10px 10px 10px 0,
+		//th
+		thColor   : #999
 	), $options);
 
 	$_name : str_replace(map-get($_options, name), "Pt", "");
@@ -36,24 +39,20 @@
 
 	//PtListTbl01
 	.Pt#{$_name}{
-		@include module-core((
-			width   : map-get($_options, width),
-			aling   : map-get($_options, align),
-			marginB : map-get($_options, marginB)
-		));
-		margin-top: map-get($_options, marginT)
+		//moduleのwidth&margin設定
+		@include module-core($_options);
 
 		//
 		th,
 		td{
-			color: map-get($_options, color)
-			border-bottom: map-get($_options, borderBTd)
-			padding: map-get($_options, paddingTd)
 			text-align: left;
+			color: map-get($_options, color);
+			@include propaty-set("border", map-get($_options, tdBorder));
+			@include propaty-set("padding", map-get($_options, tdPadding));
 		}
 		th{
 			font-weight: normal;
-			color: map-get($_options, colorTh)
+			color: map-get($_options, thColor);
 		}
 
 	}

@@ -223,6 +223,27 @@ $sprite-all: sprite-map("spAll/*.png",$layout: smart);
 @import "hisho/module/BxCntent01";
 @include BxCntent01();
 
+@import "hisho/module/PtNav01";
+@include PtNav01();
+
+@import "hisho/module/PtTab01";
+@include PtTab01();
+@include PtTab01((
+	name: "PtTab02",
+	border : (
+		left: solid 1px #ccc
+	),
+	liBorder : (
+		right: solid 1px #ccc,
+		bottom: solid 1px #ccc,
+		left: solid 1px #fff
+	),
+	aBorder : (
+		top: solid 5px #cee
+	)
+));
+
+
 //--------------------------------
 // 9.overlide
 //--------------------------------

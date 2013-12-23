@@ -1,30 +1,32 @@
 @charset "utf-8";
 // ------------------------------
-// [name] PtMore01
+// [name] PtNav01
 // [varsion] v1.0.0
-// [path] /hisho/module/_PtMore01.scss
-// [desc] text parts 01
+// [path] /hisho/module/_PtNav01.scss
+// [desc] navigation
 // [exsample]
 //
-//    @include PtMore01();
+//    @include PtNav01();
 // ------------------------------
 
 //publick mixin
-@mixin PtMore01($options:null){
+@mixin PtNav01($options:null){
 
 	//-----------------
 	// options
 	//-----------------
 	$_options: map-extend((
-		name   : "PtMore01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		name   : "PtNav01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
 		width  : auto,        //moduleのwidth指定
 		aling  : center,      //moduleのセンタリング位置を指定
 		margin : null,        //moduleのmargin指定(nullの場合default設定が適応される)
-		font   : null,
+		//li
+		liMargin  : (right: 5px),
+		//a
 		linkStyle : null,
-		//icon
-		iconTop    : 0,
-		iconMargin : (right: 5px)
+		//spr
+		sprTop    : 3px,
+		sprMargin : null
 	), $options);
 
 	$_name : str_replace(map-get($_options, name), "Pt", "");
@@ -33,28 +35,33 @@
 	// view
 	//-----------------
 
-	//PtMore01
+	//PtNav01
 	.Pt#{$_name}{
 		//moduleのwidth&margin設定
 		@include module-core($_options);
-		@include propaty-set("font", map-get($_options, font));
-		text-align: right;
-		line-height: 1;
 
-		//ptMore01A
+		//ptNav01Li
+		.pt#{$_name}Li{
+			@include inline-block;
+			@include propaty-set("margin", map-get($_options, liMargin));
+		}
+		
+		//ptNav01Li
 		.pt#{$_name}A{
 			@if map-get($_options, linkStyle){
 				@include link-styles(map-get($_options, linkStyle));
 			}
 		}
-		//ptMore01Icon
-		.pt#{$_name}Icon{
-			@include sprite-core();
-			position: relative;
-			top: map-get($_options, iconTop);
-			@include propaty-set("margin", map-get($_options, iconMargin));
+		
+		//ptNav01Spr
+		.pt#{$_name}Spr{
+			top: map-get($_options, sprTop);
+			@if map-get($_options, sprMargin){
+				@include propaty-set("margin", map-get($_options, sprMargin));
+			}@else{
+				margin-left: map-get(map-get($_options, liMargin), right) + 4px;
+			}
 		}
-
 	}
 
 }

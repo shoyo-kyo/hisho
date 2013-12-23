@@ -24,12 +24,12 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		name       : "PtNumList01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
-		width      : auto,        //moduleのwidth指定
-		aling      : center,      //moduleのセンタリング位置を指定
-		marginB    : null,        //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
-		color      : null,
-		marginLi   : 0 0 8px 20px
+		name   : "PtNumList01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width  : auto,        //moduleのwidth指定
+		aling  : center,      //moduleのセンタリング位置を指定
+		margin : null,        //moduleのmargin指定(nullの場合default設定が適応される)
+		color    : null,
+		liMargin : 0 0 8px 20px
 	), $options);
 
 	$_name : str_replace(map-get($_options, name), "Pt", "");
@@ -40,16 +40,13 @@
 
 	//PtNumList01
 	.Pt#{$_name}{
-		@include module-core((
-			width   : map-get($_options, width),
-			aling   : map-get($_options, align),
-			marginB : map-get($_options, marginB)
-		));
-		color: map-get($_options, color)
+		//moduleのwidth&margin設定
+		@include module-core($_options);
+		color: map-get($_options, color);
 
 		//ptNumList01Li
 		.pt#{$_name}Li{
-			margin: map-get($_options, marginLi)
+			@include propaty-set("margin", map-get($_options, liMargin));
 			list-style: decimal;
 		}
 	}

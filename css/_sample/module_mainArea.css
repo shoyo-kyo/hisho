@@ -1,100 +1,1022 @@
-/*
-Syntax error: Invalid CSS after "			font-weight": expected ";", was ": map-get($_opt..."
-        on line 69 of C:/xampp/htdocs/_tasc/99_atest_dev/hisho/sass/hisho/module/_PtTitle01.scss
-        from line 160 of C:/xampp/htdocs/_tasc/99_atest_dev/hisho/sass/_sample/module_mainArea.scss
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Share+Tech+Mono);
+/* line 5, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
 
-Backtrace:
-C:/xampp/htdocs/_tasc/99_atest_dev/hisho/sass/hisho/module/_PtTitle01.scss:69
-C:/xampp/htdocs/_tasc/99_atest_dev/hisho/sass/_sample/module_mainArea.scss:160
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:1306:in `expected'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:1242:in `expected'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:1237:in `tok!'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:687:in `block in declaration_or_ruleset'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:1282:in `call'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:1282:in `rethrow'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:693:in `declaration_or_ruleset'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:655:in `block_child'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:647:in `block_contents'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:636:in `block'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:629:in `ruleset'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:692:in `block in declaration_or_ruleset'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:1282:in `call'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:1282:in `rethrow'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:693:in `declaration_or_ruleset'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:655:in `block_child'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:647:in `block_contents'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:636:in `block'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:629:in `ruleset'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:692:in `block in declaration_or_ruleset'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:1282:in `call'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:1282:in `rethrow'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:693:in `declaration_or_ruleset'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:655:in `block_child'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:647:in `block_contents'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:636:in `block'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:229:in `mixin_directive'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:217:in `special_directive'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:189:in `directive'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:654:in `block_child'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:647:in `block_contents'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:117:in `stylesheet'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/scss/parser.rb:42:in `parse'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/engine.rb:402:in `_to_tree'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/engine.rb:306:in `to_tree'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:294:in `block in visit_import'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:293:in `visit_import'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:153:in `block in visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:153:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:174:in `with_environment'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:161:in `visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:181:in `visit_root'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:152:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/visitors/perform.rb:8:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/tree/root_node.rb:20:in `render'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.0.rc.2/lib/sass/engine.rb:275:in `render'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:171:in `block (2 levels) in compile'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:153:in `timed'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:166:in `block in compile'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/logger.rb:46:in `red'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:165:in `compile'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:144:in `compile_if_required'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:129:in `block (2 levels) in run'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:127:in `each'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:127:in `block in run'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:153:in `timed'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/compiler.rb:126:in `run'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/watcher/compiler.rb:24:in `compile'
-C:/Ruby200-x64/lib/ruby/2.0.0/forwardable.rb:171:in `compile'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/watcher/project_watcher.rb:95:in `sass_modified'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/watcher/project_watcher.rb:83:in `sass_callback'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/watcher/watch.rb:14:in `call'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/watcher/watch.rb:14:in `run_callback'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/watcher/project_watcher.rb:63:in `block in listen_callback'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/watcher/project_watcher.rb:60:in `each'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-1.0.0.alpha.17/lib/compass/watcher/project_watcher.rb:60:in `listen_callback'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/listener.rb:236:in `call'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/listener.rb:236:in `on_change'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/listener.rb:271:in `block in initialize_adapter'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/adapter.rb:244:in `call'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/adapter.rb:244:in `report_changes'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/adapter.rb:313:in `poll_changed_directories'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/listen-1.1.6/lib/listen/adapter.rb:289:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"			font-weight\": expected \";\", was \": map-get($_opt...\"\A         on line 69 of C:/xampp/htdocs/_tasc/99_atest_dev/hisho/sass/hisho/module/_PtTitle01.scss\A         from line 160 of C:/xampp/htdocs/_tasc/99_atest_dev/hisho/sass/_sample/module_mainArea.scss"; }
+/* line 22, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 21, ../../sass/hisho/reset/_global.scss */
+html {
+  overflow-y: scroll;
+}
+
+/* line 26, ../../sass/hisho/reset/_global.scss */
+hr {
+  display: none;
+}
+
+/* line 31, ../../sass/hisho/reset/_global.scss */
+img {
+  vertical-align: top;
+}
+
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+/* line 43, ../../sass/hisho/reset/_global.scss */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  vertical-align: baseline;
+  font-size: 12px;
+  font-family: 12px;
+}
+/* line 13, ../../sass/hisho/reset/_form-font.scss */
+body.OsWin button, body.OsWin
+input, body.OsWin
+select, body.OsWin
+textarea {
+  font-family: 'メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+}
+/* line 16, ../../sass/hisho/reset/_form-font.scss */
+body.OsMac button, body.OsMac
+input, body.OsMac
+select, body.OsMac
+textarea {
+  font-family: 'Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',sans-serif;
+}
+
+/* line 53, ../../sass/hisho/reset/_global.scss */
+button,
+input {
+  line-height: normal;
+  *overflow: visible;
+}
+
+/* line 66, ../../sass/hisho/reset/_global.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/* line 72, ../../sass/hisho/reset/_global.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* line 78, ../../sass/hisho/reset/_global.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/* line 85, ../../sass/hisho/reset/_global.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* line 93, ../../sass/hisho/reset/_global.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/* line 101, ../../sass/hisho/reset/_global.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 107, ../../sass/hisho/reset/_global.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 116, ../../sass/hisho/reset/_global.scss */
+textarea {
+  overflow-x: hidden;
+  overflow-y: auto;
+  vertical-align: top;
+}
+
+/* line 127, ../../sass/hisho/reset/_global.scss */
+h1, h2, h3, h4, h5, h6,
+p, dl, dt, dd, ul, ol, li, table, th, td,
+div, blockquote, pre,
+form, fieldset, legend,
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  *zoom: 1;
+}
+
+/* line 143, ../../sass/hisho/reset/_global.scss */
+html {
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+
+/* line 149, ../../sass/hisho/reset/_global.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/* line 106, ../../sass/_sample/module_mainArea.scss */
+body {
+  font-size: 12px;
+  font-family: 'Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+  line-height: 1.5;
+  color: #333333;
+}
+/* line 112, ../../sass/_sample/module_mainArea.scss */
+body.OsWin {
+  font-family: 'メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+}
+/* line 115, ../../sass/_sample/module_mainArea.scss */
+body.OsMac {
+  font-family: 'Lucida Grande','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',sans-serif;
+}
+
+/* line 120, ../../sass/_sample/module_mainArea.scss */
+a {
+  color: #2468ce;
+  text-decoration: underline;
+}
+/* line 57, ../../sass/hisho/helper/mixin/_link-styles.scss */
+a:link {
+  color: #2468ce;
+  text-decoration: underline;
+}
+/* line 64, ../../sass/hisho/helper/mixin/_link-styles.scss */
+a:visited {
+  color: #a611a1;
+  text-decoration: underline;
+}
+/* line 71, ../../sass/hisho/helper/mixin/_link-styles.scss */
+a:hover {
+  text-decoration: none;
+}
+/* line 78, ../../sass/hisho/helper/mixin/_link-styles.scss */
+a:active {
+  text-decoration: none;
+}
+/* line 85, ../../sass/hisho/helper/mixin/_link-styles.scss */
+a:focus {
+  text-decoration: none;
+}
+
+/* line 56, spAll/*.png */
+.spAll-sprite, .spAll-PtTopPrevBtn01Img01, .spAll-PtTopPrevBtn01Img02 {
+  background-image: url('/hisho/img/spAll-s259cf87ab0.png');
+  background-repeat: no-repeat;
+}
+
+/* line 84, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/utilities/sprites/_base.scss */
+.spAll-PtTopPrevBtn01Img01 {
+  background-position: 0 0;
+  height: 50px;
+  width: 50px;
+}
+
+/* line 84, ../../../../../../../Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/utilities/sprites/_base.scss */
+.spAll-PtTopPrevBtn01Img02 {
+  background-position: 0 -50px;
+  height: 50px;
+  width: 50px;
+}
+
+/* line 73, ../../sass/hisho/layout/col1/_default.scss */
+.LyBody01 {
+  position: relative;
+}
+
+/* line 87, ../../sass/hisho/layout/col1/_default.scss */
+.LyCnt01 {
+  position: relative;
+  overflow: hidden;
+  *zoom: 1;
+  width: 600px;
+  margin: 0 auto;
+}
+
+/* line 94, ../../sass/hisho/layout/col1/_default.scss */
+.LyMain01 {
+  width: 600px;
+  margin: 0 0;
+}
+
+/* line 10, ../../sass/hisho/module/_utilities.scss */
+.UtHide {
+  display: none;
+}
+
+/* line 13, ../../sass/hisho/module/_utilities.scss */
+.UtAlignCenter {
+  text-align: center !important;
+}
+
+/* line 14, ../../sass/hisho/module/_utilities.scss */
+.UtAlignRight {
+  text-align: right !important;
+}
+
+/* line 15, ../../sass/hisho/module/_utilities.scss */
+.UtAlignLeft {
+  text-align: left !important;
+}
+
+/* line 16, ../../sass/hisho/module/_utilities.scss */
+.UtAlignMiddle {
+  vertical-align: middle !important;
+}
+
+/* line 17, ../../sass/hisho/module/_utilities.scss */
+.UtAlignTop {
+  vertical-align: top !important;
+}
+
+/* line 18, ../../sass/hisho/module/_utilities.scss */
+.UtAlignBottom {
+  vertical-align: bottom !important;
+}
+
+/* line 21, ../../sass/hisho/module/_utilities.scss */
+.UtElement {
+  margin-bottom: 20px;
+}
+
+/* line 26, ../../sass/hisho/module/_utilities.scss */
+.UtSpriteImg {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  overflow: hidden;
+  border: none;
+  vertical-align: top;
+  white-space: nowrap;
+  text-indent: 100%;
+}
+
+/* line 31, ../../sass/hisho/module/_utilities.scss */
+.UtSpriteBnt {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  overflow: hidden;
+  border: none;
+  vertical-align: top;
+  white-space: nowrap;
+  text-indent: 100%;
+  cursor: "pointer";
+  opacity: 0.8;
+}
+
+/* line 37, ../../sass/hisho/module/_utilities.scss */
+.UtNowrap {
+  width: 1px;
+  white-space: nowrap;
+}
+
+/* line 63, ../../sass/hisho/module/_PtTitle01.scss */
+.PtTitle01 {
+  margin-bottom: 20px;
+  position: relative;
+  background: #fefefe;
+  border: solid 1px #cccccc;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  padding: 10px;
+}
+/* line 72, ../../sass/hisho/module/_PtTitle01.scss */
+.PtTitle01 .ptTitle01Inner {
+  display: block;
+  padding: 10px;
+  border-left: solid 20px #333;
+  background: #fefefe;
+}
+/* line 80, ../../sass/hisho/module/_PtTitle01.scss */
+.PtTitle01 .ptTitle01Ttl {
+  font-size: 18px;
+  font-weight: bold;
+  color: #cebb6e;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTitle01 .ptTitle01Ttl.xxs {
+  font-size: 9px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTitle01 .ptTitle01Ttl.xs {
+  font-size: 12px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTitle01 .ptTitle01Ttl.s {
+  font-size: 13.5px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTitle01 .ptTitle01Ttl.m {
+  font-size: 18px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTitle01 .ptTitle01Ttl.l {
+  font-size: 24px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTitle01 .ptTitle01Ttl.xl {
+  font-size: 27px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTitle01 .ptTitle01Ttl.xxl {
+  font-size: 36px;
+}
+/* line 89, ../../sass/hisho/module/_PtTitle01.scss */
+.PtTitle01 .ptTitle01TtlIcon {
+  position: relative;
+  top: 0;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  overflow: hidden;
+  border: none;
+  vertical-align: top;
+  white-space: nowrap;
+  text-indent: 100%;
+  margin-right: 5px;
+}
+/* line 97, ../../sass/hisho/module/_PtTitle01.scss */
+.PtTitle01 .ptTitle01Txt {
+  margin-top: 5px;
+  color: #cccccc;
+}
+/* line 105, ../../sass/hisho/module/_PtTitle01.scss */
+.PtTitle01 .ptTitle01Link {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  line-height: 1;
+}
+/* line 117, ../../sass/hisho/module/_PtTitle01.scss */
+.PtTitle01 .ptTitle01LinkIcon {
+  position: relative;
+  top: 0;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  overflow: hidden;
+  border: none;
+  vertical-align: top;
+  white-space: nowrap;
+  text-indent: 100%;
+  margin-right: 5px;
+}
+
+/* line 42, ../../sass/hisho/module/_PtTitleSimple01.scss */
+.PtTitleSimple01 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #cebb6e;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTitleSimple01.xxs {
+  font-size: 15px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTitleSimple01.xs {
+  font-size: 20px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTitleSimple01.s {
+  font-size: 22.5px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTitleSimple01.m {
+  font-size: 30px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTitleSimple01.l {
+  font-size: 40px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTitleSimple01.xl {
+  font-size: 45px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTitleSimple01.xxl {
+  font-size: 60px;
+}
+
+/* line 42, ../../sass/hisho/module/_PtTxt01.scss */
+.PtTxt01 {
+  margin-bottom: 20px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTxt01.xxs {
+  font-size: 6px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTxt01.xs {
+  font-size: 8px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTxt01.s {
+  font-size: 9px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTxt01.m {
+  font-size: 12px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTxt01.l {
+  font-size: 16px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTxt01.xl {
+  font-size: 18px;
+}
+/* line 34, ../../sass/hisho/helper/mixin/_font-cloud.scss */
+.PtTxt01.xxl {
+  font-size: 24px;
+}
+
+/* line 46, ../../sass/hisho/module/_PtList01.scss */
+.PtList01 {
+  margin-bottom: 20px;
+}
+/* line 52, ../../sass/hisho/module/_PtList01.scss */
+.PtList01 .ptList01Li {
+  position: relative;
+  padding-left: 17px;
+  margin-bottom: 8px;
+}
+/* line 59, ../../sass/hisho/module/_PtList01.scss */
+.PtList01 .ptList01Icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  overflow: hidden;
+  border: none;
+  vertical-align: top;
+  white-space: nowrap;
+  text-indent: 100%;
+}
+
+/* line 42, ../../sass/hisho/module/_PtNumList01.scss */
+.PtNumList01 {
+  margin-bottom: 20px;
+}
+/* line 48, ../../sass/hisho/module/_PtNumList01.scss */
+.PtNumList01 .ptNumList01Li {
+  margin: 0 0 8px 20px;
+  list-style: decimal;
+}
+
+/* line 48, ../../sass/hisho/module/_PtDefList01.scss */
+.PtDefList01 {
+  margin-bottom: 20px;
+}
+/* line 53, ../../sass/hisho/module/_PtDefList01.scss */
+.PtDefList01 .ptDefList01Dt {
+  margin-bottom: ciel(8px/2);
+}
+/* line 60, ../../sass/hisho/module/_PtDefList01.scss */
+.PtDefList01 .ptDefList01Dd {
+  margin-bottom: 8px;
+  margin-left: 1em;
+}
+
+/* line 45, ../../sass/hisho/module/_PtTbl01.scss */
+.PtTbl01 {
+  width: 100%;
+  margin-bottom: 20px;
+}
+/* line 49, ../../sass/hisho/module/_PtTbl01.scss */
+.PtTbl01 th,
+.PtTbl01 td {
+  border: 1px solid #cccccc;
+  padding: 4px 8px;
+}
+/* line 55, ../../sass/hisho/module/_PtTbl01.scss */
+.PtTbl01 th {
+  background: #efefef;
+  font-weight: normal;
+}
+
+/* line 41, ../../sass/hisho/module/_PtListTbl01.scss */
+.PtListTbl01 {
+  width: 100%;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+/* line 46, ../../sass/hisho/module/_PtListTbl01.scss */
+.PtListTbl01 th,
+.PtListTbl01 td {
+  text-align: left;
+  color: #333333;
+  border-bottom: dotted 1px #cccccc;
+  padding: 10px 10px 10px 0;
+}
+/* line 53, ../../sass/hisho/module/_PtListTbl01.scss */
+.PtListTbl01 th {
+  font-weight: normal;
+  color: #999999;
+}
+
+/* line 36, ../../sass/hisho/module/_PtCode01.scss */
+.PtCode01 {
+  margin-bottom: 20px;
+  background: #333333;
+  border: solid 1px black;
+  color: white;
+}
+/* line 44, ../../sass/hisho/module/_PtCode01.scss */
+.PtCode01 .ptCode01Inner {
+  display: block;
+  padding: 20px;
+}
+
+/* line 49, ../../sass/hisho/module/_PtAdTxt01.scss */
+.PtAdTxt01 {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+/* line 55, ../../sass/hisho/module/_PtAdTxt01.scss */
+.PtAdTxt01 .ptAdTxt01A {
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+}
+/* line 60, ../../sass/hisho/module/_PtAdTxt01.scss */
+.PtAdTxt01 .ptAdTxt01A:hover {
+  background: #f8f8f8;
+}
+/* line 62, ../../sass/hisho/module/_PtAdTxt01.scss */
+.PtAdTxt01 .ptAdTxt01A:hover .ptAdTxt01Ttl {
+  text-decoration: none;
+}
+/* line 68, ../../sass/hisho/module/_PtAdTxt01.scss */
+.PtAdTxt01 .ptAdTxt01Ttl {
+  color: #333333;
+  font-size: 20px;
+  text-decoration: underline;
+}
+/* line 74, ../../sass/hisho/module/_PtAdTxt01.scss */
+.PtAdTxt01 .ptAdTxt01Url {
+  color: #7c94aa;
+  font-size: 11px;
+  margin-top: 1px;
+  text-decoration: none;
+}
+/* line 81, ../../sass/hisho/module/_PtAdTxt01.scss */
+.PtAdTxt01 .ptAdTxt01Txt {
+  color: #cccccc;
+  font-size: 12px;
+  margin-top: 5px;
+  text-decoration: none;
+}
+
+/* line 41, ../../sass/hisho/module/_PtAdImg01.scss */
+.PtAdImg01 {
+  margin-bottom: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  position: relative;
+}
+/* line 48, ../../sass/hisho/module/_PtAdImg01.scss */
+.PtAdImg01 .ptAdImg01A {
+  display: block;
+  position: relative;
+}
+/* line 56, ../../sass/hisho/module/_PtAdImg01.scss */
+.PtAdImg01 .ptAdImg01Pr {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  line-height: 1;
+  padding: 3px 10px 2px;
+  background: black;
+  border-radiuse: 2px;
+}
+
+/* line 37, ../../sass/hisho/module/_PtMore01.scss */
+.PtMore01 {
+  margin-bottom: 20px;
+  text-align: right;
+  line-height: 1;
+}
+/* line 51, ../../sass/hisho/module/_PtMore01.scss */
+.PtMore01 .ptMore01Icon {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  overflow: hidden;
+  border: none;
+  vertical-align: top;
+  white-space: nowrap;
+  text-indent: 100%;
+  position: relative;
+  top: 0;
+  margin-right: 5px;
+}
+
+/* line 53, ../../sass/hisho/module/_PtMoreBtn01.scss */
+.PtMoreBtn01 {
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  border-radiuse: 3px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1;
+  background-image: -moz-linear-gradient(#ffffff, #fefefe, #eeeeee);
+  background-image: -o-linear-gradient(#ffffff, #fefefe, #eeeeee);
+  background-image: -webkit-linear-gradient(#ffffff, #fefefe, #eeeeee);
+  background-image: linear-gradient(#ffffff, #fefefe, #eeeeee);
+}
+/* line 68, ../../sass/hisho/module/_PtMoreBtn01.scss */
+.PtMoreBtn01:hover, .PtMoreBtn01:active {
+  border: 1px solid #cccccc;
+  border-radiuse: 3px;
+}
+/* line 75, ../../sass/hisho/module/_PtMoreBtn01.scss */
+.PtMoreBtn01 .ptMoreBtn01A {
+  display: block;
+  padding: 15px;
+  color: #333333;
+  text-decoration: none;
+}
+/* line 57, ../../sass/hisho/helper/mixin/_link-styles.scss */
+.PtMoreBtn01 .ptMoreBtn01A:link {
+  color: #333333;
+  text-decoration: none;
+}
+/* line 64, ../../sass/hisho/helper/mixin/_link-styles.scss */
+.PtMoreBtn01 .ptMoreBtn01A:visited {
+  color: #333333;
+  text-decoration: none;
+}
+/* line 71, ../../sass/hisho/helper/mixin/_link-styles.scss */
+.PtMoreBtn01 .ptMoreBtn01A:hover {
+  color: #666666;
+  text-decoration: none;
+}
+/* line 78, ../../sass/hisho/helper/mixin/_link-styles.scss */
+.PtMoreBtn01 .ptMoreBtn01A:active {
+  color: #666666;
+  text-decoration: none;
+}
+/* line 85, ../../sass/hisho/helper/mixin/_link-styles.scss */
+.PtMoreBtn01 .ptMoreBtn01A:focus {
+  color: #666666;
+  text-decoration: none;
+}
+
+/* line 37, ../../sass/hisho/module/_PtTopPrev01.scss */
+.PtTopPrev01 {
+  margin-bottom: 20px;
+  text-align: right;
+  line-height: 1;
+}
+/* line 51, ../../sass/hisho/module/_PtTopPrev01.scss */
+.PtTopPrev01 .ptTopPrev01Icon {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  overflow: hidden;
+  border: none;
+  vertical-align: top;
+  white-space: nowrap;
+  text-indent: 100%;
+  position: relative;
+  top: 0;
+  margin-right: 5px;
+}
+
+/* line 34, ../../sass/hisho/module/_PtTopPrevBtn01.scss */
+.PtTopPrevBtn01 {
+  margin-bottom: 20px;
+  text-align: right;
+}
+/* line 39, ../../sass/hisho/module/_PtTopPrevBtn01.scss */
+.PtTopPrevBtn01.fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+/* line 46, ../../sass/hisho/module/_PtTopPrevBtn01.scss */
+.PtTopPrevBtn01 .ptTopPrevBtn01Btn {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  overflow: hidden;
+  border: none;
+  vertical-align: top;
+  white-space: nowrap;
+  text-indent: 100%;
+}
+/* line 49, ../../sass/hisho/module/_PtTopPrevBtn01.scss */
+.PtTopPrevBtn01 .ptTopPrevBtn01Btn:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+
+/* line 33, ../../sass/hisho/module/_PtLine01.scss */
+.PtLine01 {
+  margin-bottom: 20px;
+  border-bottom: solid 1px #cccccc;
+  display: block;
+}
+
+/* line 31, ../../sass/hisho/module/_PtSprt01.scss */
+.PtSprt01 {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  overflow: hidden;
+  border: none;
+  vertical-align: top;
+  white-space: nowrap;
+  text-indent: 100%;
+  margin: 0;
+  width: 0;
+  line-height: 1;
+  height: 12px;
+  border-right: solid 1px #cccccc;
+}
+
+/* line 46, ../../sass/hisho/module/_BxQuote01.scss */
+.BxQuote01 {
+  margin-bottom: 20px;
+  position: relative;
+  background: #f7f3ea;
+  padding: 20px 20px 20px 90px;
+}
+/* line 54, ../../sass/hisho/module/_BxQuote01.scss */
+.BxQuote01:before {
+  content: '“';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-family: serif;
+  font-size: 100px;
+  color: #e1dfd8;
+  line-height: 1;
+}
+
+/* line 39, ../../sass/hisho/module/_BxListY01.scss */
+.BxListY01 {
+  margin-bottom: 20px;
+}
+/* line 49, ../../sass/hisho/module/_BxListY01.scss */
+.BxListY01 .bxListY01Li {
+  margin-bottom: 10px;
+}
+
+/* line 44, ../../sass/hisho/module/_BxListX01.scss */
+.BxListX01 {
+  width: 600px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+/* line 50, ../../sass/hisho/module/_BxListX01.scss */
+.BxListX01 .bxListX01Ul {
+  overflow: hidden;
+  *zoom: 1;
+  width: 610px;
+}
+/* line 56, ../../sass/hisho/module/_BxListX01.scss */
+.BxListX01 .bxListX01Li {
+  float: left;
+  width: 112px;
+  margin-right: 10px;
+}
+
+/* line 56, ../../sass/hisho/module/_BxCntent01.scss */
+.BxCntent01 {
+  margin-bottom: 20px;
+  background: #efefef;
+  border: solid 1px #cccccc;
+  padding: 3px;
+}
+
+/* line 39, ../../sass/hisho/module/_PtNav01.scss */
+.PtNav01 {
+  margin-bottom: 20px;
+}
+/* line 44, ../../sass/hisho/module/_PtNav01.scss */
+.PtNav01 .ptNav01Li {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin-right: 5px;
+}
+/* line 57, ../../sass/hisho/module/_PtNav01.scss */
+.PtNav01 .ptNav01Spr {
+  top: 3px;
+  margin-left: 9px;
+}
+
+/* line 61, ../../sass/hisho/module/_PtTab01.scss */
+.PtTab01 {
+  margin-bottom: 20px;
+  border-bottom: solid 1px #cccccc;
+  border-left: solid 1px #cccccc;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 70, ../../sass/hisho/module/_PtTab01.scss */
+.PtTab01 .ptTab01Li {
+  float: left;
+  background: #fefefe;
+  border-top: solid 1px #cccccc;
+  border-right: solid 1px #cccccc;
+  min-width: 100px;
+  text-align: center;
+}
+/* line 81, ../../sass/hisho/module/_PtTab01.scss */
+.PtTab01 .ptTab01A {
+  display: block;
+  color: #333333;
+  text-decoration: none;
+  padding: 8px;
+}
+/* line 57, ../../sass/hisho/helper/mixin/_link-styles.scss */
+.PtTab01 .ptTab01A:link {
+  color: #333333;
+  text-decoration: none;
+}
+/* line 64, ../../sass/hisho/helper/mixin/_link-styles.scss */
+.PtTab01 .ptTab01A:visited {
+  color: #333333;
+  text-decoration: none;
+}
+/* line 71, ../../sass/hisho/helper/mixin/_link-styles.scss */
+.PtTab01 .ptTab01A:hover {
+  color: #999999;
+  text-decoration: none;
+}
+/* line 78, ../../sass/hisho/helper/mixin/_link-styles.scss */
+.PtTab01 .ptTab01A:active {
+  color: #999999;
+  text-decoration: none;
+}
+/* line 85, ../../sass/hisho/helper/mixin/_link-styles.scss */
+.PtTab01 .ptTab01A:focus {
+  color: #999999;
+  text-decoration: none;
+}
+
+/* line 61, ../../sass/hisho/module/_PtTab01.scss */
+.PtTab02 {
+  margin-bottom: 20px;
+  border-left: solid 1px #cccccc;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 70, ../../sass/hisho/module/_PtTab01.scss */
+.PtTab02 .ptTab02Li {
+  float: left;
+  background: #fefefe;
+  border-right: solid 1px #cccccc;
+  border-bottom: solid 1px #cccccc;
+  border-left: solid 1px white;
+  min-width: 100px;
+  text-align: center;
+}
+/* line 81, ../../sass/hisho/module/_PtTab01.scss */
+.PtTab02 .ptTab02A {
+  display: block;
+  color: #333333;
+  text-decoration: none;
+  border-top: solid 5px #cceeee;
+  padding: 8px;
+}
+/* line 57, ../../sass/hisho/helper/mixin/_link-styles.scss */
+.PtTab02 .ptTab02A:link {
+  color: #333333;
+  text-decoration: none;
+}
+/* line 64, ../../sass/hisho/helper/mixin/_link-styles.scss */
+.PtTab02 .ptTab02A:visited {
+  color: #333333;
+  text-decoration: none;
+}
+/* line 71, ../../sass/hisho/helper/mixin/_link-styles.scss */
+.PtTab02 .ptTab02A:hover {
+  color: #999999;
+  text-decoration: none;
+}
+/* line 78, ../../sass/hisho/helper/mixin/_link-styles.scss */
+.PtTab02 .ptTab02A:active {
+  color: #999999;
+  text-decoration: none;
+}
+/* line 85, ../../sass/hisho/helper/mixin/_link-styles.scss */
+.PtTab02 .ptTab02A:focus {
+  color: #999999;
+  text-decoration: none;
+}

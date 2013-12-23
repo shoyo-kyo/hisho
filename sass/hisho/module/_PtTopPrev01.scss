@@ -16,14 +16,15 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		name      : "PtTopPrev01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
-		width     : auto,         //moduleのwidth指定
-		aling     : center,       //moduleのセンタリング位置を指定
-		marginB   : null,         //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
-		size      : null,
+		name   : "PtTopPrev01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width  : auto,        //moduleのwidth指定
+		aling  : center,      //moduleのセンタリング位置を指定
+		margin : null,        //moduleのmargin指定(nullの場合default設定が適応される)
+		font   : null,
 		linkStyle : null,
-		topIcon   : 0,
-		marginIcon : 0 5px 0 0
+		//icon
+		iconTop    : 0,
+		iconMargin : (right: 5px)
 	), $options);
 
 	$_name : str_replace(map-get($_options, name), "Pt", "");
@@ -34,30 +35,24 @@
 
 	//PtTopPrev01
 	.Pt#{$_name}{
-		@include module-core((
-			width   : map-get($_options, width),
-			aling   : map-get($_options, align),
-			marginB : map-get($_options, marginB)
-		));
-
-		@if map-get($_options, size){
-			font-size: map-get($_options, size);
-		}
+		//moduleのwidth&margin設定
+		@include module-core($_options);
+		@include propaty-set("font", map-get($_options, font));
 		text-align: right;
 		line-height: 1;
 
 		//ptTopPrev01A
 		.pt#{$_name}A{
 			@if map-get($_options, linkStyle){
-				@include link-styles($styleSetting);
+				@include link-styles(map-get($_options, linkStyle));
 			}
 		}
 		//ptTopPrev01con
 		.pt#{$_name}Icon{
 			@include sprite-core();
 			position: relative;
-			top: map-get($_options, topIcon)
-			margin: map-get($_options, marginIcon)
+			top: map-get($_options, iconTop);
+			@include propaty-set("margin", map-get($_options, iconMargin));
 		}
 
 	}

@@ -17,25 +17,22 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		name     : "PtTitleSimple01",
-		width    : auto,
-		aling    : center,
-		marginB  : null,
-		color    : #CEBB6E,
-		family   : null,
-		weight   : bold,
+		name   : "PtTitleSimple01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width  : auto,        //moduleのwidth指定
+		aling  : center,      //moduleのセンタリング位置を指定
+		margin : null,        //moduleのmargin指定(nullの場合default設定が適応される)
+		font : (
+			size: 30px,
+			weight: bold
+		),
 		lineHeight : null,
-		medium   : 30px,
-		large    : null,
-		x-large  : null,
-		xx-large : null,
-		small    : null,
-		x-small  : null,
-		xx-small : null
+		color    : #CEBB6E,
+		fontCloud : 30px,
 	), $options);
 
-	$_fontSize: null;
 	$_name : str_replace(map-get($_options, name), "Pt", "");
+	$_fontCloud : if(map-get($_options, fontCloud), map-get($_options, fontCloud), map-get( map-get($_options, font), size));
+
 
 	//-----------------
 	// view
@@ -43,63 +40,13 @@
 
 	//PtTitleSimple01
 	.Pt#{$_name}{
-		@include module-core((
-			width   : map-get($_options, width),
-			aling   : map-get($_options, align),
-			marginB : map-get($_options, marginB)
-		));
-
-		font-size: map-get($_options, medium);
-		
-		line-height: map-get($_options, lineHeight)
-		font-weight: map-get($_options, weight)
-		font-family: map-get($_options, family)
-		color: map-get($_options, color)
-
-		//medium
-		$_fontSize: map-get($_options, medium);
-		&.medium{
-			font-size: $_fontSize;
-		}
-
-		//small
-		$_fontSize: map-get($_options, medium);
-		$_fontSize: floor($_fontSize / 1.2);
-		&.small{
-			font-size: if(map-get($_options, small), map-get($_options, small), $_fontSize);
-		}
-
-		//x-small
-		$_fontSize: floor($_fontSize / 1.2);
-		&.x-small{
-			font-size: if(map-get($_options, x-small), map-get($_options, x-small), $_fontSize);
-		}
-
-		//xx-small
-		$_fontSize: floor($_fontSize / 1.2);
-		&.xx-small{
-			font-size: if(map-get($_options, xx-small), map-get($_options, xx-small), $_fontSize);
-		}
-
-		//large
-		$_fontSize: map-get($_options, medium);
-		$_fontSize: round($_fontSize * 1.2);
-		&.large{
-			font-size: if(map-get($_options, large), map-get($_options, large), $_fontSize);
-		}
-
-		//x-large
-		$_fontSize: round($_fontSize * 1.2);
-		&.x-large{
-			font-size: if(map-get($_options, x-large), map-get($_options, x-large), $_fontSize);
-		}
-
-		//xx-large
-		$_fontSize: round($_fontSize * 1.2);
-		&.xx-large{
-			font-size: if(map-get($_options, xx-large), map-get($_options, xx-large), $_fontSize);
-		}
-
+		//moduleのwidth&margin設定
+		@include module-core($_options);
+		@include propaty-set("font", map-get($_options, font));
+		line-height: map-get($_options, lineHeight);
+		color: map-get($_options, color);
+		//各種size生成
+		@include font-cloud($_fontCloud);
 	}
 
 }

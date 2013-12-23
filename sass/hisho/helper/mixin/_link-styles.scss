@@ -16,9 +16,9 @@
 //private mixin
 @mixin link-styles-view($color:null, $underline:null){
 	@if $color {
-		color:$color;
+		color: $color;
 	}
-	@if $underline {
+	@if $underline == true {
 		text-decoration: underline;
 	} @else {
 		text-decoration: none;
@@ -43,11 +43,11 @@
 		linkUnderActive      : false,
 		linkUnderFocus       : false
 	), $options);
-
+	
 	//-----------------
 	// view
 	//-----------------
-
+ 
 	@include link-styles-view(
 		$color: map-get($_options, linkColor),
 		$underline: map-get($_options, linkUnderline)

@@ -16,10 +16,9 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		name      : "PtSprt01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
-		height    : 12px,
-		borderL   : null,
-		borderR   : solid 1px #ccc
+		name   : "PtSprt01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		height : 12px,
+		border : (right: solid 1px #ccc)
 	), $options);
 
 	$_name : str_replace(map-get($_options, name), "Pt", "");
@@ -34,10 +33,9 @@
 		@include sprite-core();
 		margin:0;
 		width:0;
-		height: map-get($_options, height)
-		border-left: map-get($_options, borderL)
-		border-right: map-get($_options, borderR)
 		line-height: 1;
+		height: map-get($_options, height);
+		@include propaty-set("border", map-get($_options, border));
 	}
 
 }

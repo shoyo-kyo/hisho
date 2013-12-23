@@ -22,15 +22,17 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		name       : "PtTbl01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
-		width      : auto,         //moduleのwidth指定
-		aling      : center,       //moduleのセンタリング位置を指定
-		marginB    : null,         //moduleの下部margin指定 （defaultは$styleSettingで指定した値）
-		borderT    : null,
-		bgColorTh  : #ececec,
-		bgColorTd  : null,
-		paddingTd  : 4px 8px,
-		borderTd   : 1px solid #ccc
+		name   : "PtTbl01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width  : 100%,        //moduleのwidth指定
+		aling  : center,      //moduleのセンタリング位置を指定
+		margin : null,        //moduleのmargin指定(nullの場合default設定が適応される)
+		//td
+		tdBorder : 1px solid #ccc,
+		tdPadding: 4px 8px,
+		tdBackground : null,
+		//th
+		thBackground : #efefef,
+		thFont : (weight:normal)
 	), $options);
 
 	$_name : str_replace(map-get($_options, name), "Pt", "");
@@ -41,21 +43,18 @@
 
 	//PtTbl01
 	.Pt#{$_name}{
-		@include module-core((
-			width   : map-get($_options, width),
-			aling   : map-get($_options, align),
-			marginB : map-get($_options, marginB)
-		));
+		//moduleのwidth&margin設定
+		@include module-core($_options);
 		//
 		th,
 		td{
-			border: map-get($_options, borderTd)
-			background: map-get($_options, bgColorTd)
-			padding: map-get($_options, paddingTd)
+			background: map-get($_options, tdBackground);
+			@include propaty-set("border", map-get($_options, tdBorder));
+			@include propaty-set("padding", map-get($_options, tdPadding));
 		}
 		th{
-			background: map-get($_options, bgColorTh)
-			font-weight: normal;
+			background: map-get($_options, thBackground);
+			@include propaty-set("font", map-get($_options, thFont));
 		}
 	}
 

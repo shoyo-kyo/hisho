@@ -17,20 +17,24 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		name     : "BxListX01",
-		width    : 600px, //[必須]
-		aling    : center,
-		marginB  : null,
-		colNum   : 5,
-		marginRLi: 10px,
-		marginBLi: null
+		name   : "BxListX01", //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width  : 600px,       //[必須]moduleのwidth指定
+		aling  : center,      //moduleのセンタリング位置を指定
+		margin : null,        //moduleのmargin指定(nullの場合default設定が適応される)
+		colNum   : 5,         //[必須]列数指定
+		//
+		liMargin: (
+			right: 10px,
+			bottom: null
+		)
 	), $options);
 
 	$_name : str_replace(map-get($_options, name), "Bx", "");
 	
-	$_marginAll : ( map-get($_options, colNum) - 1 ) * map-get($_options, marginRLi);
+	$_marginRight : map-get(map-get($_options, liMargin), right);
+	$_marginAll : ( map-get($_options, colNum) - 1 ) * $_marginRight;
 	$_widthLi : floor((map-get($_options, width) - $_marginAll) / map-get($_options, colNum));
-	$_widthUl : ($_widthLi + map-get($_options, marginRLi)) * map-get($_options, colNum);
+	$_widthUl : ($_widthLi + $_marginRight) * map-get($_options, colNum);
 
 	//-----------------
 	// view
@@ -38,11 +42,8 @@
 
 	//BxListX01
 	.Bx#{$_name}{
-		@include module-core((
-			width   : map-get($_options, width),
-			aling   : map-get($_options, align),
-			marginB : map-get($_options, marginB)
-		));
+		//moduleのwidth&margin設定
+		@include module-core($_options);
 		overflow: hidden;
 
 		//bxListX01Ul
@@ -55,8 +56,7 @@
 		.bx#{$_name}Li{
 			float:left;
 			width: $_widthLi;
-			margin-right: map-get($_options, marginRLi)
-			margin-bottom: map-get($_options, marginBLi)
+			@include propaty-set("margin", map-get($_options, liMargin));
 		}
 	
 	}

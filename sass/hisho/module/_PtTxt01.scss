@@ -23,19 +23,15 @@
 	//-----------------
 	$_options: map-extend((
 		name   : "PtTxt01",  //class名の変更が可能(接頭辞のPtは強制的に付与される)
-		width  : auto,        //moduleのwidth指定
-		aling  : center,      //moduleのセンタリング位置を指定
-		margin : null,        //moduleのmargin指定(nullの場合default設定が適応される)
+		width  : auto,       //moduleのwidth指定
+		aling  : center,     //moduleのセンタリング位置を指定
+		margin : null,       //moduleのmargin指定(nullの場合default設定が適応される)
 		font   : (size: map-get($styleSetting, fontSize)),
 		color  : null,
 		lineHeight : null,
-		//[map,num] foncCloud
-		//fontsize用class s,l,xl,xxl等を生成。map指定する事で任意の値を設定可能
 		fontCloud  : map-get($styleSetting, fontSize)
 	), $options);
 
-	$_fontSize: null;
-	$_style: map-get($_options, style);
 	$_name : str_replace(map-get($_options, name), "Pt", "");
 
 	//-----------------
@@ -48,8 +44,7 @@
 		@include module-core($_options);
 		@include propaty-set("font", map-get($_options, font));
 		color: map-get($_options, color);
-		line-height: map-get($styleSetting, lineHeight)
-		
+		line-height: map-get($styleSetting, lineHeight);
 		//各種size生成
 		@include font-cloud(map-get($_options, fontCloud));
 	}

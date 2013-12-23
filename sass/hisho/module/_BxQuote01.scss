@@ -17,18 +17,23 @@
 	// options
 	//-----------------
 	$_options: map-extend((
-		name     : "BxQuote01",
-		width    : auto,
-		aling    : center,
-		marginB  : null,
-		bg       : #f7f3ea,
-		border   : null,
-		padding  : 20px 20px 20px 90px,
-		colorIcon  : #e1dfd8,
-		sizeIcon   : 100px,
-		familyIcon : serif,
-		topIcon    : 20px,
-		leftIcon   : 20px
+		name   : "BxQuote01", //class名の変更が可能(接頭辞のPtは強制的に付与される)
+		width  : auto,        //moduleのwidth指定
+		aling  : center,      //moduleのセンタリング位置を指定
+		margin : null,        //moduleのmargin指定(nullの場合default設定が適応される)
+
+
+		background : #f7f3ea,
+		border  : null,
+		padding : 20px 20px 20px 90px,
+		//icon
+		iconColor : #e1dfd8,
+		iconFont : (
+			family : serif,
+			size   : 100px
+		),
+		iconTop  : 20px,
+		iconLeft : 20px
 	), $options);
 
 	$_name : str_replace(map-get($_options, name), "Bx", "");
@@ -39,25 +44,20 @@
 
 	//BxQuote01
 	.Bx#{$_name}{
-		@include module-core((
-			width   : map-get($_options, width),
-			aling   : map-get($_options, align),
-			marginB : map-get($_options, marginB)
-		));
-
+		//moduleのwidth&margin設定
+		@include module-core($_options);
 		position: relative;
-		background: map-get($_options, bg)
-		border: map-get($_options, border)
-		padding: map-get($_options, padding)
-
+		background: map-get($_options, background);
+		@include propaty-set("border", map-get($_options, border));
+		@include propaty-set("padding", map-get($_options, padding));
+		//BxQuote01Icon
 		&:before{
 			content: '“';
 			position: absolute;
-			top: map-get($_options, topIcon)
-			left: map-get($_options, leftIcon)
-			color: map-get($_options, colorIcon)
-			font-family: map-get($_options, familyIcon)
-			font-size: map-get($_options, sizeIcon)
+			top: map-get($_options, iconTop);
+			left: map-get($_options, iconLeft);
+			@include propaty-set("font", map-get($_options, iconFont));
+			color: map-get($_options, iconColor);
 			line-height: 1;
 		}
 	

@@ -243,6 +243,14 @@ $sprite-all: sprite-map("spAll/*.png",$layout: smart);
 	)
 ));
 
+@import "hisho/module/PtMultiCol01";
+@include PtMultiCol01();
+
+@import "hisho/module/PtDivideList01";
+@include PtDivideList01();
+
+
+
 
 //--------------------------------
 // 9.overlide

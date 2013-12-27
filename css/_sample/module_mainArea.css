@@ -1020,3 +1020,89 @@ a:focus {
   color: #999999;
   text-decoration: none;
 }
+
+/* line 40, ../../sass/hisho/module/_PtMultiCol01.scss */
+.PtMultiCol01 {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+/* line 46, ../../sass/hisho/module/_PtMultiCol01.scss */
+.PtMultiCol01 .ptMultiCol01Inner {
+  display: "table";
+  table-layout: fixed;
+}
+/* line 52, ../../sass/hisho/module/_PtMultiCol01.scss */
+.PtMultiCol01 .ptMultiCol01Thumb {
+  display: table-cell;
+  vertical-align: top;
+}
+/* line 56, ../../sass/hisho/module/_PtMultiCol01.scss */
+.PtMultiCol01 .ptMultiCol01Thumb.AtLeft {
+  padding-right: 20px;
+}
+/* line 59, ../../sass/hisho/module/_PtMultiCol01.scss */
+.PtMultiCol01 .ptMultiCol01Thumb.AtRight {
+  padding-left: 20px;
+}
+/* line 65, ../../sass/hisho/module/_PtMultiCol01.scss */
+.PtMultiCol01 .ptMultiCol01Img {
+  argin-bottom: 10px;
+}
+/* line 70, ../../sass/hisho/module/_PtMultiCol01.scss */
+.PtMultiCol01 .ptMultiCol01Cnt {
+  display: table-cell;
+  vertical-align: top;
+}
+/* line 76, ../../sass/hisho/module/_PtMultiCol01.scss */
+.PtMultiCol01 .ptMultiCol01Ttl {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+/* line 84, ../../sass/hisho/module/_PtMultiCol01.scss */
+.PtMultiCol01 .ptMultiCol01Txt {
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 10px;
+  color: #999;
+}
+/* line 92, ../../sass/hisho/module/_PtMultiCol01.scss */
+.PtMultiCol01 .ptMultiCol01Txt {
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 10px;
+  color: #999;
+}
+
+/* line 34, ../../sass/hisho/module/_PtDivideList01.scss */
+.PtDivideList01 {
+  margin-bottom: 20px;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 41, ../../sass/hisho/module/_PtDivideList01.scss */
+.PtDivideList01 .ptDivideList01Ul {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 44, ../../sass/hisho/module/_PtDivideList01.scss */
+.PtDivideList01 .ptDivideList01Ul.AtLeft {
+  float: left;
+}
+/* line 47, ../../sass/hisho/module/_PtDivideList01.scss */
+.PtDivideList01 .ptDivideList01Ul.AtLeft .ptDivideList01Li {
+  margin-right: 10px;
+}
+/* line 51, ../../sass/hisho/module/_PtDivideList01.scss */
+.PtDivideList01 .ptDivideList01Ul.AtRight {
+  float: right;
+}
+/* line 54, ../../sass/hisho/module/_PtDivideList01.scss */
+.PtDivideList01 .ptDivideList01Ul.AtRight .ptDivideList01Li {
+  margin-left: 10px;
+}
+/* line 61, ../../sass/hisho/module/_PtDivideList01.scss */
+.PtDivideList01 .ptDivideList01Li {
+  float: left;
+}
